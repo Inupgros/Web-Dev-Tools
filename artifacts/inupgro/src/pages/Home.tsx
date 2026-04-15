@@ -361,7 +361,7 @@ export default function Home() {
               Book Free Demo
             </Button>
             <Button data-testid="final-cta-call" size="lg" variant="outline" className="h-14 px-8 text-lg bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-sm">
-              Call Now: +91 99999 99999
+              Call Now: +91 82096 47142
             </Button>
           </div>
         </div>
@@ -384,8 +384,8 @@ export default function Home() {
               <h4 className="text-white font-bold text-lg mb-6">Contact</h4>
               <ul className="space-y-3">
                 <li>Email: hello@inupgro.com</li>
-                <li>Phone: +91 99999 99999</li>
-                <li>Address: New Delhi, India</li>
+                <li>Phone: +91 82096 47142</li>
+                <li>Address: Jaipur, Rajasthan</li>
               </ul>
             </div>
             <div>
@@ -406,7 +406,7 @@ export default function Home() {
 
       {/* Fixed WhatsApp Button */}
       <a 
-        href="https://wa.me/919999999999" 
+        href="https://wa.me/918209647142" 
         target="_blank" 
         rel="noopener noreferrer"
         data-testid="fab-whatsapp"
