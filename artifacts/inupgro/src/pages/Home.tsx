@@ -6,12 +6,10 @@ import {
   ChevronRight,
   Globe,
   MessageCircle,
-  Search,
   Smartphone,
   TrendingUp,
   Users,
   Zap,
-  ShieldCheck,
   Star,
   Newspaper,
   Target,
@@ -24,14 +22,19 @@ import {
   ArrowRight,
   Phone,
   MapPin,
-  Mail,
-  ExternalLink
+  ExternalLink,
+  Compass,
+  Map,
+  Lightbulb,
+  Building2
 } from "lucide-react";
+import careerHomeSrc from "@assets/screenshots/dev-frontend-inupgro-career-pathway_vercel_app.png";
+import careerExploreSrc from "@assets/screenshots/dev-frontend-inupgro-career-pathway_vercel_app_public-explore.png";
 
 export default function Home() {
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } }
   };
 
   const staggerContainer = {
@@ -55,8 +58,8 @@ export default function Home() {
           <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
             <a href="#why" className="hover:text-primary transition-colors">Why Inupgro</a>
             <a href="#features" className="hover:text-primary transition-colors">Features</a>
+            <a href="#career" className="hover:text-primary transition-colors">Career Pathway</a>
             <a href="#pricing" className="hover:text-primary transition-colors">Pricing</a>
-            <a href="#faq" className="hover:text-primary transition-colors">FAQ</a>
           </div>
           <a href="https://wa.me/918441879640" target="_blank" rel="noopener noreferrer">
             <Button data-testid="nav-cta-contact" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold px-6 shadow-sm">
@@ -233,6 +236,105 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="career" className="py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 text-purple-700 text-sm font-semibold mb-6">
+              <Compass className="w-4 h-4" />
+              NEW: Career Pathway Platform
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">Your Future, Mapped Out.</h2>
+            <p className="text-lg text-gray-600">Explore 600+ career paths with personalized step-by-step roadmaps, college recommendations, and market trends. Empowering 15 crore students in India.</p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="space-y-8">
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { value: "600+", label: "Career Paths" },
+                  { value: "15k+", label: "Colleges" },
+                  { value: "98%", label: "Satisfaction" },
+                  { value: "24/7", label: "AI Support" }
+                ].map((stat, i) => (
+                  <div key={i} className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm text-center">
+                    <div className="text-2xl font-extrabold text-primary">{stat.value}</div>
+                    <div className="text-sm text-gray-500 font-medium mt-1">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <ul className="space-y-5">
+                {[
+                  { icon: Map, title: "Step-by-Step Roadmaps", desc: "Get a clear sequence of skills, courses, and milestones to reach your dream career." },
+                  { icon: Lightbulb, title: "Expert Pro-Tips", desc: "Insider advice from top professionals who have paved the way." },
+                  { icon: Building2, title: "College Matching", desc: "Find the right institution based on career goals and academic profile." },
+                  { icon: TrendingUp, title: "Market Trends", desc: "Stay ahead with real-time data on salary growth and job demand in India." }
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-4">
+                    <div className="mt-1 w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center shrink-0">
+                      <item.icon className="w-5 h-5 text-purple-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900">{item.title}</h4>
+                      <p className="text-sm text-gray-600 mt-1">{item.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              <a href="https://dev-frontend-inupgro-career-pathway.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <Button data-testid="career-cta-explore" size="lg" className="bg-purple-600 hover:bg-purple-700 text-white font-bold shadow-lg shadow-purple-200 mt-4">
+                  Explore Career Paths <ExternalLink className="ml-2 w-4 h-4" />
+                </Button>
+              </a>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="relative">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-white">
+                <img src={careerHomeSrc} alt="Inupgro Career Pathway - Your Future, Mapped Out" className="w-full h-auto" />
+              </div>
+              <div className="absolute -bottom-8 -left-8 w-3/4 rounded-2xl overflow-hidden shadow-xl border border-gray-200 bg-white hidden lg:block">
+                <img src={careerExploreSrc} alt="Explore 600+ Career Paths on Inupgro" className="w-full h-auto" />
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid md:grid-cols-3 gap-8 mt-16 lg:mt-24">
+            {[
+              {
+                title: "For Students",
+                desc: "Discover your ideal career path from Class 6 onwards. Get personalized roadmaps, college recommendations, and salary insights.",
+                icon: GraduationCap,
+                color: "text-blue-600",
+                bg: "bg-blue-50"
+              },
+              {
+                title: "For Schools",
+                desc: "Offer world-class career guidance to your students. Integrate Inupgro Career Pathway into your institute's ecosystem.",
+                icon: Building2,
+                color: "text-green-600",
+                bg: "bg-green-50"
+              },
+              {
+                title: "For Parents",
+                desc: "Help your child make informed career decisions backed by data, expert advice, and real market trends.",
+                icon: Users,
+                color: "text-purple-600",
+                bg: "bg-purple-50"
+              }
+            ].map((card, i) => (
+              <motion.div key={i} variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <div className={`w-14 h-14 ${card.bg} rounded-xl flex items-center justify-center mb-6`}>
+                  <card.icon className={`w-7 h-7 ${card.color}`} />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{card.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{card.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
