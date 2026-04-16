@@ -114,13 +114,13 @@ export default function Home() {
             <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="space-y-6">
               <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/[0.12] text-sm font-medium text-blue-100">
                 <Star className="w-4 h-4 text-secondary fill-secondary" />
-                Building an Educational Ecosystem
+                Trusted by 500+ Institutes Across India
               </motion.div>
 
               <motion.h1 variants={fadeInUp} className="text-[2.75rem] md:text-[4.5rem] font-extrabold tracking-[-0.02em] text-white leading-[1.08]">
-                Empower Your School with{" "}
+                Your Institute Deserves a{" "}
                 <span className="relative inline-block mt-1">
-                  <span className="text-secondary">INUPGRO</span>
+                  <span className="text-secondary">Digital Edge</span>
                   <motion.span
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
@@ -131,7 +131,7 @@ export default function Home() {
               </motion.h1>
 
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-blue-100/80 font-medium max-w-2xl mx-auto leading-relaxed">
-                Effortlessly manage your institute with a single, powerful platform.
+                A professional website and AI-powered career guidance -- everything your institute needs to attract students and stand out, starting at just ₹50,000 for 10 years. Plus, 9 management tools launching soon -- free for your first year.
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
@@ -156,10 +156,10 @@ export default function Home() {
             className="flex justify-center gap-8 md:gap-16 mt-16 md:mt-20 pt-10 border-t border-white/10"
           >
             {[
-              { num: 500, suffix: "+", label: "Institutes" },
-              { num: 50000, suffix: "+", label: "Students" },
-              { num: 10, suffix: " Yrs", label: "Support" },
-              { num: 98, suffix: "%", label: "Satisfaction" }
+              { num: 500, suffix: "+", label: "Institutes Onboarded" },
+              { num: 50000, suffix: "+", label: "Students Impacted" },
+              { num: 10, suffix: " Yrs", label: "Website Validity" },
+              { num: 98, suffix: "%", label: "Client Satisfaction" }
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="text-2xl md:text-3xl font-extrabold text-white">
@@ -177,17 +177,17 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-14">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 text-primary text-sm font-semibold mb-5">
               <Award className="w-4 h-4" />
-              Trusted by Educators
+              The Problem We Solve
             </div>
-            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">Why INUPGRO?</h2>
-            <p className="text-base md:text-lg text-gray-500 leading-relaxed">Education shapes futures and inspires young minds, but managing a school is challenging. Inupgro makes it smarter and more efficient, giving you a trusted partner to simplify management and enhance learning.</p>
+            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">Why Do 500+ Institutes Choose INUPGRO?</h2>
+            <p className="text-base md:text-lg text-gray-500 leading-relaxed">Most institutes lose students to competitors simply because they lack a professional online presence. Parents today Google before they visit. Without a website, you're invisible. Inupgro changes that -- giving you a digital identity that builds trust, attracts enquiries, and fills seats.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { icon: GraduationCap, title: "Empowering Education", desc: "Enabling meaningful learning, so educators can focus on student growth.", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
-              { icon: TrendingUp, title: "Boosting Presence", desc: "Strengthening your institute's recognition and community ties.", color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
-              { icon: Users, title: "Fostering Connections", desc: "Uniting teachers, students, and parents for shared learning success.", color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" }
+              { icon: Globe, title: "Be Found Online", desc: "Today's parents search online before choosing a school. Your professional website ensures they find you first -- not your competitor.", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
+              { icon: TrendingUp, title: "Increase Admissions", desc: "A professional website with WhatsApp integration means every parent who finds you can reach you instantly -- turning visitors into real enquiries.", color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
+              { icon: GraduationCap, title: "Stand Out with Career Guidance", desc: "Offer something no other school does -- free AI-powered career guidance for students. Parents value this, and it drives enrollments.", color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" }
             ].map((item, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.12 } } }} className={`bg-white p-8 rounded-2xl shadow-sm border ${item.border} text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group`}>
                 <div className={`w-16 h-16 ${item.bg} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -200,7 +200,7 @@ export default function Home() {
           </div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mt-12">
-            <p className="text-lg font-semibold text-primary/80 italic">Inupgro -- Transforming Education, Empowering Schools.</p>
+            <p className="text-lg font-semibold text-primary/80 italic">"When parents can't find you online, they find someone else."</p>
           </motion.div>
         </div>
       </section>
@@ -212,10 +212,10 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-14">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.08] border border-white/10 text-blue-100 text-sm font-semibold mb-5">
               <Sparkles className="w-4 h-4 text-secondary" />
-              Simple, Transparent Pricing
+              One Investment, Three Powerful Benefits
             </div>
-            <h2 className="text-3xl md:text-[2.75rem] font-extrabold mb-4 leading-tight">Our Offerings</h2>
-            <p className="text-base md:text-lg text-blue-100/70 leading-relaxed">Three powerful solutions designed to transform your institute's digital presence and management.</p>
+            <h2 className="text-3xl md:text-[2.75rem] font-extrabold mb-4 leading-tight">What You Get with INUPGRO</h2>
+            <p className="text-base md:text-lg text-blue-100/70 leading-relaxed">Pay once. Get a professional website for 10 years, free career guidance for your students, and an entire school management platform -- all bundled together.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-start">
@@ -227,14 +227,14 @@ export default function Home() {
               <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-5">
                 <Globe className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-extrabold text-primary mb-1">Website Development</h3>
-              <p className="text-sm text-gray-400 mb-5">Professional website for your institute</p>
+              <h3 className="text-xl font-extrabold text-primary mb-1">Professional Website</h3>
+              <p className="text-sm text-gray-400 mb-5">Your digital identity -- designed to attract admissions</p>
               <div className="flex items-baseline gap-1 mb-1">
                 <span className="text-4xl lg:text-5xl font-extrabold text-primary tracking-tight">₹50,000</span>
               </div>
-              <p className="text-xs font-bold text-emerald-600 mb-7 uppercase tracking-widest">One-Time Payment -- 10 Years</p>
+              <p className="text-xs font-bold text-emerald-600 mb-7 uppercase tracking-widest">One-Time Payment -- 10 Years Covered</p>
               <ul className="space-y-2.5 text-gray-600 text-sm mb-7">
-                {["Custom website design", "Domain for 10 years", "Hosting for 10 years", "Free SSL certificate", "WhatsApp integration", "Enquiry forms", "Basic SEO setup", "Maintenance & support", "Mobile responsive"].map((item, i) => (
+                {["Custom-designed, admission-focused website", "Domain name included for 10 years", "Fast, reliable hosting for 10 years", "SSL security certificate (free)", "WhatsApp chat button for instant enquiries", "Enquiry & admission forms built-in", "Google-optimized for local search (SEO)", "Ongoing maintenance & technical support", "Fully mobile-responsive design"].map((item, i) => (
                   <li key={i} className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-secondary shrink-0" /> {item}
                   </li>
@@ -242,7 +242,7 @@ export default function Home() {
               </ul>
               <div className="bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200/60 rounded-xl p-3.5 mb-5">
                 <p className="text-xs font-semibold text-emerald-700 flex items-start gap-2">
-                  <Gift className="w-4 h-4 shrink-0 mt-0.5" /> Website contract unlocks Career Pathway Tool + 1 Year Free Platform Access
+                  <Gift className="w-4 h-4 shrink-0 mt-0.5" /> Bonus: Website contract unlocks FREE Career Pathway Tool + 1 Year FREE access to all 9 platform features
                 </p>
               </div>
               <a href="https://wa.me/918441879640?text=I'm%20interested%20in%20Website%20Development" target="_blank" rel="noopener noreferrer">
@@ -260,20 +260,20 @@ export default function Home() {
                 <Compass className="w-6 h-6 text-purple-300" />
               </div>
               <h3 className="text-xl font-extrabold text-white mb-1">Career Pathway Tool</h3>
-              <p className="text-sm text-blue-200/60 mb-5">AI-powered career guidance for students</p>
+              <p className="text-sm text-blue-200/60 mb-5">Give students a reason to choose YOUR institute</p>
               <div className="flex items-baseline gap-1 mb-1">
                 <span className="text-4xl lg:text-5xl font-extrabold text-white tracking-tight">FREE</span>
               </div>
-              <p className="text-xs text-blue-200/60 mb-7">For schools & students with website contract</p>
+              <p className="text-xs text-blue-200/60 mb-7">Included free with your website contract</p>
               <ul className="space-y-2.5 text-blue-100/80 text-sm mb-7">
                 {[
-                  { text: "600+ career paths", color: "text-purple-400" },
-                  { text: "Personalized roadmaps", color: "text-purple-400" },
-                  { text: "College recommendations", color: "text-purple-400" },
-                  { text: "Market trends & salary data", color: "text-purple-400" },
-                  { text: "Expert pro-tips", color: "text-purple-400" },
-                  { text: "24/7 AI support", color: "text-purple-400" },
-                  { text: "Showcase your institute", color: "text-purple-400" }
+                  { text: "600+ career paths mapped out", color: "text-purple-400" },
+                  { text: "Personalized step-by-step roadmaps", color: "text-purple-400" },
+                  { text: "15,000+ college recommendations", color: "text-purple-400" },
+                  { text: "Live salary & job market data", color: "text-purple-400" },
+                  { text: "Expert tips from industry professionals", color: "text-purple-400" },
+                  { text: "24/7 AI-powered career assistant", color: "text-purple-400" },
+                  { text: "Your institute showcased to students", color: "text-purple-400" }
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-2.5">
                     <CheckCircle2 className={`w-4 h-4 ${item.color} shrink-0`} /> {item.text}
@@ -300,7 +300,7 @@ export default function Home() {
                 <Zap className="w-6 h-6 text-amber-300" />
               </div>
               <h3 className="text-xl font-extrabold text-white mb-1">9 Platform Features</h3>
-              <p className="text-sm text-blue-200/60 mb-5">Complete school management ecosystem</p>
+              <p className="text-sm text-blue-200/60 mb-5">Run your entire institute from one dashboard</p>
               <div className="flex items-baseline gap-1 mb-1">
                 <span className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">1 Year FREE</span>
               </div>
@@ -318,7 +318,7 @@ export default function Home() {
               </ul>
               <div className="bg-amber-500/10 border border-amber-400/20 rounded-xl p-3.5 mb-5">
                 <p className="text-xs font-semibold text-amber-200/80 flex items-start gap-2">
-                  <Gift className="w-4 h-4 shrink-0 mt-0.5" /> Free for 1 year with website contract, then subscription pricing
+                  <Gift className="w-4 h-4 shrink-0 mt-0.5" /> Free for 1 year with website contract -- no risk, cancel anytime after
                 </p>
               </div>
               <a href="https://wa.me/918441879640?text=I'm%20interested%20in%20the%20Platform%20Features" target="_blank" rel="noopener noreferrer">
@@ -330,7 +330,7 @@ export default function Home() {
           </div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mt-12">
-            <p className="text-blue-100/70 text-base font-medium">Sign up for website development and unlock <span className="text-secondary font-bold">all three offerings</span> -- the smartest investment for your institute.</p>
+            <p className="text-blue-100/70 text-base font-medium">That's just ₹13.70 per day for a complete digital presence. <span className="text-secondary font-bold">One contract, three powerful benefits.</span></p>
           </motion.div>
         </div>
       </section>
@@ -339,9 +339,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.15),transparent_70%)]"></div>
         <div className="container relative z-10 mx-auto px-4 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInScale}>
-            <h2 className="text-xl md:text-3xl font-extrabold mb-3">The Complete Package</h2>
+            <h2 className="text-xl md:text-3xl font-extrabold mb-3">Why Pay Lakhs When You Can Pay ₹50,000 Once?</h2>
             <p className="text-base md:text-xl font-semibold max-w-3xl mx-auto">
-              Get a <span className="bg-primary/10 px-2 py-0.5 rounded-md">₹50,000 website</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">Free Career Pathway</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">1 Year Free Platform</span> -- all with a single contract.
+              Other companies charge ₹1-5 Lakhs for a website alone. With Inupgro, you get a <span className="bg-primary/10 px-2 py-0.5 rounded-md">10-year website</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">Free Career Pathway</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">1 Year Free Platform</span> -- all in one.
             </p>
           </motion.div>
         </div>
@@ -350,16 +350,16 @@ export default function Home() {
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-14">
-            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">How It Works</h2>
-            <p className="text-base md:text-lg text-gray-500 leading-relaxed">From sign-up to a complete digital ecosystem in 4 simple steps.</p>
+            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">Go Digital in 4 Simple Steps</h2>
+            <p className="text-base md:text-lg text-gray-500 leading-relaxed">No technical knowledge needed. We handle everything -- you just focus on educating.</p>
           </motion.div>
           <div className="grid md:grid-cols-4 gap-6 relative max-w-5xl mx-auto">
             <div className="hidden md:block absolute top-10 left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-transparent via-gray-200 to-transparent -z-10"></div>
             {[
-              { num: "1", title: "Contact Us", desc: "Reach out via WhatsApp or call. Share your institute details and requirements.", icon: Phone },
-              { num: "2", title: "Website Built", desc: "We design and develop a professional, admission-focused website for you.", icon: Globe },
-              { num: "3", title: "Go Live", desc: "Your website goes live and Career Pathway Tool is activated. Platform features available at launch.", icon: Play },
-              { num: "4", title: "Grow", desc: "Attract more students, manage admissions, and grow your institute digitally.", icon: TrendingUp }
+              { num: "1", title: "Send Us a Message", desc: "Tap the WhatsApp button or call us. Tell us about your institute -- that's all we need to get started.", icon: Phone },
+              { num: "2", title: "We Build Your Website", desc: "Our team designs a professional, mobile-friendly website tailored to your institute within days.", icon: Globe },
+              { num: "3", title: "Go Live & Get Noticed", desc: "Your website goes live with SEO, WhatsApp chat, and enquiry forms. Career Pathway Tool activates instantly.", icon: Play },
+              { num: "4", title: "Watch Admissions Grow", desc: "Start receiving enquiries from parents who find you online. Track, manage, and grow -- all from one place.", icon: TrendingUp }
             ].map((step, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.12 } } }} className="relative flex flex-col items-center text-center group">
                 <div className="w-[72px] h-[72px] rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-white text-2xl font-extrabold flex items-center justify-center mb-5 shadow-xl group-hover:scale-105 transition-transform duration-300">
@@ -380,8 +380,8 @@ export default function Home() {
               <Compass className="w-4 h-4" />
               FREE with Website Contract
             </div>
-            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">Career Pathway Tool</h2>
-            <p className="text-base md:text-lg text-gray-500 leading-relaxed">Explore 600+ career paths with personalized step-by-step roadmaps, college recommendations, and market trends. Free for schools and students who partner with Inupgro.</p>
+            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">The Career Guidance Tool That Sets Your Institute Apart</h2>
+            <p className="text-base md:text-lg text-gray-500 leading-relaxed">Most schools offer academics. Yours will also offer AI-powered career guidance covering 600+ career paths -- from Class 6 onwards. Students get clarity on their future, and parents see your institute as one that truly cares. It's completely free with your Inupgro website.</p>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16 lg:mb-20">
@@ -402,10 +402,10 @@ export default function Home() {
 
               <ul className="space-y-4">
                 {[
-                  { icon: Map, title: "Step-by-Step Roadmaps", desc: "Clear sequence of skills, courses, and milestones to reach any dream career." },
-                  { icon: Lightbulb, title: "Expert Pro-Tips", desc: "Insider advice from top professionals who have paved the way." },
-                  { icon: Building2, title: "College Matching", desc: "Find the right college based on career goals and academic profile." },
-                  { icon: TrendingUp, title: "Market Trends", desc: "Real-time data on salary growth and job demand across India." }
+                  { icon: Map, title: "Step-by-Step Roadmaps", desc: "Students see exactly what skills, courses, and exams they need -- no more confusion about 'what to do after 10th or 12th.'" },
+                  { icon: Lightbulb, title: "Expert Pro-Tips", desc: "Practical advice from industry professionals who have actually walked the path -- not generic career counseling." },
+                  { icon: Building2, title: "15,000+ College Matches", desc: "Students get matched to the right colleges based on their career goals, location, budget, and academic profile." },
+                  { icon: TrendingUp, title: "Live Salary & Job Data", desc: "Real-time data on salary ranges, job demand, and industry growth across India -- so students make informed choices." }
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3.5 group">
                     <div className="mt-0.5 w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center shrink-0 group-hover:bg-purple-100 transition-colors">
@@ -420,8 +420,8 @@ export default function Home() {
               </ul>
 
               <div className="bg-gradient-to-r from-purple-50 to-purple-50/50 border border-purple-200/60 rounded-2xl p-5">
-                <p className="text-sm font-bold text-purple-800 mb-1">How to Get Access?</p>
-                <p className="text-sm text-purple-600 leading-relaxed">Contract with Inupgro for website development (₹50,000) and get the Career Pathway Tool absolutely free. Your institute will also be showcased on the platform to attract students.</p>
+                <p className="text-sm font-bold text-purple-800 mb-1">How Does Your Institute Benefit?</p>
+                <p className="text-sm text-purple-600 leading-relaxed">Your institute gets showcased on the Career Pathway platform, visible to thousands of students exploring careers. Parents see you as a forward-thinking school. All free with your ₹50,000 website contract.</p>
               </div>
 
               <a href="https://wa.me/918441879640?text=I'm%20interested%20in%20the%20Career%20Pathway%20Tool" target="_blank" rel="noopener noreferrer">
@@ -444,9 +444,9 @@ export default function Home() {
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid md:grid-cols-3 gap-6 mt-12 lg:mt-20">
             {[
-              { title: "For Students", desc: "Discover your ideal career path from Class 6 onwards. Get personalized roadmaps, college recommendations, and salary insights.", icon: GraduationCap, color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
-              { title: "For Schools", desc: "Offer world-class career guidance to your students. Your institute gets showcased on the Inupgro platform to attract enrollments.", icon: Building2, color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
-              { title: "For Parents", desc: "Help your child make informed career decisions backed by data, expert advice, and real market trends.", icon: Users, color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" }
+              { title: "For Students", desc: "No more guessing about the future. Explore 600+ career paths, understand what each career requires, see salary data, and get a step-by-step roadmap -- all from Class 6 onwards.", icon: GraduationCap, color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
+              { title: "For Schools & Colleges", desc: "Become the institute that offers career clarity, not just academics. Get showcased on the platform, attract more enrollments, and give parents a compelling reason to choose you.", icon: Building2, color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
+              { title: "For Parents", desc: "Finally, a data-backed way to guide your child's career. No more relying on opinions -- see real salary data, job demand, and clear roadmaps for every career option.", icon: Users, color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" }
             ].map((card, i) => (
               <motion.div key={i} variants={fadeInUp} className={`bg-white p-7 rounded-2xl shadow-sm border ${card.border} hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group`}>
                 <div className={`w-13 h-13 ${card.bg} rounded-2xl flex items-center justify-center mb-5 w-14 h-14 group-hover:scale-110 transition-transform duration-300`}>
@@ -467,21 +467,21 @@ export default function Home() {
               <Clock className="w-4 h-4" />
               Launching Soon -- Free for 1 Year with Website Contract
             </div>
-            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">9 Cutting Edge Platform Features</h2>
-            <p className="text-base md:text-lg text-gray-500 leading-relaxed">A complete school management ecosystem. All 9 features will be free for 1 year for institutes who contract with Inupgro for website development.</p>
+            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">9 Tools to Run Your Institute Smarter</h2>
+            <p className="text-base md:text-lg text-gray-500 leading-relaxed">From admissions to fee collection, marketing to scholarships -- manage everything from one platform. All 9 features are free for 1 year when you sign up for a website with Inupgro.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
             {[
-              { icon: Globe, title: "Enhanced School Visibility", desc: "Boost your online presence, making it easier for students and parents to connect.", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
-              { icon: Newspaper, title: "Educational School News", desc: "Engage your community with updates, achievements, and important announcements.", color: "text-indigo-600", bg: "bg-indigo-50", border: "border-indigo-100" },
-              { icon: Target, title: "Targeted Marketing", desc: "Use AI insights to attract the right students and optimize enrollments efficiently.", color: "text-rose-600", bg: "bg-rose-50", border: "border-rose-100" },
-              { icon: BarChart3, title: "Track School Performance", desc: "Analyze student and teacher performance to improve curriculum and teaching methods.", color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
-              { icon: BookOpen, title: "Turn Knowledge into Income", desc: "Earn ₹2,000 per topic shared while enhancing education quality across the platform.", color: "text-amber-600", bg: "bg-amber-50", border: "border-amber-100" },
-              { icon: UserPlus, title: "One-Click Onboarding", desc: "Simplify school and teacher registration with an easy, time-saving process.", color: "text-cyan-600", bg: "bg-cyan-50", border: "border-cyan-100" },
-              { icon: FileCheck, title: "Dynamic Admission Result Publishing", desc: "Automate result publishing for faster, hassle-free admissions.", color: "text-violet-600", bg: "bg-violet-50", border: "border-violet-100" },
-              { icon: GraduationCap, title: "Comprehensive Scholarship Framework", desc: "Streamline applications and distribution for easy access to financial aid.", color: "text-teal-600", bg: "bg-teal-50", border: "border-teal-100" },
-              { icon: Wallet, title: "Smart Fee Ecosystem", desc: "Automate invoicing, track payments, and improve financial organization.", color: "text-orange-600", bg: "bg-orange-50", border: "border-orange-100" }
+              { icon: Globe, title: "Enhanced School Visibility", desc: "Get listed on the Inupgro network so parents and students discover your institute organically -- beyond just your own website.", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
+              { icon: Newspaper, title: "Educational School News", desc: "Publish achievements, events, and updates that parents actually see -- build trust and community engagement effortlessly.", color: "text-indigo-600", bg: "bg-indigo-50", border: "border-indigo-100" },
+              { icon: Target, title: "Targeted Marketing", desc: "Reach the right parents in your area with AI-powered campaigns. Stop wasting money on flyers -- go digital.", color: "text-rose-600", bg: "bg-rose-50", border: "border-rose-100" },
+              { icon: BarChart3, title: "Track School Performance", desc: "See which classes, teachers, and subjects are performing best. Make data-driven decisions instead of guessing.", color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
+              { icon: BookOpen, title: "Turn Knowledge into Income", desc: "Teachers can earn ₹2,000 per topic shared on the platform. Your staff creates content, Inupgro pays them.", color: "text-amber-600", bg: "bg-amber-50", border: "border-amber-100" },
+              { icon: UserPlus, title: "One-Click Onboarding", desc: "Register new students, teachers, and staff in seconds -- no paperwork, no manual data entry, no hassle.", color: "text-cyan-600", bg: "bg-cyan-50", border: "border-cyan-100" },
+              { icon: FileCheck, title: "Admission Result Publishing", desc: "Publish admission results online instantly. Parents check results themselves -- saving your staff hours of phone calls.", color: "text-violet-600", bg: "bg-violet-50", border: "border-violet-100" },
+              { icon: GraduationCap, title: "Scholarship Framework", desc: "Create, manage, and distribute scholarships digitally. Students apply online, you review and approve -- all in one place.", color: "text-teal-600", bg: "bg-teal-50", border: "border-teal-100" },
+              { icon: Wallet, title: "Smart Fee Ecosystem", desc: "Generate invoices, send payment reminders via WhatsApp, and track who's paid and who hasn't -- all automatically.", color: "text-orange-600", bg: "bg-orange-50", border: "border-orange-100" }
             ].map((feat, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.06 } } }} className={`bg-white p-7 rounded-2xl shadow-sm border ${feat.border} hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group relative`}>
                 <div className="absolute top-4 right-4">
@@ -503,14 +503,14 @@ export default function Home() {
       <section className="py-20 md:py-28 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-14">
-            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">Trusted by Educators</h2>
-            <p className="text-base md:text-lg text-gray-500">What our partners say about working with Inupgro.</p>
+            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">Hear from Institute Leaders Like You</h2>
+            <p className="text-base md:text-lg text-gray-500">Real feedback from schools, colleges, and coaching centres already growing with Inupgro.</p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { name: "Rajesh Kumar", inst: "Sunshine Public School, Jaipur", text: "Inupgro built us a stunning website and the Career Pathway tool is a game-changer for our students. Parents love that we offer career guidance as part of the school experience." },
-              { name: "Priya Sharma", inst: "Excel Coaching Institute", text: "Paying ₹50,000 once for 10 years was the best investment. Plus getting the Career Pathway tool free and upcoming platform features -- it's incredible value." },
-              { name: "Dr. A. Verma", inst: "Global Degree College", text: "The website drives real enquiries via WhatsApp daily. We can't wait for the 9 platform features to launch -- the scholarship framework alone will save us hours." }
+              { name: "Rajesh Kumar", inst: "Sunshine Public School, Jaipur", text: "Before Inupgro, we had no online presence and were losing students to competitors with websites. Within weeks of going live, we started getting WhatsApp enquiries from parents who found us on Google. The Career Pathway tool is something parents genuinely value." },
+              { name: "Priya Sharma", inst: "Excel Coaching Institute", text: "I was spending ₹15,000 every year on a basic website that looked outdated. With Inupgro, I paid ₹50,000 once and got a professional website for 10 years, plus the Career Pathway tool and platform features for free. It's the smartest investment I've made for my institute." },
+              { name: "Dr. A. Verma", inst: "Global Degree College", text: "What convinced me was the value -- a 10-year website, career guidance for students, and soon an entire management platform. We now receive 5-10 enquiries via WhatsApp every week just from the website. The upcoming fee management and scholarship tools will save us hours of manual work." }
             ].map((test, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.1 } } }} className="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 relative hover:shadow-lg transition-shadow duration-300">
                 <div className="flex gap-1 mb-4">
@@ -542,11 +542,12 @@ export default function Home() {
           </motion.div>
           <Accordion type="single" collapsible className="w-full space-y-3">
             {[
-              { q: "What does the ₹50,000 website package include?", a: "The ₹50,000 one-time payment covers custom website design, domain registration, hosting, SSL certificate, WhatsApp integration, enquiry forms, basic SEO setup, and full maintenance and support -- all for 10 years. No hidden or recurring fees." },
-              { q: "How do I get the Career Pathway Tool for free?", a: "The Career Pathway Tool is free for schools and students, but requires a website development contract with Inupgro. Once you sign up for the website (₹50,000), your institute gets access to the Career Pathway platform at no additional cost. Your institute is also showcased on the platform. Website is mandatory to join." },
-              { q: "What are the 9 platform features and when do they launch?", a: "The 9 features include Enhanced School Visibility, Educational News, Targeted Marketing, Performance Tracking, Knowledge-to-Income, One-Click Onboarding, Admission Result Publishing, Scholarship Framework, and Smart Fee Ecosystem. They are launching soon and will be free for 1 year for all institutes who have a website contract with Inupgro." },
-              { q: "Can I use my existing domain name?", a: "Absolutely. If you already own a domain name (like yourschool.com), we can map our newly designed website to it seamlessly." },
-              { q: "Do you provide support after the website goes live?", a: "Yes. We provide ongoing technical support to ensure your website stays up and running smoothly. Minor content updates (like changing a phone number or adding a notice) are handled promptly." }
+              { q: "What exactly do I get for ₹50,000?", a: "You get a professionally designed, mobile-responsive website with your own domain name, fast hosting, SSL security, WhatsApp chat integration, enquiry/admission forms, Google SEO optimization, and ongoing maintenance -- all covered for 10 years with no hidden fees. The Career Pathway Tool is also included free. That's just ₹13.70 per day for your website." },
+              { q: "Is the Career Pathway Tool really free?", a: "Yes, 100% free for your institute and students. The only requirement is a website contract with Inupgro (₹50,000). Once your website is live, the Career Pathway Tool is activated at no extra cost. Your institute also gets showcased on the platform, which helps attract more student enquiries." },
+              { q: "What are the 9 platform features and when do they launch?", a: "The 9 features cover everything from targeted marketing and performance tracking to fee management and scholarship distribution. They are launching soon and will be completely free for 1 year for all institutes with a website contract. After the first year, affordable subscription plans will be available -- but you can cancel anytime." },
+              { q: "I already have a website. Can I still benefit?", a: "Yes. If your current website isn't generating enquiries or looks outdated, we'll build you a modern, admission-focused website designed to convert visitors into leads. If you already have a domain (like yourschool.com), we'll seamlessly connect it to your new Inupgro website." },
+              { q: "Do you provide support after the website goes live?", a: "Absolutely. Our team provides ongoing technical support for the entire 10-year period. Content updates like changing a phone number, adding a notice, or updating photos are handled promptly. You're never left on your own." },
+              { q: "Why is Inupgro so affordable compared to others?", a: "Most web agencies charge ₹1-5 Lakhs for a school website and additional yearly maintenance fees. Inupgro's mission is to make digital transformation accessible to every institute in India. By standardizing our process, we deliver high-quality websites at a fraction of the cost -- and bundle career guidance and management tools for free." }
             ].map((faq, i) => (
               <AccordionItem key={i} value={`item-${i + 1}`} className="bg-gray-50 border border-gray-100 rounded-2xl px-6 data-[state=open]:bg-white data-[state=open]:shadow-sm data-[state=open]:border-gray-200 transition-all">
                 <AccordionTrigger data-testid={`faq-trigger-${i + 1}`} className="text-base font-semibold hover:no-underline text-left py-5">
@@ -567,9 +568,9 @@ export default function Home() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/2"></div>
         <div className="container relative z-10 mx-auto px-4 text-center max-w-3xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-5 leading-tight">Let's Build a Smarter Future for Education -- Together!</h2>
-            <p className="text-base md:text-lg text-blue-100/70 mb-3 leading-relaxed">Transform your school's digital presence with a professional website, free career guidance for students, and a complete management ecosystem.</p>
-            <p className="text-lg text-secondary font-bold mb-10">₹50,000 one-time investment unlocks it all.</p>
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-5 leading-tight">Your Competitors Are Already Online. Are You?</h2>
+            <p className="text-base md:text-lg text-blue-100/70 mb-3 leading-relaxed">Every day without a website, your institute is invisible to parents searching for schools on Google. Join 500+ institutes who have already taken the digital leap with Inupgro.</p>
+            <p className="text-lg text-secondary font-bold mb-10">₹50,000 once. 10 years covered. Career guidance + management tools included free.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a href="https://wa.me/918441879640" target="_blank" rel="noopener noreferrer">
                 <Button data-testid="final-cta-join" size="lg" className="h-14 px-8 text-base bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold rounded-xl shadow-lg shadow-secondary/25 hover:shadow-xl hover:scale-[1.02] transition-all">
@@ -596,7 +597,7 @@ export default function Home() {
                 </div>
                 <span className="text-xl font-extrabold text-white tracking-tight">INUPGRO</span>
               </div>
-              <p className="text-sm text-gray-500 leading-relaxed">Transforming Education, Empowering Schools. Building an educational ecosystem for smarter, more efficient school management.</p>
+              <p className="text-sm text-gray-500 leading-relaxed">India's most affordable digital ecosystem for educational institutes. Professional websites, AI career guidance, and school management tools -- all in one platform.</p>
             </div>
             <div>
               <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">Contact Us</h4>
