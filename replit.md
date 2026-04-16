@@ -4,6 +4,24 @@
 
 pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
 
+## Artifacts
+
+### Inupgro Landing Page (`artifacts/inupgro`)
+- Single-page landing website for **Inupgro** -- an EdTech company
+- **Stack**: React + Vite, Tailwind CSS, shadcn/ui, Framer Motion, Lucide icons
+- **Design**: Deep navy blue primary (#0f172a via CSS custom properties) + gold/amber secondary
+- **No backend** -- pure frontend, no API hooks
+- **Business Model (3 Offerings)**:
+  1. **Website Development** -- ₹50,000 one-time for 10 years (core/mandatory offering)
+  2. **Career Pathway Tool** -- FREE for schools/students, requires website contract (website mandatory)
+  3. **9 Platform Features** -- Launching Soon, free for 1 year with website contract
+- **Contact**: Phone +91 84418 79640, WhatsApp wa.me/918441879640
+- **Address**: Jhalana Gram, Malviya Nagar, Jaipur (Raj)
+- **Career Pathway URL**: https://dev-frontend-inupgro-career-pathway.vercel.app/
+- **Screenshots**: `attached_assets/screenshots/` (career pathway app screenshots)
+- **Vite alias**: `@assets/` maps to `attached_assets/`
+- **Key file**: `artifacts/inupgro/src/pages/Home.tsx` (entire landing page)
+
 ## Stack
 
 - **Monorepo tool**: pnpm workspaces
@@ -18,10 +36,11 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 
 ## Key Commands
 
-- `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- `pnpm --filter @workspace/api-server run dev` — run API server locally
+- `pnpm run typecheck` -- full typecheck across all packages
+- `pnpm run build` -- typecheck + build all packages
+- `pnpm --filter @workspace/inupgro run dev` -- run Inupgro landing page locally
+- `pnpm --filter @workspace/api-spec run codegen` -- regenerate API hooks and Zod schemas from OpenAPI spec
+- `pnpm --filter @workspace/db run push` -- push DB schema changes (dev only)
+- `pnpm --filter @workspace/api-server run dev` -- run API server locally
 
 See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.
