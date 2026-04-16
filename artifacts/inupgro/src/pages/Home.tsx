@@ -1,7 +1,7 @@
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   CheckCircle2,
   ChevronRight,
@@ -50,6 +50,40 @@ function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: strin
     <motion.span ref={ref}>
       <motion.span>{rounded}</motion.span>{suffix}
     </motion.span>
+  );
+}
+
+function FlipScreenshots({ front, back }: { front: string; back: string }) {
+  const [flipped, setFlipped] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => setFlipped((f) => !f), 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div
+      className="relative w-full cursor-pointer"
+      style={{ perspective: 1200 }}
+      onClick={() => setFlipped((f) => !f)}
+    >
+      <motion.div
+        animate={{ rotateY: flipped ? 180 : 0 }}
+        transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+        style={{ transformStyle: "preserve-3d" }}
+        className="relative w-full"
+      >
+        <div style={{ backfaceVisibility: "hidden" }} className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200/80 bg-white">
+          <img src={front} alt="Inupgro Career Pathway - Your Future, Mapped Out" className="w-full h-auto" />
+        </div>
+        <div
+          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+          className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border border-gray-200/80 bg-white"
+        >
+          <img src={back} alt="Explore 600+ Career Paths on Inupgro" className="w-full h-auto object-cover" />
+        </div>
+      </motion.div>
+    </div>
   );
 }
 
@@ -431,14 +465,9 @@ export default function Home() {
               </a>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative">
+            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative" style={{ perspective: 1200 }}>
               <div className="absolute -inset-4 bg-gradient-to-br from-purple-100/40 to-blue-100/30 rounded-[2rem] blur-2xl -z-10"></div>
-              <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200/80 bg-white">
-                <img src={careerHomeSrc} alt="Inupgro Career Pathway - Your Future, Mapped Out" className="w-full h-auto" />
-              </div>
-              <div className="absolute -bottom-6 -left-6 w-[70%] rounded-2xl overflow-hidden shadow-xl border border-gray-200/80 bg-white hidden lg:block">
-                <img src={careerExploreSrc} alt="Explore 600+ Career Paths on Inupgro" className="w-full h-auto" />
-              </div>
+              <FlipScreenshots front={careerHomeSrc} back={careerExploreSrc} />
             </motion.div>
           </div>
 
