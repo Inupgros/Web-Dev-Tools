@@ -85,7 +85,7 @@ export default function Home() {
                 <span className="text-secondary inline-block mt-2">INUPGRO</span>
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-blue-100/90 font-medium max-w-2xl mx-auto">
-                Effortlessly manage your school, college or coaching centre with a single, powerful platform.
+                Effortlessly manage your institute with a single, powerful platform.
               </motion.p>
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
                 <a href="https://wa.me/918441879640" target="_blank" rel="noopener noreferrer">
@@ -113,7 +113,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               { icon: GraduationCap, title: "Empowering Education", desc: "Enabling meaningful learning, so educators can focus on student growth.", color: "text-blue-600", bg: "bg-blue-50" },
-              { icon: TrendingUp, title: "Boosting Presence", desc: "Strengthening your school, college or coaching centre's recognition and community ties.", color: "text-green-600", bg: "bg-green-50" },
+              { icon: TrendingUp, title: "Boosting Presence", desc: "Strengthening your institute's recognition and community ties.", color: "text-green-600", bg: "bg-green-50" },
               { icon: Users, title: "Fostering Connections", desc: "Uniting teachers, students, and parents for shared learning success.", color: "text-purple-600", bg: "bg-purple-50" }
             ].map((item, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.15 } } }} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
@@ -135,7 +135,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Offerings</h2>
-            <p className="text-lg text-blue-100">Three powerful solutions designed to transform your school, college or coaching centre's digital presence and management.</p>
+            <p className="text-lg text-blue-100">Three powerful solutions designed to transform your institute's digital presence and management.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -148,7 +148,7 @@ export default function Home() {
                 <Globe className="w-7 h-7 text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-primary mb-2">Website Development</h3>
-              <p className="text-sm text-gray-500 mb-6">Professional website for your school, college or coaching centre</p>
+              <p className="text-sm text-gray-500 mb-6">Professional website for your institute</p>
               <div className="flex items-baseline gap-1 mb-2">
                 <span className="text-5xl font-extrabold text-primary">₹50,000</span>
               </div>
@@ -196,7 +196,7 @@ export default function Home() {
                 <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-purple-400 shrink-0" /> Market trends & salary data</li>
                 <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-purple-400 shrink-0" /> Expert pro-tips</li>
                 <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-purple-400 shrink-0" /> 24/7 AI support</li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-purple-400 shrink-0" /> Showcase your school, college or coaching centre</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-purple-400 shrink-0" /> Showcase your institute</li>
               </ul>
               <div className="bg-purple-500/10 border border-purple-400/30 rounded-xl p-4 mb-6">
                 <p className="text-sm font-semibold text-purple-200 flex items-center gap-2">
@@ -222,7 +222,7 @@ export default function Home() {
               <div className="flex items-baseline gap-1 mb-2">
                 <span className="text-3xl font-extrabold text-white">1 Year FREE</span>
               </div>
-              <p className="text-sm text-blue-200 mb-8">For schools, colleges & coaching centres with website contract</p>
+              <p className="text-sm text-blue-200 mb-8">For institutes with website contract</p>
               <ul className="space-y-3 text-blue-100 font-medium mb-8">
                 <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0" /> Enhanced School Visibility</li>
                 <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0" /> Educational School News</li>
@@ -248,7 +248,7 @@ export default function Home() {
           </div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mt-12">
-            <p className="text-blue-100 text-lg font-medium">Sign up for website development and unlock <span className="text-secondary font-bold">all three offerings</span> -- the smartest investment for your school, college or coaching centre.</p>
+            <p className="text-blue-100 text-lg font-medium">Sign up for website development and unlock <span className="text-secondary font-bold">all three offerings</span> -- the smartest investment for your institute.</p>
           </motion.div>
         </div>
       </section>
@@ -271,10 +271,10 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-8 relative">
             <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-100 -z-10 transform -translate-y-1/2"></div>
             {[
-              { num: "1", title: "Contact Us", desc: "Reach out via WhatsApp or call. Share your school, college or coaching centre details and requirements." },
+              { num: "1", title: "Contact Us", desc: "Reach out via WhatsApp or call. Share your institute details and requirements." },
               { num: "2", title: "Website Built", desc: "We design and develop a professional, admission-focused website for you." },
               { num: "3", title: "Go Live", desc: "Your website goes live and Career Pathway Tool is activated. Platform features available at launch." },
-              { num: "4", title: "Grow", desc: "Attract more students, manage admissions, and grow your school, college or coaching centre digitally." }
+              { num: "4", title: "Grow", desc: "Attract more students, manage admissions, and grow your institute digitally." }
             ].map((step, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.15 } } }} className="relative flex flex-col items-center text-center">
                 <div className="w-16 h-16 rounded-full bg-primary text-white text-2xl font-bold flex items-center justify-center mb-6 shadow-xl border-4 border-white">
@@ -336,7 +336,7 @@ export default function Home() {
 
               <div className="bg-purple-50 border border-purple-200 rounded-xl p-5">
                 <p className="text-sm font-semibold text-purple-800 mb-1">How to Get Access?</p>
-                <p className="text-sm text-purple-700">Contract with Inupgro for website development (₹50,000) and get the Career Pathway Tool absolutely free. Your school, college or coaching centre will also be showcased on the platform to attract students.</p>
+                <p className="text-sm text-purple-700">Contract with Inupgro for website development (₹50,000) and get the Career Pathway Tool absolutely free. Your institute will also be showcased on the platform to attract students.</p>
               </div>
 
               <a href="https://wa.me/918441879640?text=I'm%20interested%20in%20the%20Career%20Pathway%20Tool" target="_blank" rel="noopener noreferrer">
@@ -359,7 +359,7 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid md:grid-cols-3 gap-8 mt-16 lg:mt-24">
             {[
               { title: "For Students", desc: "Discover your ideal career path from Class 6 onwards. Get personalized roadmaps, college recommendations, and salary insights.", icon: GraduationCap, color: "text-blue-600", bg: "bg-blue-50" },
-              { title: "For Schools", desc: "Offer world-class career guidance to your students. Your school, college or coaching centre gets showcased on the Inupgro platform to attract enrollments.", icon: Building2, color: "text-green-600", bg: "bg-green-50" },
+              { title: "For Schools", desc: "Offer world-class career guidance to your students. Your institute gets showcased on the Inupgro platform to attract enrollments.", icon: Building2, color: "text-green-600", bg: "bg-green-50" },
               { title: "For Parents", desc: "Help your child make informed career decisions backed by data, expert advice, and real market trends.", icon: Users, color: "text-purple-600", bg: "bg-purple-50" }
             ].map((card, i) => (
               <motion.div key={i} variants={fadeInUp} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
@@ -382,7 +382,7 @@ export default function Home() {
               Launching Soon -- Free for 1 Year with Website Contract
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">9 Cutting Edge Platform Features</h2>
-            <p className="text-lg text-gray-600">A complete school management ecosystem. All 9 features will be free for 1 year for schools, colleges and coaching centres who contract with Inupgro for website development.</p>
+            <p className="text-lg text-gray-600">A complete school management ecosystem. All 9 features will be free for 1 year for institutes who contract with Inupgro for website development.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
@@ -454,13 +454,13 @@ export default function Home() {
             <AccordionItem value="item-2" className="bg-white border border-gray-200 rounded-lg px-6">
               <AccordionTrigger data-testid="faq-trigger-2" className="text-lg font-semibold hover:no-underline">How do I get the Career Pathway Tool for free?</AccordionTrigger>
               <AccordionContent className="text-gray-600 text-base pb-6">
-                The Career Pathway Tool is free for schools and students, but requires a website development contract with Inupgro. Once you sign up for the website (₹50,000), your school, college or coaching centre gets access to the Career Pathway platform at no additional cost. Your school, college or coaching centre is also showcased on the platform. Website is mandatory to join.
+                The Career Pathway Tool is free for schools and students, but requires a website development contract with Inupgro. Once you sign up for the website (₹50,000), your institute gets access to the Career Pathway platform at no additional cost. Your institute is also showcased on the platform. Website is mandatory to join.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3" className="bg-white border border-gray-200 rounded-lg px-6">
               <AccordionTrigger data-testid="faq-trigger-3" className="text-lg font-semibold hover:no-underline">What are the 9 platform features and when do they launch?</AccordionTrigger>
               <AccordionContent className="text-gray-600 text-base pb-6">
-                The 9 features include Enhanced School Visibility, Educational News, Targeted Marketing, Performance Tracking, Knowledge-to-Income, One-Click Onboarding, Admission Result Publishing, Scholarship Framework, and Smart Fee Ecosystem. They are launching soon and will be free for 1 year for all schools, colleges and coaching centres who have a website contract with Inupgro.
+                The 9 features include Enhanced School Visibility, Educational News, Targeted Marketing, Performance Tracking, Knowledge-to-Income, One-Click Onboarding, Admission Result Publishing, Scholarship Framework, and Smart Fee Ecosystem. They are launching soon and will be free for 1 year for all institutes who have a website contract with Inupgro.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4" className="bg-white border border-gray-200 rounded-lg px-6">
