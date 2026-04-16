@@ -21,7 +21,6 @@ import {
   ArrowRight,
   Phone,
   MapPin,
-  ExternalLink,
   Compass,
   Map,
   Lightbulb,
@@ -340,9 +339,9 @@ export default function Home() {
                 <p className="text-sm text-purple-700">Contract with Inupgro for website development (₹50,000) and get the Career Pathway Tool absolutely free. Your school, college or coaching centre will also be showcased on the platform to attract students.</p>
               </div>
 
-              <a href="https://dev-frontend-inupgro-career-pathway.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/918441879640?text=I'm%20interested%20in%20the%20Career%20Pathway%20Tool" target="_blank" rel="noopener noreferrer">
                 <Button data-testid="career-cta-explore" size="lg" className="bg-purple-600 hover:bg-purple-700 text-white font-bold shadow-lg shadow-purple-200 mt-4">
-                  Explore Career Paths <ExternalLink className="ml-2 w-4 h-4" />
+                  Get Career Pathway Access <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
             </motion.div>
@@ -530,7 +529,7 @@ export default function Home() {
                 <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
                 <li><a href="#career" className="hover:text-white transition-colors">Career Pathway</a></li>
                 <li><a href="#features" className="hover:text-white transition-colors">Platform Features</a></li>
-                <li><a href="https://dev-frontend-inupgro-career-pathway.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">Career Pathway Tool <ExternalLink className="w-3 h-3" /></a></li>
+                <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
               </ul>
             </div>
           </div>
