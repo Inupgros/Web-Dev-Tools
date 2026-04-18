@@ -261,24 +261,24 @@ export default function Home() {
               <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-5">
                 <Globe className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-extrabold text-primary mb-1">Professional Website</h3>
-              <p className="text-sm text-gray-400 mb-5">Your digital identity -- designed to attract admissions</p>
+              <h3 className="text-2xl font-extrabold text-primary mb-1.5">Professional Website</h3>
+              <p className="text-sm text-gray-500 mb-6">Your digital identity -- designed to attract admissions</p>
 
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                <div className="border-2 border-gray-200 rounded-2xl p-4 text-center hover:border-primary/40 transition-colors">
-                  <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">5 Years</p>
-                  <p className="text-2xl lg:text-3xl font-extrabold text-primary tracking-tight">₹35,000</p>
-                  <p className="text-[10px] text-gray-400 mt-1">One-time</p>
+              <div className="grid grid-cols-2 gap-3 mb-7">
+                <div className="border-2 border-gray-200 rounded-2xl p-4 text-center bg-gray-50/50">
+                  <p className="text-xs font-bold text-gray-600 uppercase tracking-wider mb-2">5 Years</p>
+                  <p className="text-3xl font-extrabold text-primary tracking-tight leading-none">₹35,000</p>
+                  <p className="text-[11px] text-gray-500 mt-2 font-medium">One-time</p>
                 </div>
-                <div className="border-2 border-secondary bg-gradient-to-br from-secondary/5 to-amber-50 rounded-2xl p-4 text-center relative">
-                  <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground text-[9px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">Best Value</span>
-                  <p className="text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1">10 Years</p>
-                  <p className="text-2xl lg:text-3xl font-extrabold text-primary tracking-tight">₹50,000</p>
-                  <p className="text-[10px] text-emerald-600 font-semibold mt-1">Save ₹20k</p>
+                <div className="border-2 border-secondary bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-4 text-center relative shadow-md shadow-amber-200/40">
+                  <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap shadow-sm">Best Value</span>
+                  <p className="text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">10 Years</p>
+                  <p className="text-3xl font-extrabold text-primary tracking-tight leading-none">₹50,000</p>
+                  <p className="text-[11px] text-emerald-700 font-bold mt-2">Save ₹20,000</p>
                 </div>
               </div>
 
-              <ul className="space-y-2.5 text-gray-600 text-sm mb-5">
+              <ul className="space-y-3 text-gray-700 text-[14px] mb-6">
                 {[
                   "Custom-designed, admission-focused website",
                   "Domain name + hosting included",
@@ -288,25 +288,25 @@ export default function Home() {
                   "Ongoing maintenance & technical support",
                   "Fully mobile-responsive design"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-secondary shrink-0" /> {item}
+                  <li key={i} className="flex items-start gap-2.5 leading-snug">
+                    <CheckCircle2 className="w-[18px] h-[18px] text-secondary shrink-0 mt-0.5" /> <span>{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/60 rounded-xl p-3.5 mb-5">
-                <p className="text-[11px] font-extrabold text-amber-800 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5" /> Complimentary Add-Ons
+              <div className="bg-gradient-to-br from-amber-50 to-orange-50/70 border border-amber-200 rounded-2xl p-4 mb-4">
+                <p className="text-xs font-extrabold text-amber-800 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4" /> Complimentary Add-Ons
                 </p>
-                <ul className="space-y-1.5 text-xs text-amber-900">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0" /> Free professional photoshoot</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0" /> Director's message video</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0" /> Career counselling session</li>
+                <ul className="space-y-2 text-[13px] text-amber-900 font-medium">
+                  <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Free professional photoshoot</span></li>
+                  <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Director's message video</span></li>
+                  <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Career counselling session</span></li>
                 </ul>
               </div>
-              <div className="bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200/60 rounded-xl p-3.5 mb-5">
-                <p className="text-xs font-semibold text-emerald-700 flex items-start gap-2">
-                  <Gift className="w-4 h-4 shrink-0 mt-0.5" /> Bonus: Unlocks FREE Career Pathway Tool + 1 Year FREE access to all 9 platform features
+              <div className="bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200 rounded-2xl p-4 mb-5">
+                <p className="text-[13px] font-semibold text-emerald-800 flex items-start gap-2 leading-snug">
+                  <Gift className="w-4 h-4 shrink-0 mt-0.5 text-emerald-600" /> <span>Bonus: Unlocks <span className="font-extrabold">FREE Career Pathway Tool</span> + 1 Year FREE access to all 9 platform features</span>
                 </p>
               </div>
               <a href="https://wa.me/918441879640?text=I'm%20interested%20in%20Website%20Development" target="_blank" rel="noopener noreferrer">
