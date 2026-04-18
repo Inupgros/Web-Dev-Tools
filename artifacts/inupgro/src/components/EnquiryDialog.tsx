@@ -19,8 +19,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, CheckCircle2, Sparkles } from "lucide-react";
+import { Loader2, CheckCircle2, Sparkles, AlertCircle } from "lucide-react";
 import { submitEnquiry } from "@/lib/enquiry";
+import { cn } from "@/lib/utils";
 
 type Props = {
   trigger: ReactNode;
@@ -28,6 +29,74 @@ type Props = {
   title?: string;
   description?: string;
 };
+
+type FormState = {
+  name: string;
+  phone: string;
+  email: string;
+  institute: string;
+  city: string;
+  plan: string;
+  message: string;
+};
+
+type FormErrors = Partial<Record<keyof FormState, string>>;
+
+const NAME_REGEX = /^[a-zA-Z\u00C0-\u024F\u0900-\u097F .'-]+$/;
+const PHONE_DIGITS_REGEX = /\D/g;
+const INDIAN_PHONE_REGEX = /^[6-9]\d{9}$/;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+function validateField(key: keyof FormState, value: string): string | undefined {
+  const trimmed = value.trim();
+  switch (key) {
+    case "name":
+      if (!trimmed) return "Please enter your name.";
+      if (trimmed.length < 2) return "Name must be at least 2 characters.";
+      if (trimmed.length > 80) return "Name is too long.";
+      if (!NAME_REGEX.test(trimmed))
+        return "Use letters, spaces, dots, hyphens or apostrophes only.";
+      return undefined;
+    case "phone": {
+      if (!trimmed) return "Phone number is required.";
+      const digits = trimmed.replace(PHONE_DIGITS_REGEX, "");
+      const local = digits.startsWith("91") && digits.length === 12 ? digits.slice(2) : digits;
+      if (local.length !== 10) return "Enter a 10-digit mobile number.";
+      if (!INDIAN_PHONE_REGEX.test(local))
+        return "Mobile number must start with 6, 7, 8 or 9.";
+      return undefined;
+    }
+    case "email":
+      if (!trimmed) return undefined;
+      if (trimmed.length > 120) return "Email is too long.";
+      if (!EMAIL_REGEX.test(trimmed)) return "Enter a valid email address.";
+      return undefined;
+    case "institute":
+      if (!trimmed) return "Institute name is required.";
+      if (trimmed.length < 2) return "Institute name is too short.";
+      if (trimmed.length > 120) return "Institute name is too long.";
+      return undefined;
+    case "city":
+      if (!trimmed) return undefined;
+      if (trimmed.length < 2) return "City name is too short.";
+      if (trimmed.length > 60) return "City name is too long.";
+      return undefined;
+    case "message":
+      if (trimmed.length > 1000) return "Message must be under 1000 characters.";
+      return undefined;
+    default:
+      return undefined;
+  }
+}
+
+function validateAll(form: FormState): FormErrors {
+  const errors: FormErrors = {};
+  (Object.keys(form) as Array<keyof FormState>).forEach((key) => {
+    const err = validateField(key, form[key]);
+    if (err) errors[key] = err;
+  });
+  return errors;
+}
 
 export function EnquiryDialog({
   trigger,
@@ -39,7 +108,7 @@ export function EnquiryDialog({
   const [open, setOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<FormState>({
     name: "",
     phone: "",
     email: "",
@@ -48,12 +117,25 @@ export function EnquiryDialog({
     plan: defaultPlan,
     message: "",
   });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [touched, setTouched] = useState<Partial<Record<keyof FormState, boolean>>>({});
 
-  const update = (key: keyof typeof form) => (value: string) =>
+  const update = (key: keyof FormState) => (value: string) => {
     setForm((prev) => ({ ...prev, [key]: value }));
+    if (touched[key] || errors[key]) {
+      setErrors((prev) => ({ ...prev, [key]: validateField(key, value) }));
+    }
+  };
+
+  const handleBlur = (key: keyof FormState) => () => {
+    setTouched((prev) => ({ ...prev, [key]: true }));
+    setErrors((prev) => ({ ...prev, [key]: validateField(key, form[key]) }));
+  };
 
   const reset = () => {
     setSubmitted(false);
+    setErrors({});
+    setTouched({});
     setForm({
       name: "",
       phone: "",
@@ -69,18 +151,40 @@ export function EnquiryDialog({
     e.preventDefault();
     if (submitting) return;
 
-    if (!form.name.trim() || !form.phone.trim() || !form.institute.trim()) {
+    const allErrors = validateAll(form);
+    setErrors(allErrors);
+    setTouched({
+      name: true,
+      phone: true,
+      email: true,
+      institute: true,
+      city: true,
+      message: true,
+    });
+
+    if (Object.keys(allErrors).length > 0) {
+      const firstKey = Object.keys(allErrors)[0] as keyof FormState;
       toast({
-        title: "Missing details",
-        description: "Please fill in your name, phone number and institute.",
+        title: "Please fix the highlighted fields",
+        description: allErrors[firstKey],
         variant: "destructive",
       });
+      const el = document.getElementById(`enq-${firstKey}`);
+      el?.focus();
       return;
     }
 
     setSubmitting(true);
     try {
-      await submitEnquiry(form);
+      await submitEnquiry({
+        ...form,
+        name: form.name.trim(),
+        phone: form.phone.trim(),
+        email: form.email.trim(),
+        institute: form.institute.trim(),
+        city: form.city.trim(),
+        message: form.message.trim(),
+      });
       setSubmitted(true);
       toast({
         title: "Enquiry sent!",
@@ -99,6 +203,20 @@ export function EnquiryDialog({
       setSubmitting(false);
     }
   };
+
+  const errorClass = (key: keyof FormState) =>
+    errors[key] ? "border-red-500 focus-visible:ring-red-500" : "";
+
+  const renderError = (key: keyof FormState) =>
+    errors[key] ? (
+      <p
+        className="flex items-center gap-1 text-xs text-red-600"
+        data-testid={`enquiry-${key}-error`}
+      >
+        <AlertCircle className="w-3 h-3" />
+        {errors[key]}
+      </p>
+    ) : null;
 
   return (
     <Dialog
@@ -145,7 +263,7 @@ export function EnquiryDialog({
               </DialogDescription>
             </DialogHeader>
 
-            <form onSubmit={handleSubmit} className="space-y-4 mt-2">
+            <form onSubmit={handleSubmit} noValidate className="space-y-4 mt-2">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <Label htmlFor="enq-name">
@@ -156,9 +274,14 @@ export function EnquiryDialog({
                     data-testid="enquiry-name"
                     value={form.name}
                     onChange={(e) => update("name")(e.target.value)}
+                    onBlur={handleBlur("name")}
                     placeholder="e.g. Rajesh Kumar"
-                    required
+                    aria-invalid={Boolean(errors.name)}
+                    className={cn(errorClass("name"))}
+                    autoComplete="name"
+                    maxLength={80}
                   />
+                  {renderError("name")}
                 </div>
                 <div className="space-y-1.5">
                   <Label htmlFor="enq-phone">
@@ -168,12 +291,17 @@ export function EnquiryDialog({
                     id="enq-phone"
                     data-testid="enquiry-phone"
                     type="tel"
-                    inputMode="tel"
+                    inputMode="numeric"
                     value={form.phone}
                     onChange={(e) => update("phone")(e.target.value)}
-                    placeholder="10-digit number"
-                    required
+                    onBlur={handleBlur("phone")}
+                    placeholder="10-digit mobile number"
+                    aria-invalid={Boolean(errors.phone)}
+                    className={cn(errorClass("phone"))}
+                    autoComplete="tel"
+                    maxLength={15}
                   />
+                  {renderError("phone")}
                 </div>
               </div>
 
@@ -186,9 +314,14 @@ export function EnquiryDialog({
                   data-testid="enquiry-institute"
                   value={form.institute}
                   onChange={(e) => update("institute")(e.target.value)}
+                  onBlur={handleBlur("institute")}
                   placeholder="e.g. Sunshine Public School"
-                  required
+                  aria-invalid={Boolean(errors.institute)}
+                  className={cn(errorClass("institute"))}
+                  autoComplete="organization"
+                  maxLength={120}
                 />
+                {renderError("institute")}
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
@@ -199,8 +332,14 @@ export function EnquiryDialog({
                     data-testid="enquiry-city"
                     value={form.city}
                     onChange={(e) => update("city")(e.target.value)}
+                    onBlur={handleBlur("city")}
                     placeholder="e.g. Jaipur"
+                    aria-invalid={Boolean(errors.city)}
+                    className={cn(errorClass("city"))}
+                    autoComplete="address-level2"
+                    maxLength={60}
                   />
+                  {renderError("city")}
                 </div>
                 <div className="space-y-1.5">
                   <Label htmlFor="enq-email">Email (optional)</Label>
@@ -210,8 +349,14 @@ export function EnquiryDialog({
                     type="email"
                     value={form.email}
                     onChange={(e) => update("email")(e.target.value)}
+                    onBlur={handleBlur("email")}
                     placeholder="you@example.com"
+                    aria-invalid={Boolean(errors.email)}
+                    className={cn(errorClass("email"))}
+                    autoComplete="email"
+                    maxLength={120}
                   />
+                  {renderError("email")}
                 </div>
               </div>
 
@@ -240,15 +385,25 @@ export function EnquiryDialog({
               </div>
 
               <div className="space-y-1.5">
-                <Label htmlFor="enq-message">Message (optional)</Label>
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="enq-message">Message (optional)</Label>
+                  <span className="text-[11px] text-gray-400">
+                    {form.message.length}/1000
+                  </span>
+                </div>
                 <Textarea
                   id="enq-message"
                   data-testid="enquiry-message"
                   value={form.message}
                   onChange={(e) => update("message")(e.target.value)}
+                  onBlur={handleBlur("message")}
                   placeholder="Anything you'd like us to know..."
                   rows={3}
+                  aria-invalid={Boolean(errors.message)}
+                  className={cn(errorClass("message"))}
+                  maxLength={1000}
                 />
+                {renderError("message")}
               </div>
 
               <Button
