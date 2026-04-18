@@ -88,6 +88,8 @@ function FlipScreenshots({ front, back }: { front: string; back: string }) {
 }
 
 export default function Home() {
+  const [selectedPlan, setSelectedPlan] = useState<"5yr" | "10yr">("10yr");
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } }
@@ -265,17 +267,40 @@ export default function Home() {
               <p className="text-sm text-gray-500 mb-6">Your digital identity -- designed to attract admissions</p>
 
               <div className="grid grid-cols-2 gap-3 mb-7">
-                <div className="border-2 border-gray-200 rounded-2xl p-4 text-center bg-gray-50/50">
-                  <p className="text-xs font-bold text-gray-600 uppercase tracking-wider mb-2">5 Years</p>
+                <button
+                  type="button"
+                  onClick={() => setSelectedPlan("5yr")}
+                  data-testid="plan-toggle-5yr"
+                  className={`border-2 rounded-2xl p-4 text-center transition-all relative ${
+                    selectedPlan === "5yr"
+                      ? "border-secondary bg-gradient-to-br from-amber-50 to-orange-50 shadow-md shadow-amber-200/40"
+                      : "border-gray-200 bg-gray-50/50 hover:border-gray-300"
+                  }`}
+                >
+                  {selectedPlan === "5yr" && (
+                    <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap shadow-sm">Selected</span>
+                  )}
+                  <p className={`text-xs font-bold uppercase tracking-wider mb-2 ${selectedPlan === "5yr" ? "text-gray-700" : "text-gray-600"}`}>5 Years</p>
                   <p className="text-3xl font-extrabold text-primary tracking-tight leading-none">₹35,000</p>
                   <p className="text-[11px] text-gray-500 mt-2 font-medium">One-time</p>
-                </div>
-                <div className="border-2 border-secondary bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-4 text-center relative shadow-md shadow-amber-200/40">
-                  <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap shadow-sm">Best Value</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedPlan("10yr")}
+                  data-testid="plan-toggle-10yr"
+                  className={`border-2 rounded-2xl p-4 text-center transition-all relative ${
+                    selectedPlan === "10yr"
+                      ? "border-secondary bg-gradient-to-br from-amber-50 to-orange-50 shadow-md shadow-amber-200/40"
+                      : "border-gray-200 bg-gray-50/50 hover:border-gray-300"
+                  }`}
+                >
+                  <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap shadow-sm">
+                    {selectedPlan === "10yr" ? "Best Value" : "Save ₹20k"}
+                  </span>
                   <p className="text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">10 Years</p>
                   <p className="text-3xl font-extrabold text-primary tracking-tight leading-none">₹50,000</p>
                   <p className="text-[11px] text-emerald-700 font-bold mt-2">Save ₹20,000</p>
-                </div>
+                </button>
               </div>
 
               <ul className="space-y-3 text-gray-700 text-[14px] mb-6">
@@ -294,24 +319,44 @@ export default function Home() {
                 ))}
               </ul>
 
-              <div className="bg-gradient-to-br from-amber-50 to-orange-50/70 border border-amber-200 rounded-2xl p-4 mb-4">
-                <p className="text-xs font-extrabold text-amber-800 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                  <Sparkles className="w-4 h-4" /> Complimentary Add-Ons
-                </p>
-                <ul className="space-y-2 text-[13px] text-amber-900 font-medium">
-                  <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Free professional photoshoot</span></li>
-                  <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Director's message video</span></li>
-                  <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Career counselling session</span></li>
-                </ul>
-              </div>
+              {selectedPlan === "10yr" ? (
+                <div className="bg-gradient-to-br from-amber-50 to-orange-50/70 border border-amber-200 rounded-2xl p-4 mb-4">
+                  <p className="text-xs font-extrabold text-amber-800 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                    <Sparkles className="w-4 h-4" /> Complimentary Add-Ons
+                    <span className="ml-auto bg-amber-600 text-white text-[9px] font-extrabold px-2 py-0.5 rounded-full normal-case tracking-normal">10-Yr Only</span>
+                  </p>
+                  <ul className="space-y-2 text-[13px] text-amber-900 font-medium">
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Free professional photoshoot</span></li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Director's message video</span></li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Career counselling session</span></li>
+                  </ul>
+                </div>
+              ) : (
+                <div className="bg-gray-50 border border-dashed border-gray-300 rounded-2xl p-4 mb-4">
+                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                    <Sparkles className="w-4 h-4" /> Unlock Add-Ons with 10-Year Plan
+                  </p>
+                  <p className="text-[12px] text-gray-500 leading-snug">
+                    Upgrade to the 10-year plan to also get a free professional photoshoot, director's message video, and a career counselling session.
+                  </p>
+                </div>
+              )}
               <div className="bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200 rounded-2xl p-4 mb-5">
                 <p className="text-[13px] font-semibold text-emerald-800 flex items-start gap-2 leading-snug">
                   <Gift className="w-4 h-4 shrink-0 mt-0.5 text-emerald-600" /> <span>Bonus: Unlocks <span className="font-extrabold">FREE Career Pathway Tool</span> + 1 Year FREE access to all 9 platform features</span>
                 </p>
               </div>
-              <a href="https://wa.me/918441879640?text=I'm%20interested%20in%20Website%20Development" target="_blank" rel="noopener noreferrer">
+              <a
+                href={
+                  selectedPlan === "10yr"
+                    ? "https://wa.me/918441879640?text=I'm%20interested%20in%20the%2010-Year%20Website%20Plan%20(%E2%82%B950%2C000)"
+                    : "https://wa.me/918441879640?text=I'm%20interested%20in%20the%205-Year%20Website%20Plan%20(%E2%82%B935%2C000)"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button data-testid="pricing-website-cta" className="w-full h-12 text-base bg-primary hover:bg-primary/90 rounded-xl font-bold hover:shadow-lg transition-all">
-                  Get Started <ArrowRight className="ml-2 w-4 h-4" />
+                  Get Started with {selectedPlan === "10yr" ? "10-Year Plan" : "5-Year Plan"} <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
             </motion.div>
