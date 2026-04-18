@@ -14,3 +14,31 @@ import * as zod from "zod";
 export const HealthCheckResponse = zod.object({
   status: zod.string(),
 });
+
+/**
+ * Stores a new enquiry submitted from the website contact form.
+ * @summary Submit a new enquiry
+ */
+export const createEnquiryBodyNameMax = 200;
+
+export const createEnquiryBodyPhoneMax = 50;
+
+export const createEnquiryBodyEmailMax = 200;
+
+export const createEnquiryBodyInstituteMax = 200;
+
+export const createEnquiryBodyCityMax = 100;
+
+export const createEnquiryBodyPlanMax = 200;
+
+export const createEnquiryBodyMessageMax = 2000;
+
+export const CreateEnquiryBody = zod.object({
+  name: zod.string().min(1).max(createEnquiryBodyNameMax),
+  phone: zod.string().min(1).max(createEnquiryBodyPhoneMax),
+  email: zod.string().max(createEnquiryBodyEmailMax).optional(),
+  institute: zod.string().min(1).max(createEnquiryBodyInstituteMax),
+  city: zod.string().max(createEnquiryBodyCityMax).optional(),
+  plan: zod.string().max(createEnquiryBodyPlanMax).optional(),
+  message: zod.string().max(createEnquiryBodyMessageMax).optional(),
+});

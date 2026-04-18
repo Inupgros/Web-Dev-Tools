@@ -8,3 +8,45 @@
 export interface HealthStatus {
   status: string;
 }
+
+export interface CreateEnquiryRequest {
+  /**
+   * @minLength 1
+   * @maxLength 200
+   */
+  name: string;
+  /**
+   * @minLength 1
+   * @maxLength 50
+   */
+  phone: string;
+  /** @maxLength 200 */
+  email?: string;
+  /**
+   * @minLength 1
+   * @maxLength 200
+   */
+  institute: string;
+  /** @maxLength 100 */
+  city?: string;
+  /** @maxLength 200 */
+  plan?: string;
+  /** @maxLength 2000 */
+  message?: string;
+}
+
+export interface Enquiry {
+  id: number;
+  name: string;
+  phone: string;
+  email: string;
+  institute: string;
+  city: string;
+  plan: string;
+  message: string;
+  createdAt: string;
+}
+
+export interface ErrorResponse {
+  message: string;
+}

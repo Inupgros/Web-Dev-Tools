@@ -1,6 +1,4 @@
-// Paste your Google Apps Script Web App URL here.
-// It should look like: https://script.google.com/macros/s/AKfycbx.../exec
-export const GOOGLE_SCRIPT_URL = "";
+import { createEnquiry } from "@workspace/api-client-react";
 
 export type EnquiryPayload = {
   name: string;
@@ -13,24 +11,13 @@ export type EnquiryPayload = {
 };
 
 export async function submitEnquiry(payload: EnquiryPayload): Promise<void> {
-  if (!GOOGLE_SCRIPT_URL) {
-    throw new Error(
-      "Google Sheet is not connected yet. Please add your Apps Script URL in src/lib/enquiry.ts.",
-    );
-  }
-
-  const formData = new FormData();
-  formData.append("timestamp", new Date().toISOString());
-  Object.entries(payload).forEach(([key, value]) => {
-    formData.append(key, value ?? "");
+  await createEnquiry({
+    name: payload.name.trim(),
+    phone: payload.phone.trim(),
+    email: payload.email.trim(),
+    institute: payload.institute.trim(),
+    city: payload.city.trim(),
+    plan: payload.plan.trim(),
+    message: payload.message.trim(),
   });
-
-  const response = await fetch(GOOGLE_SCRIPT_URL, {
-    method: "POST",
-    body: formData,
-  });
-
-  if (!response.ok) {
-    throw new Error(`Submission failed (${response.status})`);
-  }
 }

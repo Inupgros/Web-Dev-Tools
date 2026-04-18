@@ -5,18 +5,26 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import type {
+  MutationFunction,
   QueryFunction,
   QueryKey,
+  UseMutationOptions,
+  UseMutationResult,
   UseQueryOptions,
   UseQueryResult,
 } from "@tanstack/react-query";
 
-import type { HealthStatus } from "./api.schemas";
+import type {
+  CreateEnquiryRequest,
+  Enquiry,
+  ErrorResponse,
+  HealthStatus,
+} from "./api.schemas";
 
 import { customFetch } from "../custom-fetch";
-import type { ErrorType } from "../custom-fetch";
+import type { ErrorType, BodyType } from "../custom-fetch";
 
 type AwaitedInput<T> = PromiseLike<T> | T;
 
@@ -99,3 +107,90 @@ export function useHealthCheck<
 
   return { ...query, queryKey: queryOptions.queryKey };
 }
+
+/**
+ * Stores a new enquiry submitted from the website contact form.
+ * @summary Submit a new enquiry
+ */
+export const getCreateEnquiryUrl = () => {
+  return `/api/enquiries`;
+};
+
+export const createEnquiry = async (
+  createEnquiryRequest: CreateEnquiryRequest,
+  options?: RequestInit,
+): Promise<Enquiry> => {
+  return customFetch<Enquiry>(getCreateEnquiryUrl(), {
+    ...options,
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...options?.headers },
+    body: JSON.stringify(createEnquiryRequest),
+  });
+};
+
+export const getCreateEnquiryMutationOptions = <
+  TError = ErrorType<ErrorResponse>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof createEnquiry>>,
+    TError,
+    { data: BodyType<CreateEnquiryRequest> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof createEnquiry>>,
+  TError,
+  { data: BodyType<CreateEnquiryRequest> },
+  TContext
+> => {
+  const mutationKey = ["createEnquiry"];
+  const { mutation: mutationOptions, request: requestOptions } = options
+    ? options.mutation &&
+      "mutationKey" in options.mutation &&
+      options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey }, request: undefined };
+
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof createEnquiry>>,
+    { data: BodyType<CreateEnquiryRequest> }
+  > = (props) => {
+    const { data } = props ?? {};
+
+    return createEnquiry(data, requestOptions);
+  };
+
+  return { mutationFn, ...mutationOptions };
+};
+
+export type CreateEnquiryMutationResult = NonNullable<
+  Awaited<ReturnType<typeof createEnquiry>>
+>;
+export type CreateEnquiryMutationBody = BodyType<CreateEnquiryRequest>;
+export type CreateEnquiryMutationError = ErrorType<ErrorResponse>;
+
+/**
+ * @summary Submit a new enquiry
+ */
+export const useCreateEnquiry = <
+  TError = ErrorType<ErrorResponse>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof createEnquiry>>,
+    TError,
+    { data: BodyType<CreateEnquiryRequest> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationResult<
+  Awaited<ReturnType<typeof createEnquiry>>,
+  TError,
+  { data: BodyType<CreateEnquiryRequest> },
+  TContext
+> => {
+  return useMutation(getCreateEnquiryMutationOptions(options));
+};

@@ -44,3 +44,17 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - `pnpm --filter @workspace/api-server run dev` -- run API server locally
 
 See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.
+
+## Enquiry submissions (April 2026)
+
+The hero "Get Started Today" button on Inupgro opens an enquiry dialog
+(`artifacts/inupgro/src/components/EnquiryDialog.tsx`) that POSTs to
+`/api/enquiries` (handled by `artifacts/api-server/src/routes/enquiries.ts`).
+Submissions are stored in the `enquiries` table defined in
+`lib/db/src/schema/enquiries.ts`.
+
+To inspect submissions: query the `enquiries` table in the Replit Postgres
+database. To change the request shape, update `lib/api-spec/openapi.yaml`
+(`CreateEnquiryRequest` schema) and re-run
+`pnpm --filter @workspace/api-spec run codegen`. Schema changes also require
+`pnpm --filter @workspace/db run push`.
