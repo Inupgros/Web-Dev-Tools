@@ -1,0 +1,17 @@
+{
+  "name": "INUPGRO - Institute Websites & Career Guidance",
+  "short_name": "INUPGRO",
+  "description": "Affordable, admission-focused websites for schools and institutes across India, plus free AI-powered career guidance for students.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b3a6f",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
