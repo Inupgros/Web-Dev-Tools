@@ -194,7 +194,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="flex justify-center gap-8 md:gap-16 mt-16 md:mt-20 pt-10 border-t border-white/10"
+            className="grid grid-cols-2 sm:flex sm:justify-center gap-y-6 gap-x-4 sm:gap-8 md:gap-16 mt-12 md:mt-20 pt-8 md:pt-10 border-t border-white/10"
           >
             {[
               { num: 500, suffix: "+", label: "Institutes Onboarded" },
@@ -202,11 +202,11 @@ export default function Home() {
               { num: 10, suffix: " Yrs", label: "Website Validity" },
               { num: 98, suffix: "%", label: "Client Satisfaction" }
             ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="text-2xl md:text-3xl font-extrabold text-white">
+              <div key={i} className="text-center min-w-0">
+                <div className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white whitespace-nowrap">
                   <AnimatedCounter value={stat.num} suffix={stat.suffix} />
                 </div>
-                <div className="text-xs md:text-sm text-blue-200/70 font-medium mt-1 uppercase tracking-wider">{stat.label}</div>
+                <div className="text-[11px] sm:text-xs md:text-sm text-blue-200/70 font-medium mt-1 uppercase tracking-wider leading-tight">{stat.label}</div>
               </div>
             ))}
           </motion.div>
