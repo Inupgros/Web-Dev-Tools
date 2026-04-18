@@ -131,7 +131,7 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <a href="https://wa.me/918441879640" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/918209647142" target="_blank" rel="noopener noreferrer">
             <Button data-testid="nav-cta-contact" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold px-5 shadow-sm hover:shadow-md transition-all rounded-xl">
               Contact Us
             </Button>
@@ -171,7 +171,7 @@ export default function Home() {
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-                <a href="https://wa.me/918441879640" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/918209647142" target="_blank" rel="noopener noreferrer">
                   <Button data-testid="hero-cta-join" size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold shadow-lg shadow-secondary/25 rounded-xl hover:shadow-xl hover:scale-[1.02] transition-all">
                     Get Started Today
                   </Button>
@@ -357,8 +357,8 @@ export default function Home() {
               <a
                 href={
                   selectedPlan === "10yr"
-                    ? "https://wa.me/918441879640?text=I'm%20interested%20in%20the%2010-Year%20Website%20Plan%20(%E2%82%B950%2C000)"
-                    : "https://wa.me/918441879640?text=I'm%20interested%20in%20the%205-Year%20Website%20Plan%20(%E2%82%B935%2C000)"
+                    ? "https://wa.me/918209647142?text=I'm%20interested%20in%20the%2010-Year%20Website%20Plan%20(%E2%82%B950%2C000)"
+                    : "https://wa.me/918209647142?text=I'm%20interested%20in%20the%205-Year%20Website%20Plan%20(%E2%82%B935%2C000)"
                 }
                 target="_blank"
                 rel="noopener noreferrer"
@@ -402,7 +402,7 @@ export default function Home() {
                   <ShieldCheck className="w-4 h-4 shrink-0 mt-0.5" /> Requires website contract with Inupgro (website is mandatory)
                 </p>
               </div>
-              <a href="https://wa.me/918441879640?text=I'm%20interested%20in%20the%20Career%20Pathway%20Tool" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/918209647142?text=I'm%20interested%20in%20the%20Career%20Pathway%20Tool" target="_blank" rel="noopener noreferrer">
                 <Button data-testid="pricing-career-cta" variant="outline" className="w-full h-12 text-base bg-white/[0.06] hover:bg-white/[0.12] text-white border-white/20 rounded-xl font-bold hover:shadow-lg transition-all">
                   Learn More <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -438,7 +438,7 @@ export default function Home() {
                   <Gift className="w-4 h-4 shrink-0 mt-0.5" /> Free for 1 year with website contract -- no risk, cancel anytime after
                 </p>
               </div>
-              <a href="https://wa.me/918441879640?text=I'm%20interested%20in%20the%20Platform%20Features" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/918209647142?text=I'm%20interested%20in%20the%20Platform%20Features" target="_blank" rel="noopener noreferrer">
                 <Button data-testid="pricing-features-cta" variant="outline" className="w-full h-12 text-base bg-white/[0.06] hover:bg-white/[0.12] text-white border-white/20 rounded-xl font-bold hover:shadow-lg transition-all">
                   Join Waitlist <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -541,7 +541,7 @@ export default function Home() {
                 <p className="text-sm text-purple-600 leading-relaxed">Your institute gets showcased on the Career Pathway platform, visible to thousands of students exploring careers. Parents see you as a forward-thinking school. All free with your Inupgro website contract.</p>
               </div>
 
-              <a href="https://wa.me/918441879640?text=I'm%20interested%20in%20the%20Career%20Pathway%20Tool" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/918209647142?text=I'm%20interested%20in%20the%20Career%20Pathway%20Tool" target="_blank" rel="noopener noreferrer">
                 <Button data-testid="career-cta-explore" size="lg" className="bg-purple-600 hover:bg-purple-700 text-white font-bold shadow-lg shadow-purple-200/50 rounded-xl hover:shadow-xl hover:scale-[1.02] transition-all">
                   Get Career Pathway Access <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -684,14 +684,14 @@ export default function Home() {
             <p className="text-base md:text-lg text-blue-100/70 mb-3 leading-relaxed">Every day without a website, your institute is invisible to parents searching for schools on Google. Join 500+ institutes who have already taken the digital leap with Inupgro.</p>
             <p className="text-lg text-secondary font-bold mb-10">Starting at ₹35,000. Career guidance, free photoshoot, director's video & management tools included.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a href="https://wa.me/918441879640" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/918209647142" target="_blank" rel="noopener noreferrer">
                 <Button data-testid="final-cta-join" size="lg" className="h-14 px-8 text-base bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold rounded-xl shadow-lg shadow-secondary/25 hover:shadow-xl hover:scale-[1.02] transition-all">
                   Join INUPGRO Today
                 </Button>
               </a>
-              <a href="tel:+918441879640">
+              <a href="tel:+918209647142">
                 <Button data-testid="final-cta-call" size="lg" variant="outline" className="h-14 px-8 text-base bg-white/[0.06] hover:bg-white/[0.12] text-white border-white/20 backdrop-blur-sm rounded-xl hover:scale-[1.02] transition-all">
-                  <Phone className="mr-2 w-4 h-4" /> Call: +91 84418 79640
+                  <Phone className="mr-2 w-4 h-4" /> Call: +91 82096 47142
                 </Button>
               </a>
             </div>
@@ -714,7 +714,7 @@ export default function Home() {
             <div>
               <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">Contact Us</h4>
               <ul className="space-y-3 text-sm">
-                <li className="flex items-center gap-2.5"><Phone className="w-4 h-4 text-secondary" /> +91 84418 79640</li>
+                <li className="flex items-center gap-2.5"><Phone className="w-4 h-4 text-secondary" /> +91 82096 47142</li>
                 <li className="flex items-center gap-2.5"><Globe className="w-4 h-4 text-secondary" /> www.inupgro.com</li>
                 <li className="flex items-center gap-2.5"><MapPin className="w-4 h-4 text-secondary" /> Jhalana Gram, Malviya Nagar, Jaipur (Raj)</li>
               </ul>
@@ -737,7 +737,7 @@ export default function Home() {
       </footer>
 
       <a
-        href="https://wa.me/918441879640"
+        href="https://wa.me/918209647142"
         target="_blank"
         rel="noopener noreferrer"
         data-testid="fab-whatsapp"

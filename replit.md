@@ -15,7 +15,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
   1. **Website Development** -- ₹50,000 one-time for 10 years (core/mandatory offering)
   2. **Career Pathway Tool** -- FREE for schools/students, requires website contract (website mandatory)
   3. **9 Platform Features** -- Launching Soon, free for 1 year with website contract
-- **Contact**: Phone +91 84418 79640, WhatsApp wa.me/918441879640
+- **Contact**: Phone +91 82096 47142, WhatsApp wa.me/918209647142
 - **Address**: Jhalana Gram, Malviya Nagar, Jaipur (Raj)
 - **Career Pathway URL**: https://dev-frontend-inupgro-career-pathway.vercel.app/
 - **Screenshots**: `attached_assets/screenshots/` (career pathway app screenshots)
