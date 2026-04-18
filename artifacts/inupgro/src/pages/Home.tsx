@@ -48,7 +48,7 @@ function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: strin
   }, [value, count]);
 
   return (
-    <motion.span ref={ref}>
+    <motion.span ref={ref} className="text-[18px]">
       <motion.span>{rounded}</motion.span>{suffix}
     </motion.span>
   );
