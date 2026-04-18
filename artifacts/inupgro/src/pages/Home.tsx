@@ -35,6 +35,7 @@ import {
 } from "lucide-react";
 import careerHomeSrc from "@assets/screenshots/dev-frontend-inupgro-career-pathway_vercel_app.png";
 import careerExploreSrc from "@assets/screenshots/dev-frontend-inupgro-career-pathway_vercel_app_public-explore.png";
+import { EnquiryDialog } from "@/components/EnquiryDialog";
 
 function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: string }) {
   const count = useMotionValue(0);
@@ -171,11 +172,13 @@ export default function Home() {
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-                <a href="https://wa.me/918209647142" target="_blank" rel="noopener noreferrer">
-                  <Button data-testid="hero-cta-join" size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold shadow-lg shadow-secondary/25 rounded-xl hover:shadow-xl hover:scale-[1.02] transition-all">
-                    Get Started Today
-                  </Button>
-                </a>
+                <EnquiryDialog
+                  trigger={
+                    <Button data-testid="hero-cta-join" size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold shadow-lg shadow-secondary/25 rounded-xl hover:shadow-xl hover:scale-[1.02] transition-all">
+                      Get Started Today
+                    </Button>
+                  }
+                />
                 <a href="#pricing">
                   <Button data-testid="hero-cta-learn" size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-base bg-white/[0.06] hover:bg-white/[0.12] text-white border-white/20 backdrop-blur-sm rounded-xl hover:scale-[1.02] transition-all">
                     View Plans <ChevronRight className="ml-1 w-4 h-4" />
