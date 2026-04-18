@@ -266,21 +266,24 @@ export default function Home() {
               <h3 className="text-2xl font-extrabold text-primary mb-1.5">Professional Website</h3>
               <p className="text-sm text-gray-500 mb-6">Your digital identity -- designed to attract admissions</p>
 
+              <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2.5">Choose your plan</p>
               <div className="grid grid-cols-2 gap-3 mb-7">
                 <button
                   type="button"
                   onClick={() => setSelectedPlan("5yr")}
                   data-testid="plan-toggle-5yr"
-                  className={`border-2 rounded-2xl p-4 text-center transition-all relative ${
+                  className={`border-2 rounded-2xl p-4 text-center transition-all ${
                     selectedPlan === "5yr"
                       ? "border-secondary bg-gradient-to-br from-amber-50 to-orange-50 shadow-md shadow-amber-200/40"
                       : "border-gray-200 bg-gray-50/50 hover:border-gray-300"
                   }`}
                 >
-                  {selectedPlan === "5yr" && (
-                    <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap shadow-sm">Selected</span>
-                  )}
-                  <p className={`text-xs font-bold uppercase tracking-wider mb-2 ${selectedPlan === "5yr" ? "text-gray-700" : "text-gray-600"}`}>5 Years</p>
+                  <div className="flex items-center justify-center gap-1.5 mb-2 min-h-[18px]">
+                    <p className="text-xs font-bold text-gray-700 uppercase tracking-wider">5 Years</p>
+                    {selectedPlan === "5yr" && (
+                      <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
+                    )}
+                  </div>
                   <p className="text-3xl font-extrabold text-primary tracking-tight leading-none">₹35,000</p>
                   <p className="text-[11px] text-gray-500 mt-2 font-medium">One-time</p>
                 </button>
@@ -288,18 +291,20 @@ export default function Home() {
                   type="button"
                   onClick={() => setSelectedPlan("10yr")}
                   data-testid="plan-toggle-10yr"
-                  className={`border-2 rounded-2xl p-4 text-center transition-all relative ${
+                  className={`border-2 rounded-2xl p-4 text-center transition-all ${
                     selectedPlan === "10yr"
                       ? "border-secondary bg-gradient-to-br from-amber-50 to-orange-50 shadow-md shadow-amber-200/40"
                       : "border-gray-200 bg-gray-50/50 hover:border-gray-300"
                   }`}
                 >
-                  <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap shadow-sm">
-                    {selectedPlan === "10yr" ? "Best Value" : "Save ₹20k"}
-                  </span>
-                  <p className="text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">10 Years</p>
+                  <div className="flex items-center justify-center gap-1.5 mb-2 min-h-[18px]">
+                    <p className="text-xs font-bold text-gray-700 uppercase tracking-wider">10 Years</p>
+                    {selectedPlan === "10yr" && (
+                      <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
+                    )}
+                  </div>
                   <p className="text-3xl font-extrabold text-primary tracking-tight leading-none">₹50,000</p>
-                  <p className="text-[11px] text-emerald-700 font-bold mt-2">Save ₹20,000</p>
+                  <p className="text-[11px] text-emerald-700 font-bold mt-2">Best Value · Save ₹20k</p>
                 </button>
               </div>
 
