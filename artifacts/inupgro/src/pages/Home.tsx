@@ -284,8 +284,10 @@ export default function Home() {
                       <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
                     )}
                   </div>
+                  <p className="text-[11px] text-gray-400 line-through font-semibold leading-none whitespace-nowrap mb-1">₹1,50,000</p>
                   <p className="text-2xl font-extrabold text-primary tracking-tight leading-none whitespace-nowrap">₹35,000</p>
-                  <p className="text-[11px] text-gray-500 mt-2 font-medium">One-time</p>
+                  <p className="text-[10px] text-emerald-700 font-bold mt-1.5 leading-tight">Save 77%</p>
+                  <p className="text-[11px] text-gray-500 mt-1 font-medium">One-time</p>
                 </button>
                 <button
                   type="button"
@@ -303,8 +305,9 @@ export default function Home() {
                       <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
                     )}
                   </div>
+                  <p className="text-[11px] text-gray-400 line-through font-semibold leading-none whitespace-nowrap mb-1">₹2,50,000</p>
                   <p className="text-2xl font-extrabold text-primary tracking-tight leading-none whitespace-nowrap">₹50,000</p>
-                  <p className="text-[11px] text-emerald-700 font-bold mt-2 leading-tight">Best Value · Save ₹20k</p>
+                  <p className="text-[10px] text-emerald-700 font-bold mt-1.5 leading-tight">Save 80% · Best Value</p>
                 </button>
               </div>
 
