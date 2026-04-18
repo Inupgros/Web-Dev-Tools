@@ -272,7 +272,7 @@ export default function Home() {
                   type="button"
                   onClick={() => setSelectedPlan("5yr")}
                   data-testid="plan-toggle-5yr"
-                  className={`border-2 rounded-2xl p-4 text-center transition-all ${
+                  className={`border-2 rounded-2xl px-3 py-4 text-center transition-all overflow-hidden ${
                     selectedPlan === "5yr"
                       ? "border-secondary bg-gradient-to-br from-amber-50 to-orange-50 shadow-md shadow-amber-200/40"
                       : "border-gray-200 bg-gray-50/50 hover:border-gray-300"
@@ -284,14 +284,14 @@ export default function Home() {
                       <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
                     )}
                   </div>
-                  <p className="text-3xl font-extrabold text-primary tracking-tight leading-none">₹35,000</p>
+                  <p className="text-2xl font-extrabold text-primary tracking-tight leading-none whitespace-nowrap">₹35,000</p>
                   <p className="text-[11px] text-gray-500 mt-2 font-medium">One-time</p>
                 </button>
                 <button
                   type="button"
                   onClick={() => setSelectedPlan("10yr")}
                   data-testid="plan-toggle-10yr"
-                  className={`border-2 rounded-2xl p-4 text-center transition-all ${
+                  className={`border-2 rounded-2xl px-3 py-4 text-center transition-all overflow-hidden ${
                     selectedPlan === "10yr"
                       ? "border-secondary bg-gradient-to-br from-amber-50 to-orange-50 shadow-md shadow-amber-200/40"
                       : "border-gray-200 bg-gray-50/50 hover:border-gray-300"
@@ -303,8 +303,8 @@ export default function Home() {
                       <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
                     )}
                   </div>
-                  <p className="text-3xl font-extrabold text-primary tracking-tight leading-none">₹50,000</p>
-                  <p className="text-[11px] text-emerald-700 font-bold mt-2">Best Value · Save ₹20k</p>
+                  <p className="text-2xl font-extrabold text-primary tracking-tight leading-none whitespace-nowrap">₹50,000</p>
+                  <p className="text-[11px] text-emerald-700 font-bold mt-2 leading-tight">Best Value · Save ₹20k</p>
                 </button>
               </div>
 
