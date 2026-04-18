@@ -376,7 +376,7 @@ export default function Home() {
               <h3 className="text-xl font-extrabold text-white mb-1">Career Pathway Tool</h3>
               <p className="text-sm text-blue-200/60 mb-5">Give students a reason to choose YOUR institute</p>
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-4xl lg:text-5xl font-extrabold text-white tracking-tight">FREE</span>
+                <span className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">FREE</span>
               </div>
               <p className="text-xs text-blue-200/60 mb-7">Included free with your website contract</p>
               <ul className="space-y-2.5 text-blue-100/80 text-sm mb-7">
@@ -416,7 +416,7 @@ export default function Home() {
               <h3 className="text-xl font-extrabold text-white mb-1">9 Platform Features</h3>
               <p className="text-sm text-blue-200/60 mb-5">Run your entire institute from one dashboard</p>
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">1 Year FREE</span>
+                <span className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight">1 Year FREE</span>
               </div>
               <p className="text-xs text-blue-200/60 mb-7">For institutes with website contract</p>
               <ul className="space-y-2.5 text-blue-100/80 text-sm mb-7">
