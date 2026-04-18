@@ -165,7 +165,7 @@ export default function Home() {
               </motion.h1>
 
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-blue-100/80 font-medium max-w-2xl mx-auto leading-relaxed">
-                A professional website and AI-powered career guidance -- everything your institute needs to attract students and stand out, starting at just ₹50,000 for 10 years. Plus, 9 management tools launching soon -- free for your first year.
+                A professional website and AI-powered career guidance -- everything your institute needs to attract students and stand out, starting at just ₹35,000. Plus, 9 management tools launching soon -- free for your first year.
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
@@ -263,20 +263,50 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-extrabold text-primary mb-1">Professional Website</h3>
               <p className="text-sm text-gray-400 mb-5">Your digital identity -- designed to attract admissions</p>
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-4xl lg:text-5xl font-extrabold text-primary tracking-tight">₹50,000</span>
+
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                <div className="border-2 border-gray-200 rounded-2xl p-4 text-center hover:border-primary/40 transition-colors">
+                  <p className="text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-1">5 Years</p>
+                  <p className="text-2xl lg:text-3xl font-extrabold text-primary tracking-tight">₹35,000</p>
+                  <p className="text-[10px] text-gray-400 mt-1">One-time</p>
+                </div>
+                <div className="border-2 border-secondary bg-gradient-to-br from-secondary/5 to-amber-50 rounded-2xl p-4 text-center relative">
+                  <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground text-[9px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">Best Value</span>
+                  <p className="text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-1">10 Years</p>
+                  <p className="text-2xl lg:text-3xl font-extrabold text-primary tracking-tight">₹50,000</p>
+                  <p className="text-[10px] text-emerald-600 font-semibold mt-1">Save ₹20k</p>
+                </div>
               </div>
-              <p className="text-xs font-bold text-emerald-600 mb-7 uppercase tracking-widest">One-Time Payment -- 10 Years Covered</p>
-              <ul className="space-y-2.5 text-gray-600 text-sm mb-7">
-                {["Custom-designed, admission-focused website", "Domain name included for 10 years", "Fast, reliable hosting for 10 years", "SSL security certificate (free)", "WhatsApp chat button for instant enquiries", "Enquiry & admission forms built-in", "Google-optimized for local search (SEO)", "Ongoing maintenance & technical support", "Fully mobile-responsive design"].map((item, i) => (
+
+              <ul className="space-y-2.5 text-gray-600 text-sm mb-5">
+                {[
+                  "Custom-designed, admission-focused website",
+                  "Domain name + hosting included",
+                  "SSL security certificate (free)",
+                  "WhatsApp chat & enquiry forms",
+                  "Google-optimized for local search (SEO)",
+                  "Ongoing maintenance & technical support",
+                  "Fully mobile-responsive design"
+                ].map((item, i) => (
                   <li key={i} className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-secondary shrink-0" /> {item}
                   </li>
                 ))}
               </ul>
+
+              <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/60 rounded-xl p-3.5 mb-5">
+                <p className="text-[11px] font-extrabold text-amber-800 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5" /> Complimentary Add-Ons
+                </p>
+                <ul className="space-y-1.5 text-xs text-amber-900">
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0" /> Free professional photoshoot</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0" /> Director's message video</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0" /> Career counselling session</li>
+                </ul>
+              </div>
               <div className="bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200/60 rounded-xl p-3.5 mb-5">
                 <p className="text-xs font-semibold text-emerald-700 flex items-start gap-2">
-                  <Gift className="w-4 h-4 shrink-0 mt-0.5" /> Bonus: Website contract unlocks FREE Career Pathway Tool + 1 Year FREE access to all 9 platform features
+                  <Gift className="w-4 h-4 shrink-0 mt-0.5" /> Bonus: Unlocks FREE Career Pathway Tool + 1 Year FREE access to all 9 platform features
                 </p>
               </div>
               <a href="https://wa.me/918441879640?text=I'm%20interested%20in%20Website%20Development" target="_blank" rel="noopener noreferrer">
@@ -364,7 +394,7 @@ export default function Home() {
           </div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mt-12">
-            <p className="text-blue-100/70 text-base font-medium">That's just ₹13.70 per day for a complete digital presence. <span className="text-secondary font-bold">One contract, three powerful benefits.</span></p>
+            <p className="text-blue-100/70 text-base font-medium">Starting at less than ₹20 per day for a complete digital presence. <span className="text-secondary font-bold">One contract, three powerful benefits.</span></p>
           </motion.div>
         </div>
       </section>
@@ -373,9 +403,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.15),transparent_70%)]"></div>
         <div className="container relative z-10 mx-auto px-4 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInScale}>
-            <h2 className="text-xl md:text-3xl font-extrabold mb-3">Why Pay Lakhs When You Can Pay ₹50,000 Once?</h2>
+            <h2 className="text-xl md:text-3xl font-extrabold mb-3">Why Pay Lakhs When You Can Start at Just ₹35,000?</h2>
             <p className="text-base md:text-xl font-semibold max-w-3xl mx-auto">
-              Other companies charge ₹1-5 Lakhs for a website alone. With Inupgro, you get a <span className="bg-primary/10 px-2 py-0.5 rounded-md">10-year website</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">Free Career Pathway</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">1 Year Free Platform</span> -- all in one.
+              Other companies charge ₹1-5 Lakhs for a website alone. With Inupgro, you get a <span className="bg-primary/10 px-2 py-0.5 rounded-md">long-term website</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">Free Career Pathway</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">1 Year Free Platform</span> -- all in one.
             </p>
           </motion.div>
         </div>
@@ -455,7 +485,7 @@ export default function Home() {
 
               <div className="bg-gradient-to-r from-purple-50 to-purple-50/50 border border-purple-200/60 rounded-2xl p-5">
                 <p className="text-sm font-bold text-purple-800 mb-1">How Does Your Institute Benefit?</p>
-                <p className="text-sm text-purple-600 leading-relaxed">Your institute gets showcased on the Career Pathway platform, visible to thousands of students exploring careers. Parents see you as a forward-thinking school. All free with your ₹50,000 website contract.</p>
+                <p className="text-sm text-purple-600 leading-relaxed">Your institute gets showcased on the Career Pathway platform, visible to thousands of students exploring careers. Parents see you as a forward-thinking school. All free with your Inupgro website contract.</p>
               </div>
 
               <a href="https://wa.me/918441879640?text=I'm%20interested%20in%20the%20Career%20Pathway%20Tool" target="_blank" rel="noopener noreferrer">
@@ -571,8 +601,8 @@ export default function Home() {
           </motion.div>
           <Accordion type="single" collapsible className="w-full space-y-3">
             {[
-              { q: "What exactly do I get for ₹50,000?", a: "You get a professionally designed, mobile-responsive website with your own domain name, fast hosting, SSL security, WhatsApp chat integration, enquiry/admission forms, Google SEO optimization, and ongoing maintenance -- all covered for 10 years with no hidden fees. The Career Pathway Tool is also included free. That's just ₹13.70 per day for your website." },
-              { q: "Is the Career Pathway Tool really free?", a: "Yes, 100% free for your institute and students. The only requirement is a website contract with Inupgro (₹50,000). Once your website is live, the Career Pathway Tool is activated at no extra cost. Your institute also gets showcased on the platform, which helps attract more student enquiries." },
+              { q: "What does the website package include?", a: "You get a professionally designed, mobile-responsive website with your own domain name, fast hosting, SSL security, WhatsApp chat integration, enquiry/admission forms, Google SEO optimization, and ongoing maintenance. We offer two plans: ₹35,000 for 5 years or ₹50,000 for 10 years (best value -- save ₹20,000). Plus complimentary add-ons: free professional photoshoot, director's message video, and a career counselling session. The Career Pathway Tool is also included free." },
+              { q: "Is the Career Pathway Tool really free?", a: "Yes, 100% free for your institute and students. The only requirement is a website contract with Inupgro (starting at ₹35,000). Once your website is live, the Career Pathway Tool is activated at no extra cost. Your institute also gets showcased on the platform, which helps attract more student enquiries." },
               { q: "What are the 9 platform features and when do they launch?", a: "The 9 features cover everything from targeted marketing and performance tracking to fee management and scholarship distribution. They are launching soon and will be completely free for 1 year for all institutes with a website contract. After the first year, affordable subscription plans will be available -- but you can cancel anytime." },
               { q: "I already have a website. Can I still benefit?", a: "Yes. If your current website isn't generating enquiries or looks outdated, we'll build you a modern, admission-focused website designed to convert visitors into leads. If you already have a domain (like yourschool.com), we'll seamlessly connect it to your new Inupgro website." },
               { q: "Do you provide support after the website goes live?", a: "Absolutely. Our team provides ongoing technical support for the entire 10-year period. Content updates like changing a phone number, adding a notice, or updating photos are handled promptly. You're never left on your own." },
@@ -599,7 +629,7 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
             <h2 className="text-3xl md:text-5xl font-extrabold mb-5 leading-tight">Your Competitors Are Already Online. Are You?</h2>
             <p className="text-base md:text-lg text-blue-100/70 mb-3 leading-relaxed">Every day without a website, your institute is invisible to parents searching for schools on Google. Join 500+ institutes who have already taken the digital leap with Inupgro.</p>
-            <p className="text-lg text-secondary font-bold mb-10">₹50,000 once. 10 years covered. Career guidance + management tools included free.</p>
+            <p className="text-lg text-secondary font-bold mb-10">Starting at ₹35,000. Career guidance, free photoshoot, director's video & management tools included.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a href="https://wa.me/918441879640" target="_blank" rel="noopener noreferrer">
                 <Button data-testid="final-cta-join" size="lg" className="h-14 px-8 text-base bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold rounded-xl shadow-lg shadow-secondary/25 hover:shadow-xl hover:scale-[1.02] transition-all">
