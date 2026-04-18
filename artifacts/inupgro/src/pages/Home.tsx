@@ -315,6 +315,7 @@ export default function Home() {
                   <p className="text-2xl font-extrabold text-primary tracking-tight leading-none whitespace-nowrap block">₹50,000</p>
                   <p className="text-[11px] font-semibold text-gray-500 mt-2 leading-none whitespace-nowrap block">+ GST</p>
                   <p className="text-[10px] text-emerald-700 font-bold mt-1.5 leading-tight">Save 80% · Best Value</p>
+                  <p className="text-[11px] text-gray-500 mt-1 font-medium">One-time</p>
                 </button>
               </div>
 
