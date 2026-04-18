@@ -132,11 +132,13 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <a href="https://wa.me/918209647142" target="_blank" rel="noopener noreferrer">
-            <Button data-testid="nav-cta-contact" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold px-5 shadow-sm hover:shadow-md transition-all rounded-xl">
-              Contact Us
-            </Button>
-          </a>
+          <EnquiryDialog
+            trigger={
+              <Button data-testid="nav-cta-contact" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold px-5 shadow-sm hover:shadow-md transition-all rounded-xl">
+                Contact Us
+              </Button>
+            }
+          />
         </div>
       </nav>
 
