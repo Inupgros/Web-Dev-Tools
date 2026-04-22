@@ -345,6 +345,7 @@ export default function Home() {
                     <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Free professional photoshoot</span></li>
                     <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Director's message video</span></li>
                     <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Career counselling session</span></li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Certified counsellor for your school, teachers, students &amp; parents -- 2 visits per year</span></li>
                   </ul>
                 </div>
               ) : (
@@ -353,7 +354,7 @@ export default function Home() {
                     <Sparkles className="w-4 h-4" /> Unlock Add-Ons with 10-Year Plan
                   </p>
                   <p className="text-[12px] text-gray-500 leading-snug">
-                    Upgrade to the 10-year plan to also get a free professional photoshoot, director's message video, and a career counselling session.
+                    Upgrade to the 10-year plan to also get a free professional photoshoot, director's message video, a career counselling session, and a certified counsellor visiting your school, teachers, students &amp; parents twice a year.
                   </p>
                 </div>
               )}
