@@ -345,7 +345,7 @@ export default function Home() {
                     <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Free professional photoshoot</span></li>
                     <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Director's message video</span></li>
                     <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Career counselling session</span></li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Certified counsellor for your school, teachers, students &amp; parents -- 2 visits per year</span></li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Certified counselor for your Institution, teachers, students &amp; parents -- 2 visits per year</span></li>
                   </ul>
                 </div>
               ) : (
