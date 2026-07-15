@@ -89,7 +89,7 @@ function FlipScreenshots({ front, back }: { front: string; back: string }) {
 }
 
 export default function Home() {
-  const [selectedPlan, setSelectedPlan] = useState<"5yr" | "10yr">("10yr");
+  const [selectedPlan, setSelectedPlan] = useState<"1yr" | "5yr" | "10yr">("10yr");
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -170,7 +170,7 @@ export default function Home() {
               </motion.h1>
 
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-blue-100/80 font-medium max-w-2xl mx-auto leading-relaxed">
-                A professional website and AI-powered career guidance -- everything your institute needs to attract students and stand out, starting at just ₹35,000. Plus, 9 management tools launching soon -- free for your first year.
+                A professional website and AI-powered career guidance -- everything your institute needs to attract students and stand out, starting at just ₹15,000. Plus, 9 management tools launching soon -- free for your first year.
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
@@ -272,50 +272,70 @@ export default function Home() {
               <p className="text-sm text-gray-500 mb-6">Your digital identity -- designed to attract admissions</p>
 
               <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2.5">Choose your plan</p>
-              <div className="grid grid-cols-2 gap-3 mb-7">
+              <div className="grid grid-cols-3 gap-2 mb-7">
+                <button
+                  type="button"
+                  onClick={() => setSelectedPlan("1yr")}
+                  data-testid="plan-toggle-1yr"
+                  className={`border-2 rounded-2xl px-2 py-4 text-center transition-all overflow-hidden ${
+                    selectedPlan === "1yr"
+                      ? "border-secondary bg-gradient-to-br from-amber-50 to-orange-50 shadow-md shadow-amber-200/40"
+                      : "border-gray-200 bg-gray-50/50 hover:border-gray-300"
+                  }`}
+                >
+                  <div className="flex items-center justify-center gap-1 mb-2 min-h-[18px]">
+                    <p className="text-[10px] font-bold text-gray-700 uppercase tracking-wider">1 Year</p>
+                    {selectedPlan === "1yr" && (
+                      <CheckCircle2 className="w-3 h-3 text-secondary" />
+                    )}
+                  </div>
+                  <p className="text-xl font-extrabold text-primary tracking-tight leading-none whitespace-nowrap block">₹15,000</p>
+                  <p className="text-[10px] font-semibold text-gray-500 mt-2 leading-none whitespace-nowrap block">+ GST</p>
+                  <p className="text-[9px] text-gray-400 font-medium mt-1.5 leading-tight">One-time</p>
+                </button>
                 <button
                   type="button"
                   onClick={() => setSelectedPlan("5yr")}
                   data-testid="plan-toggle-5yr"
-                  className={`border-2 rounded-2xl px-3 py-4 text-center transition-all overflow-hidden ${
+                  className={`border-2 rounded-2xl px-2 py-4 text-center transition-all overflow-hidden ${
                     selectedPlan === "5yr"
                       ? "border-secondary bg-gradient-to-br from-amber-50 to-orange-50 shadow-md shadow-amber-200/40"
                       : "border-gray-200 bg-gray-50/50 hover:border-gray-300"
                   }`}
                 >
-                  <div className="flex items-center justify-center gap-1.5 mb-2 min-h-[18px]">
-                    <p className="text-xs font-bold text-gray-700 uppercase tracking-wider">5 Years</p>
+                  <div className="flex items-center justify-center gap-1 mb-2 min-h-[18px]">
+                    <p className="text-[10px] font-bold text-gray-700 uppercase tracking-wider">5 Years</p>
                     {selectedPlan === "5yr" && (
-                      <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
+                      <CheckCircle2 className="w-3 h-3 text-secondary" />
                     )}
                   </div>
-                  <p className="text-[11px] text-red-500 line-through decoration-red-500 font-semibold leading-none whitespace-nowrap mb-1">₹1,50,000</p>
-                  <p className="text-2xl font-extrabold text-primary tracking-tight leading-none whitespace-nowrap block">₹35,000</p>
-                  <p className="text-[11px] font-semibold text-gray-500 mt-2 leading-none whitespace-nowrap block">+ GST</p>
-                  <p className="text-[10px] text-emerald-700 font-bold mt-1.5 leading-tight">Save 77%</p>
-                  <p className="text-[11px] text-gray-500 mt-1 font-medium">One-time</p>
+                  <p className="text-[10px] text-red-500 line-through decoration-red-500 font-semibold leading-none whitespace-nowrap mb-1">₹75,000</p>
+                  <p className="text-xl font-extrabold text-primary tracking-tight leading-none whitespace-nowrap block">₹50,000</p>
+                  <p className="text-[10px] font-semibold text-gray-500 mt-2 leading-none whitespace-nowrap block">+ GST</p>
+                  <p className="text-[9px] text-emerald-700 font-bold mt-1.5 leading-tight">Save 33%</p>
+                  <p className="text-[9px] text-gray-500 mt-1 font-medium">One-time</p>
                 </button>
                 <button
                   type="button"
                   onClick={() => setSelectedPlan("10yr")}
                   data-testid="plan-toggle-10yr"
-                  className={`border-2 rounded-2xl px-3 py-4 text-center transition-all overflow-hidden ${
+                  className={`border-2 rounded-2xl px-2 py-4 text-center transition-all overflow-hidden ${
                     selectedPlan === "10yr"
                       ? "border-secondary bg-gradient-to-br from-amber-50 to-orange-50 shadow-md shadow-amber-200/40"
                       : "border-gray-200 bg-gray-50/50 hover:border-gray-300"
                   }`}
                 >
-                  <div className="flex items-center justify-center gap-1.5 mb-2 min-h-[18px]">
-                    <p className="text-xs font-bold text-gray-700 uppercase tracking-wider">10 Years</p>
+                  <div className="flex items-center justify-center gap-1 mb-2 min-h-[18px]">
+                    <p className="text-[10px] font-bold text-gray-700 uppercase tracking-wider">10 Years</p>
                     {selectedPlan === "10yr" && (
-                      <CheckCircle2 className="w-3.5 h-3.5 text-secondary" />
+                      <CheckCircle2 className="w-3 h-3 text-secondary" />
                     )}
                   </div>
-                  <p className="text-[11px] text-red-500 line-through decoration-red-500 font-semibold leading-none whitespace-nowrap mb-1">₹2,50,000</p>
-                  <p className="text-2xl font-extrabold text-primary tracking-tight leading-none whitespace-nowrap block">₹50,000</p>
-                  <p className="text-[11px] font-semibold text-gray-500 mt-2 leading-none whitespace-nowrap block">+ GST</p>
-                  <p className="text-[10px] text-emerald-700 font-bold mt-1.5 leading-tight">Save 80% · Best Value</p>
-                  <p className="text-[11px] text-gray-500 mt-1 font-medium">One-time</p>
+                  <p className="text-[10px] text-red-500 line-through decoration-red-500 font-semibold leading-none whitespace-nowrap mb-1">₹1,50,000</p>
+                  <p className="text-xl font-extrabold text-primary tracking-tight leading-none whitespace-nowrap block">₹80,000</p>
+                  <p className="text-[10px] font-semibold text-gray-500 mt-2 leading-none whitespace-nowrap block">+ GST</p>
+                  <p className="text-[9px] text-emerald-700 font-bold mt-1.5 leading-tight">Save 47% · Best</p>
+                  <p className="text-[9px] text-gray-500 mt-1 font-medium">One-time</p>
                 </button>
               </div>
 
@@ -366,14 +386,16 @@ export default function Home() {
               <a
                 href={
                   selectedPlan === "10yr"
-                    ? "https://wa.me/918209647142?text=I'm%20interested%20in%20the%2010-Year%20Website%20Plan%20(%E2%82%B950%2C000)"
-                    : "https://wa.me/918209647142?text=I'm%20interested%20in%20the%205-Year%20Website%20Plan%20(%E2%82%B935%2C000)"
+                    ? "https://wa.me/918209647142?text=I'm%20interested%20in%20the%2010-Year%20Website%20Plan%20(%E2%82%B980%2C000)"
+                    : selectedPlan === "5yr"
+                    ? "https://wa.me/918209647142?text=I'm%20interested%20in%20the%205-Year%20Website%20Plan%20(%E2%82%B950%2C000)"
+                    : "https://wa.me/918209647142?text=I'm%20interested%20in%20the%201-Year%20Website%20Plan%20(%E2%82%B915%2C000)"
                 }
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button data-testid="pricing-website-cta" className="w-full h-12 text-base bg-primary hover:bg-primary/90 rounded-xl font-bold hover:shadow-lg transition-all">
-                  Get Started with {selectedPlan === "10yr" ? "10-Year Plan" : "5-Year Plan"} <ArrowRight className="ml-2 w-4 h-4" />
+                  Get Started with {selectedPlan === "10yr" ? "10-Year Plan" : selectedPlan === "5yr" ? "5-Year Plan" : "1-Year Plan"} <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
             </motion.div>
@@ -456,7 +478,7 @@ export default function Home() {
           </div>
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mt-12">
-            <p className="text-blue-100/70 text-base font-medium">Starting at less than ₹20 per day for a complete digital presence. <span className="text-secondary font-bold">One contract, three powerful benefits.</span></p>
+            <p className="text-blue-100/70 text-base font-medium">Starting at just ₹15,000 for a complete digital presence. <span className="text-secondary font-bold">One contract, three powerful benefits.</span></p>
           </motion.div>
         </div>
       </section>
@@ -465,7 +487,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.15),transparent_70%)]"></div>
         <div className="container relative z-10 mx-auto px-4 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInScale}>
-            <h2 className="text-xl md:text-3xl font-extrabold mb-3">Why Pay Lakhs When You Can Start at Just ₹35,000?</h2>
+            <h2 className="text-xl md:text-3xl font-extrabold mb-3">Why Pay Lakhs When You Can Start at Just ₹15,000?</h2>
             <p className="text-base md:text-xl font-semibold max-w-3xl mx-auto">
               Other companies charge ₹1-5 Lakhs for a website alone. With Inupgro, you get a <span className="bg-primary/10 px-2 py-0.5 rounded-md">long-term website</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">Free Career Pathway</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">1 Year Free Platform</span> -- all in one.
             </p>
@@ -630,7 +652,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               { name: "Rajesh Kumar", inst: "Sunshine Public School, Jaipur", text: "Before Inupgro, we had no online presence and were losing students to competitors with websites. Within weeks of going live, we started getting WhatsApp enquiries from parents who found us on Google. The Career Pathway tool is something parents genuinely value." },
-              { name: "Priya Sharma", inst: "Excel Coaching Institute", text: "I was spending ₹15,000 every year on a basic website that looked outdated. With Inupgro, I paid ₹50,000 once and got a professional website for 10 years, plus the Career Pathway tool and platform features for free. It's the smartest investment I've made for my institute." },
+              { name: "Priya Sharma", inst: "Excel Coaching Institute", text: "I was spending a lot every year on a basic website that looked outdated. With Inupgro, I paid ₹80,000 once and got a professional website for 10 years, plus the Career Pathway tool and platform features for free. It's the smartest investment I've made for my institute." },
               { name: "Dr. A. Verma", inst: "Global Degree College", text: "What convinced me was the value -- a 10-year website, career guidance for students, and soon an entire management platform. We now receive 5-10 enquiries via WhatsApp every week just from the website. The upcoming fee management and scholarship tools will save us hours of manual work." }
             ].map((test, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.1 } } }} className="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 relative hover:shadow-lg transition-shadow duration-300">
@@ -663,8 +685,8 @@ export default function Home() {
           </motion.div>
           <Accordion type="single" collapsible className="w-full space-y-3">
             {[
-              { q: "What does the website package include?", a: "You get a professionally designed, mobile-responsive website with your own domain name, fast hosting, SSL security, WhatsApp chat integration, enquiry/admission forms, Google SEO optimization, and ongoing maintenance. We offer two plans: ₹35,000 for 5 years or ₹50,000 for 10 years (best value -- save ₹20,000). Plus complimentary add-ons: free professional photoshoot, director's message video, and a career counselling session. The Career Pathway Tool is also included free." },
-              { q: "Is the Career Pathway Tool really free?", a: "Yes, 100% free for your institute and students. The only requirement is a website contract with Inupgro (starting at ₹35,000). Once your website is live, the Career Pathway Tool is activated at no extra cost. Your institute also gets showcased on the platform, which helps attract more student enquiries." },
+              { q: "What does the website package include?", a: "You get a professionally designed, mobile-responsive website with your own domain name, fast hosting, SSL security, WhatsApp chat integration, enquiry/admission forms, Google SEO optimization, and ongoing maintenance. We offer three plans: ₹15,000 for 1 year, ₹50,000 for 5 years, or ₹80,000 for 10 years (best value -- save 47%). The 10-year plan also includes complimentary add-ons: free professional photoshoot, director's message video, career counselling session, and a certified counsellor visiting your institution twice a year. The Career Pathway Tool is included free with all plans." },
+              { q: "Is the Career Pathway Tool really free?", a: "Yes, 100% free for your institute and students. The only requirement is a website contract with Inupgro (starting at ₹15,000). Once your website is live, the Career Pathway Tool is activated at no extra cost. Your institute also gets showcased on the platform, which helps attract more student enquiries." },
               { q: "What are the 9 platform features and when do they launch?", a: "The 9 features cover everything from targeted marketing and performance tracking to fee management and scholarship distribution. They are launching soon and will be completely free for 1 year for all institutes with a website contract. After the first year, affordable subscription plans will be available -- but you can cancel anytime." },
               { q: "I already have a website. Can I still benefit?", a: "Yes. If your current website isn't generating enquiries or looks outdated, we'll build you a modern, admission-focused website designed to convert visitors into leads. If you already have a domain (like yourschool.com), we'll seamlessly connect it to your new Inupgro website." },
               { q: "Do you provide support after the website goes live?", a: "Absolutely. Our team provides ongoing technical support for the entire 10-year period. Content updates like changing a phone number, adding a notice, or updating photos are handled promptly. You're never left on your own." },
@@ -691,7 +713,7 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
             <h2 className="text-3xl md:text-5xl font-extrabold mb-5 leading-tight">Your Competitors Are Already Online. Are You?</h2>
             <p className="text-base md:text-lg text-blue-100/70 mb-3 leading-relaxed">Every day without a website, your institute is invisible to parents searching for schools on Google. Join 500+ institutes who have already taken the digital leap with Inupgro.</p>
-            <p className="text-lg text-secondary font-bold mb-10">Starting at ₹35,000. Career guidance, free photoshoot, director's video & management tools included.</p>
+            <p className="text-lg text-secondary font-bold mb-10">Starting at ₹15,000. Career guidance, free photoshoot, director's video & management tools included.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a href="https://wa.me/918209647142" target="_blank" rel="noopener noreferrer">
                 <Button data-testid="final-cta-join" size="lg" className="h-14 px-8 text-base bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold rounded-xl shadow-lg shadow-secondary/25 hover:shadow-xl hover:scale-[1.02] transition-all">

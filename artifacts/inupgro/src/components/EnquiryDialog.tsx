@@ -367,11 +367,14 @@ export function EnquiryDialog({
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="5-Year Website Plan (₹35,000)">
-                      5-Year Website Plan (₹35,000)
+                    <SelectItem value="1-Year Website Plan (₹15,000)">
+                      1-Year Website Plan (₹15,000)
                     </SelectItem>
-                    <SelectItem value="10-Year Website Plan (₹50,000)">
-                      10-Year Website Plan (₹50,000)
+                    <SelectItem value="5-Year Website Plan (₹50,000)">
+                      5-Year Website Plan (₹50,000)
+                    </SelectItem>
+                    <SelectItem value="10-Year Website Plan (₹80,000)">
+                      10-Year Website Plan (₹80,000)
                     </SelectItem>
                     <SelectItem value="Career Pathway Tool">
                       Career Pathway Tool
