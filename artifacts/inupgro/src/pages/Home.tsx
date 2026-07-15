@@ -89,7 +89,7 @@ function FlipScreenshots({ front, back }: { front: string; back: string }) {
 }
 
 export default function Home() {
-  const [selectedPlan, setSelectedPlan] = useState<"1yr" | "5yr" | "10yr">("10yr");
+  const [selectedPlan] = useState<"1yr" | "5yr" | "10yr">("10yr");
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -247,239 +247,230 @@ export default function Home() {
       </section>
 
       <section id="pricing" className="py-20 md:py-28 bg-primary text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-400/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-400/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+
         <div className="container relative z-10 mx-auto px-4 md:px-6">
+
+          {/* Section header */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-14">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.08] border border-white/10 text-blue-100 text-sm font-semibold mb-5">
               <Sparkles className="w-4 h-4 text-secondary" />
               One Investment, Three Powerful Benefits
             </div>
-            <h2 className="text-3xl md:text-[2.75rem] font-extrabold mb-4 leading-tight">What You Get with INUPGRO</h2>
-            <p className="text-base md:text-lg text-blue-100/70 leading-relaxed">Pay once. Get a professional website for 10 years, free career guidance for your students, and an entire school management platform -- all bundled together.</p>
+            <h2 className="text-3xl md:text-[2.75rem] font-extrabold mb-4 leading-tight">Simple, Transparent Pricing</h2>
+            <p className="text-base md:text-lg text-blue-100/70 leading-relaxed">Choose a plan that fits your budget. Every plan includes domain, hosting, SEO, WhatsApp forms, and free career guidance for your students.</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-start">
+          {/* 3 plan cards */}
+          <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto mb-6 items-end">
 
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }} className="bg-white rounded-3xl p-7 lg:p-8 shadow-2xl shadow-black/20 border-2 border-secondary relative text-gray-900 md:-translate-y-3">
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-secondary to-amber-400 text-secondary-foreground px-5 py-1.5 rounded-full text-xs font-bold shadow-lg uppercase tracking-wider">
-                Core Offering
+            {/* 1 Year */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }} className="bg-white/[0.06] border border-white/10 rounded-3xl p-7 flex flex-col hover:border-white/20 transition-all">
+              <div className="text-[11px] font-extrabold text-blue-300 uppercase tracking-widest mb-5">1 Year Plan</div>
+              <div className="mb-6">
+                <div className="text-[2.5rem] font-extrabold text-white leading-none tracking-tight">₹15,000</div>
+                <div className="text-sm text-blue-200/60 mt-2">+ GST &nbsp;·&nbsp; One-time payment</div>
               </div>
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mb-5">
-                <Globe className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-extrabold text-primary mb-1.5">Professional Website</h3>
-              <p className="text-sm text-gray-500 mb-6">Your digital identity -- designed to attract admissions</p>
-
-              <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2.5">Choose your plan</p>
-              <div className="grid grid-cols-3 gap-2 mb-7">
-                <button
-                  type="button"
-                  onClick={() => setSelectedPlan("1yr")}
-                  data-testid="plan-toggle-1yr"
-                  className={`border-2 rounded-2xl px-2 py-4 text-center transition-all overflow-hidden ${
-                    selectedPlan === "1yr"
-                      ? "border-secondary bg-gradient-to-br from-amber-50 to-orange-50 shadow-md shadow-amber-200/40"
-                      : "border-gray-200 bg-gray-50/50 hover:border-gray-300"
-                  }`}
-                >
-                  <div className="flex items-center justify-center gap-1 mb-2 min-h-[18px]">
-                    <p className="text-[10px] font-bold text-gray-700 uppercase tracking-wider">1 Year</p>
-                    {selectedPlan === "1yr" && (
-                      <CheckCircle2 className="w-3 h-3 text-secondary" />
-                    )}
-                  </div>
-                  <p className="text-xl font-extrabold text-primary tracking-tight leading-none whitespace-nowrap block">₹15,000</p>
-                  <p className="text-[10px] font-semibold text-gray-500 mt-2 leading-none whitespace-nowrap block">+ GST</p>
-                  <p className="text-[9px] text-gray-400 font-medium mt-1.5 leading-tight">One-time</p>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setSelectedPlan("5yr")}
-                  data-testid="plan-toggle-5yr"
-                  className={`border-2 rounded-2xl px-2 py-4 text-center transition-all overflow-hidden ${
-                    selectedPlan === "5yr"
-                      ? "border-secondary bg-gradient-to-br from-amber-50 to-orange-50 shadow-md shadow-amber-200/40"
-                      : "border-gray-200 bg-gray-50/50 hover:border-gray-300"
-                  }`}
-                >
-                  <div className="flex items-center justify-center gap-1 mb-2 min-h-[18px]">
-                    <p className="text-[10px] font-bold text-gray-700 uppercase tracking-wider">5 Years</p>
-                    {selectedPlan === "5yr" && (
-                      <CheckCircle2 className="w-3 h-3 text-secondary" />
-                    )}
-                  </div>
-                  <p className="text-[10px] text-red-500 line-through decoration-red-500 font-semibold leading-none whitespace-nowrap mb-1">₹75,000</p>
-                  <p className="text-xl font-extrabold text-primary tracking-tight leading-none whitespace-nowrap block">₹50,000</p>
-                  <p className="text-[10px] font-semibold text-gray-500 mt-2 leading-none whitespace-nowrap block">+ GST</p>
-                  <p className="text-[9px] text-emerald-700 font-bold mt-1.5 leading-tight">Save 33%</p>
-                  <p className="text-[9px] text-gray-500 mt-1 font-medium">One-time</p>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setSelectedPlan("10yr")}
-                  data-testid="plan-toggle-10yr"
-                  className={`border-2 rounded-2xl px-2 py-4 text-center transition-all overflow-hidden ${
-                    selectedPlan === "10yr"
-                      ? "border-secondary bg-gradient-to-br from-amber-50 to-orange-50 shadow-md shadow-amber-200/40"
-                      : "border-gray-200 bg-gray-50/50 hover:border-gray-300"
-                  }`}
-                >
-                  <div className="flex items-center justify-center gap-1 mb-2 min-h-[18px]">
-                    <p className="text-[10px] font-bold text-gray-700 uppercase tracking-wider">10 Years</p>
-                    {selectedPlan === "10yr" && (
-                      <CheckCircle2 className="w-3 h-3 text-secondary" />
-                    )}
-                  </div>
-                  <p className="text-[10px] text-red-500 line-through decoration-red-500 font-semibold leading-none whitespace-nowrap mb-1">₹1,50,000</p>
-                  <p className="text-xl font-extrabold text-primary tracking-tight leading-none whitespace-nowrap block">₹80,000</p>
-                  <p className="text-[10px] font-semibold text-gray-500 mt-2 leading-none whitespace-nowrap block">+ GST</p>
-                  <p className="text-[9px] text-emerald-700 font-bold mt-1.5 leading-tight">Save 47% · Best</p>
-                  <p className="text-[9px] text-gray-500 mt-1 font-medium">One-time</p>
-                </button>
-              </div>
-
-              <ul className="space-y-3 text-gray-700 text-[14px] mb-6">
+              <ul className="space-y-2.5 text-blue-100/80 text-sm mb-8 flex-1">
                 {[
-                  "Custom-designed, admission-focused website",
-                  "Domain name + hosting included",
-                  "SSL security certificate (free)",
+                  "Custom-designed website",
+                  "Domain name + hosting",
+                  "SSL security certificate",
                   "WhatsApp chat & enquiry forms",
-                  "Google-optimized for local search (SEO)",
-                  "Ongoing maintenance & technical support",
-                  "Fully mobile-responsive design"
+                  "Google SEO optimized",
+                  "Maintenance & support",
+                  "Mobile-responsive design"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2.5 leading-snug">
-                    <CheckCircle2 className="w-[18px] h-[18px] text-secondary shrink-0 mt-0.5" /> <span>{item}</span>
+                  <li key={i} className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" /> {item}
                   </li>
                 ))}
               </ul>
-
-              {selectedPlan === "10yr" ? (
-                <div className="bg-gradient-to-br from-amber-50 to-orange-50/70 border border-amber-200 rounded-2xl p-4 mb-4">
-                  <p className="text-xs font-extrabold text-amber-800 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                    <Sparkles className="w-4 h-4" /> Complimentary Add-Ons
-                    <span className="ml-auto bg-amber-600 text-white text-[9px] font-extrabold px-2 py-0.5 rounded-full normal-case tracking-normal">10-Yr Only</span>
-                  </p>
-                  <ul className="space-y-2 text-[13px] text-amber-900 font-medium">
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Free professional photoshoot</span></li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Director's message video</span></li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Career counselling session</span></li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" /> <span>Certified counselor for your Institution, teachers, students &amp; parents -- 2 visits per year</span></li>
-                  </ul>
-                </div>
-              ) : (
-                <div className="bg-gray-50 border border-dashed border-gray-300 rounded-2xl p-4 mb-4">
-                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                    <Sparkles className="w-4 h-4" /> Unlock Add-Ons with 10-Year Plan
-                  </p>
-                  <p className="text-[12px] text-gray-500 leading-snug">
-                    Upgrade to the 10-year plan to also get a free professional photoshoot, director's message video, a career counselling session, and a certified counsellor visiting your school, teachers, students &amp; parents twice a year.
-                  </p>
-                </div>
-              )}
-              <div className="bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200 rounded-2xl p-4 mb-5">
-                <p className="text-[13px] font-semibold text-emerald-800 flex items-start gap-2 leading-snug">
-                  <Gift className="w-4 h-4 shrink-0 mt-0.5 text-emerald-600" /> <span>Bonus: Unlocks <span className="font-extrabold">FREE Career Pathway Tool</span> + 1 Year FREE access to all 9 platform features</span>
-                </p>
-              </div>
-              <a
-                href={
-                  selectedPlan === "10yr"
-                    ? "https://wa.me/918209647142?text=I'm%20interested%20in%20the%2010-Year%20Website%20Plan%20(%E2%82%B980%2C000)"
-                    : selectedPlan === "5yr"
-                    ? "https://wa.me/918209647142?text=I'm%20interested%20in%20the%205-Year%20Website%20Plan%20(%E2%82%B950%2C000)"
-                    : "https://wa.me/918209647142?text=I'm%20interested%20in%20the%201-Year%20Website%20Plan%20(%E2%82%B915%2C000)"
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button data-testid="pricing-website-cta" className="w-full h-12 text-base bg-primary hover:bg-primary/90 rounded-xl font-bold hover:shadow-lg transition-all">
-                  Get Started with {selectedPlan === "10yr" ? "10-Year Plan" : selectedPlan === "5yr" ? "5-Year Plan" : "1-Year Plan"} <ArrowRight className="ml-2 w-4 h-4" />
+              <a href="https://wa.me/918209647142?text=I'm%20interested%20in%20the%201-Year%20Website%20Plan%20(%E2%82%B915%2C000)" target="_blank" rel="noopener noreferrer">
+                <Button data-testid="pricing-1yr-cta" variant="outline" className="w-full h-11 text-sm bg-white/[0.06] hover:bg-white/[0.14] text-white border-white/20 rounded-xl font-bold transition-all">
+                  Get 1-Year Plan <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
             </motion.div>
 
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { delay: 0.1 } } }} className="bg-white/[0.06] border border-white/[0.12] rounded-3xl p-7 lg:p-8 backdrop-blur-md relative">
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-5 py-1.5 rounded-full text-xs font-bold shadow-lg uppercase tracking-wider">
-                Free with Website
+            {/* 10 Years — FEATURED CENTER, elevated */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { delay: 0.1 } } }} className="bg-white rounded-3xl p-7 flex flex-col relative shadow-2xl shadow-black/30 border-2 border-secondary md:-translate-y-4 text-gray-900">
+              <div className="absolute -top-[14px] left-1/2 -translate-x-1/2 bg-gradient-to-r from-secondary to-amber-400 text-secondary-foreground px-5 py-1.5 rounded-full text-xs font-extrabold shadow-lg uppercase tracking-wider whitespace-nowrap">
+                ⭐ Best Value
               </div>
-              <div className="w-12 h-12 bg-purple-500/15 rounded-2xl flex items-center justify-center mb-5">
-                <Compass className="w-6 h-6 text-purple-300" />
+              <div className="text-[11px] font-extrabold text-primary/50 uppercase tracking-widest mb-5">10 Years Plan</div>
+              <div className="mb-6">
+                <div className="text-sm text-red-400 line-through font-semibold mb-1">₹1,50,000</div>
+                <div className="text-[2.5rem] font-extrabold text-primary leading-none tracking-tight">₹80,000</div>
+                <div className="flex items-center gap-2 mt-2 flex-wrap">
+                  <span className="text-sm text-gray-500">+ GST &nbsp;·&nbsp; One-time</span>
+                  <span className="bg-emerald-100 text-emerald-700 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">Save 47%</span>
+                </div>
               </div>
-              <h3 className="text-xl font-extrabold text-white mb-1">Career Pathway Tool</h3>
-              <p className="text-sm text-blue-200/60 mb-5">Give students a reason to choose YOUR institute</p>
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">FREE</span>
-              </div>
-              <p className="text-xs text-blue-200/60 mb-7">Included free with your website contract</p>
-              <ul className="space-y-2.5 text-blue-100/80 text-sm mb-7">
+              <ul className="space-y-2.5 text-gray-700 text-sm mb-6 flex-1">
                 {[
-                  { text: "600+ career paths mapped out", color: "text-purple-400" },
-                  { text: "Personalized step-by-step roadmaps", color: "text-purple-400" },
-                  { text: "15,000+ college recommendations", color: "text-purple-400" },
-                  { text: "Live salary & job market data", color: "text-purple-400" },
-                  { text: "Expert tips from industry professionals", color: "text-purple-400" },
-                  { text: "24/7 AI-powered career assistant", color: "text-purple-400" },
-                  { text: "Your institute showcased to students", color: "text-purple-400" }
+                  "Custom-designed website",
+                  "Domain name + hosting",
+                  "SSL security certificate",
+                  "WhatsApp chat & enquiry forms",
+                  "Google SEO optimized",
+                  "10 years maintenance & support",
+                  "Mobile-responsive design"
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-2.5">
-                    <CheckCircle2 className={`w-4 h-4 ${item.color} shrink-0`} /> {item.text}
+                    <CheckCircle2 className="w-4 h-4 text-secondary shrink-0" /> {item}
                   </li>
                 ))}
               </ul>
-              <div className="bg-purple-500/10 border border-purple-400/20 rounded-xl p-3.5 mb-5">
-                <p className="text-xs font-semibold text-purple-200/80 flex items-start gap-2">
-                  <ShieldCheck className="w-4 h-4 shrink-0 mt-0.5" /> Requires website contract with Inupgro (website is mandatory)
+              {/* Add-ons */}
+              <div className="bg-gradient-to-br from-amber-50 to-orange-50/80 border border-amber-200 rounded-2xl p-4 mb-5">
+                <p className="text-[11px] font-extrabold text-amber-800 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5" /> Complimentary Add-Ons
+                </p>
+                <ul className="space-y-1.5 text-[12px] text-amber-900 font-medium">
+                  <li className="flex items-start gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" /> Free professional photoshoot</li>
+                  <li className="flex items-start gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" /> Director's message video</li>
+                  <li className="flex items-start gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" /> Career counselling session</li>
+                  <li className="flex items-start gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" /> Certified counselor — 2 visits/year for Institution, teachers, students &amp; parents</li>
+                </ul>
+              </div>
+              <a href="https://wa.me/918209647142?text=I'm%20interested%20in%20the%2010-Year%20Website%20Plan%20(%E2%82%B980%2C000)" target="_blank" rel="noopener noreferrer">
+                <Button data-testid="pricing-website-cta" className="w-full h-12 text-base bg-primary hover:bg-primary/90 text-white rounded-xl font-bold shadow-lg hover:shadow-xl transition-all">
+                  Get 10-Year Plan <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </a>
+            </motion.div>
+
+            {/* 5 Years */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { delay: 0.15 } } }} className="bg-white/[0.06] border border-white/10 rounded-3xl p-7 flex flex-col hover:border-white/20 transition-all">
+              <div className="text-[11px] font-extrabold text-blue-300 uppercase tracking-widest mb-5">5 Years Plan</div>
+              <div className="mb-6">
+                <div className="text-sm text-red-400/80 line-through font-semibold mb-1">₹75,000</div>
+                <div className="text-[2.5rem] font-extrabold text-white leading-none tracking-tight">₹50,000</div>
+                <div className="flex items-center gap-2 mt-2 flex-wrap">
+                  <span className="text-sm text-blue-200/60">+ GST &nbsp;·&nbsp; One-time</span>
+                  <span className="bg-emerald-500/20 text-emerald-300 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">Save 33%</span>
+                </div>
+              </div>
+              <ul className="space-y-2.5 text-blue-100/80 text-sm mb-8 flex-1">
+                {[
+                  "Custom-designed website",
+                  "Domain name + hosting",
+                  "SSL security certificate",
+                  "WhatsApp chat & enquiry forms",
+                  "Google SEO optimized",
+                  "5 years maintenance & support",
+                  "Mobile-responsive design"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" /> {item}
+                  </li>
+                ))}
+              </ul>
+              <a href="https://wa.me/918209647142?text=I'm%20interested%20in%20the%205-Year%20Website%20Plan%20(%E2%82%B950%2C000)" target="_blank" rel="noopener noreferrer">
+                <Button data-testid="pricing-5yr-cta" variant="outline" className="w-full h-11 text-sm bg-white/[0.06] hover:bg-white/[0.14] text-white border-white/20 rounded-xl font-bold transition-all">
+                  Get 5-Year Plan <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Bonus bar */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-5xl mx-auto bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/20 rounded-2xl px-6 py-4 mb-12 flex items-center justify-center gap-3 flex-wrap text-center">
+            <Gift className="w-5 h-5 text-emerald-400 shrink-0" />
+            <p className="text-sm font-semibold text-emerald-200">Every plan unlocks <span className="font-extrabold text-white">FREE Career Pathway Tool</span> + <span className="font-extrabold text-white">1 Year FREE</span> access to all 9 platform features</p>
+          </motion.div>
+
+          {/* Career Pathway + Platform Features */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }} className="bg-white/[0.06] border border-white/[0.12] rounded-3xl p-7 lg:p-8 backdrop-blur-md relative">
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-5 py-1.5 rounded-full text-xs font-bold shadow-lg uppercase tracking-wider">
+                Free with Website
+              </div>
+              <div className="flex items-start gap-4 mb-5">
+                <div className="w-12 h-12 bg-purple-500/15 rounded-2xl flex items-center justify-center shrink-0">
+                  <Compass className="w-6 h-6 text-purple-300" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-extrabold text-white mb-0.5">Career Pathway Tool</h3>
+                  <p className="text-sm text-blue-200/60">Give students a reason to choose YOUR institute</p>
+                </div>
+              </div>
+              <div className="text-3xl font-extrabold text-white mb-1">FREE</div>
+              <p className="text-xs text-blue-200/60 mb-5">Included free with your website contract</p>
+              <ul className="grid grid-cols-2 gap-2 text-blue-100/80 text-sm mb-6">
+                {[
+                  "600+ career paths",
+                  "Step-by-step roadmaps",
+                  "15,000+ colleges",
+                  "Live salary data",
+                  "Expert pro-tips",
+                  "24/7 AI assistant",
+                  "Institute showcase",
+                  "From Class 6+"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0" /> <span className="text-[13px]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="bg-purple-500/10 border border-purple-400/20 rounded-xl p-3 mb-5">
+                <p className="text-xs font-semibold text-purple-200/80 flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 shrink-0" /> Requires website contract with Inupgro
                 </p>
               </div>
               <a href="https://wa.me/918209647142?text=I'm%20interested%20in%20the%20Career%20Pathway%20Tool" target="_blank" rel="noopener noreferrer">
-                <Button data-testid="pricing-career-cta" variant="outline" className="w-full h-12 text-base bg-white/[0.06] hover:bg-white/[0.12] text-white border-white/20 rounded-xl font-bold hover:shadow-lg transition-all">
+                <Button data-testid="pricing-career-cta" variant="outline" className="w-full h-11 text-sm bg-white/[0.06] hover:bg-white/[0.12] text-white border-white/20 rounded-xl font-bold transition-all">
                   Learn More <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
             </motion.div>
 
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { delay: 0.2 } } }} className="bg-white/[0.06] border border-white/[0.12] rounded-3xl p-7 lg:p-8 backdrop-blur-md relative">
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-5 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5 uppercase tracking-wider">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { delay: 0.1 } } }} className="bg-white/[0.06] border border-white/[0.12] rounded-3xl p-7 lg:p-8 backdrop-blur-md relative">
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-5 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5 uppercase tracking-wider whitespace-nowrap">
                 <Clock className="w-3 h-3" /> Launching Soon
               </div>
-              <div className="w-12 h-12 bg-amber-500/15 rounded-2xl flex items-center justify-center mb-5">
-                <Zap className="w-6 h-6 text-amber-300" />
+              <div className="flex items-start gap-4 mb-5">
+                <div className="w-12 h-12 bg-amber-500/15 rounded-2xl flex items-center justify-center shrink-0">
+                  <Zap className="w-6 h-6 text-amber-300" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-extrabold text-white mb-0.5">9 Platform Features</h3>
+                  <p className="text-sm text-blue-200/60">Run your entire institute from one dashboard</p>
+                </div>
               </div>
-              <h3 className="text-xl font-extrabold text-white mb-1">9 Platform Features</h3>
-              <p className="text-sm text-blue-200/60 mb-5">Run your entire institute from one dashboard</p>
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight">1 Year FREE</span>
-              </div>
-              <p className="text-xs text-blue-200/60 mb-7">For institutes with website contract</p>
-              <ul className="space-y-2.5 text-blue-100/80 text-sm mb-7">
+              <div className="text-2xl font-extrabold text-white mb-1">1 Year FREE</div>
+              <p className="text-xs text-blue-200/60 mb-5">For institutes with website contract</p>
+              <ul className="grid grid-cols-2 gap-2 text-blue-100/80 text-sm mb-6">
                 {[
-                  "Enhanced School Visibility", "Educational School News", "Targeted Marketing",
-                  "Track Performance", "Knowledge to Income", "One-Click Onboarding",
-                  "Admission Results", "Scholarship Framework", "Smart Fee Ecosystem"
+                  "Enhanced Visibility", "School News Feed", "Targeted Marketing",
+                  "Track Performance", "Knowledge Income", "One-Click Onboarding",
+                  "Admission Results", "Scholarship Tool", "Smart Fee System"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" /> {item}
+                  <li key={i} className="flex items-center gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" /> <span className="text-[13px]">{item}</span>
                   </li>
                 ))}
               </ul>
-              <div className="bg-amber-500/10 border border-amber-400/20 rounded-xl p-3.5 mb-5">
-                <p className="text-xs font-semibold text-amber-200/80 flex items-start gap-2">
-                  <Gift className="w-4 h-4 shrink-0 mt-0.5" /> Free for 1 year with website contract -- no risk, cancel anytime after
+              <div className="bg-amber-500/10 border border-amber-400/20 rounded-xl p-3 mb-5">
+                <p className="text-xs font-semibold text-amber-200/80 flex items-center gap-2">
+                  <Gift className="w-4 h-4 shrink-0" /> Free for 1 year with website contract -- cancel anytime after
                 </p>
               </div>
               <a href="https://wa.me/918209647142?text=I'm%20interested%20in%20the%20Platform%20Features" target="_blank" rel="noopener noreferrer">
-                <Button data-testid="pricing-features-cta" variant="outline" className="w-full h-12 text-base bg-white/[0.06] hover:bg-white/[0.12] text-white border-white/20 rounded-xl font-bold hover:shadow-lg transition-all">
+                <Button data-testid="pricing-features-cta" variant="outline" className="w-full h-11 text-sm bg-white/[0.06] hover:bg-white/[0.12] text-white border-white/20 rounded-xl font-bold transition-all">
                   Join Waitlist <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
             </motion.div>
           </div>
 
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mt-12">
-            <p className="text-blue-100/70 text-base font-medium">Starting at just ₹15,000 for a complete digital presence. <span className="text-secondary font-bold">One contract, three powerful benefits.</span></p>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mt-10">
+            <p className="text-blue-100/60 text-sm">All prices are one-time payments + GST. No hidden charges. No renewal fees. <span className="text-secondary font-semibold">One contract covers everything.</span></p>
           </motion.div>
+
         </div>
       </section>
 
