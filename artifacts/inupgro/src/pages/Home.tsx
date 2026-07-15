@@ -31,7 +31,9 @@ import {
   Gift,
   Play,
   Award,
-  Sparkles
+  Sparkles,
+  ExternalLink,
+  MonitorSmartphone
 } from "lucide-react";
 import careerHomeSrc from "@assets/screenshots/dev-frontend-inupgro-career-pathway_vercel_app.png";
 import careerExploreSrc from "@assets/screenshots/dev-frontend-inupgro-career-pathway_vercel_app_public-explore.png";
@@ -123,6 +125,7 @@ export default function Home() {
           <div className="hidden md:flex items-center space-x-1">
             {[
               { label: "Why Inupgro", href: "#why" },
+              { label: "Portfolio", href: "#portfolio" },
               { label: "Pricing", href: "#pricing" },
               { label: "Career Pathway", href: "#career" },
               { label: "Features", href: "#features" }
@@ -243,6 +246,188 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mt-12">
             <p className="text-lg font-semibold text-primary/80 italic">"When parents can't find you online, they find someone else."</p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ── Portfolio Section ── */}
+      <section id="portfolio" className="py-20 md:py-28 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6">
+
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 text-primary text-sm font-semibold mb-5">
+              <MonitorSmartphone className="w-4 h-4" />
+              Our Work
+            </div>
+            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">Websites We've Built</h2>
+            <p className="text-base md:text-lg text-gray-500 leading-relaxed">Real institutes, real websites — designed to attract parents, showcase achievements, and drive admissions across India.</p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+            {[
+              {
+                name: "Rajasthan Public School",
+                type: "K-12 School",
+                city: "Jaipur, Rajasthan",
+                tag: "Completed",
+                tagColor: "bg-emerald-100 text-emerald-700",
+                header: "bg-[#0f172a]",
+                accent: "#f59e0b",
+                gradient: "from-[#0f172a] via-[#1e3a5f] to-[#0f2d52]",
+                barColor: "bg-amber-400",
+                logo: "RPS",
+                logoColor: "bg-amber-400 text-gray-900",
+                navItems: ["Home", "About", "Academics", "Contact"],
+                tagline: "Shaping Tomorrow's Leaders",
+                desc: "Excellence in Education Since 1998",
+              },
+              {
+                name: "Sunrise Coaching Centre",
+                type: "Coaching Institute",
+                city: "Jodhpur, Rajasthan",
+                tag: "Completed",
+                tagColor: "bg-emerald-100 text-emerald-700",
+                header: "bg-orange-600",
+                accent: "#fff",
+                gradient: "from-orange-600 via-orange-500 to-amber-400",
+                barColor: "bg-white",
+                logo: "SC",
+                logoColor: "bg-white text-orange-600",
+                navItems: ["Courses", "Results", "Faculty", "Enroll"],
+                tagline: "Top Results, Every Year",
+                desc: "IIT · NEET · Board Excellence",
+              },
+              {
+                name: "Greenwood International",
+                type: "CBSE School",
+                city: "Ajmer, Rajasthan",
+                tag: "Completed",
+                tagColor: "bg-emerald-100 text-emerald-700",
+                header: "bg-emerald-700",
+                accent: "#fff",
+                gradient: "from-emerald-800 via-emerald-700 to-teal-600",
+                barColor: "bg-emerald-200",
+                logo: "GI",
+                logoColor: "bg-white text-emerald-700",
+                navItems: ["Home", "Facilities", "Gallery", "Admissions"],
+                tagline: "Nurturing Global Citizens",
+                desc: "CBSE Affiliated · Classes Nursery–XII",
+              },
+              {
+                name: "Vidya Shakti Academy",
+                type: "Skill Training",
+                city: "Kota, Rajasthan",
+                tag: "Completed",
+                tagColor: "bg-emerald-100 text-emerald-700",
+                header: "bg-purple-700",
+                accent: "#fff",
+                gradient: "from-purple-800 via-purple-700 to-indigo-700",
+                barColor: "bg-purple-300",
+                logo: "VS",
+                logoColor: "bg-white text-purple-700",
+                navItems: ["Programs", "Batch", "Placement", "Contact"],
+                tagline: "Skills That Build Careers",
+                desc: "Computer · Spoken English · Tally",
+              },
+              {
+                name: "Future Bright Junior College",
+                type: "Junior College",
+                city: "Jaipur, Rajasthan",
+                tag: "Completed",
+                tagColor: "bg-emerald-100 text-emerald-700",
+                header: "bg-rose-700",
+                accent: "#fff",
+                gradient: "from-rose-800 via-rose-700 to-pink-600",
+                barColor: "bg-pink-200",
+                logo: "FB",
+                logoColor: "bg-white text-rose-700",
+                navItems: ["Streams", "Faculty", "Results", "Admissions"],
+                tagline: "Your Future Starts Here",
+                desc: "Science · Commerce · Arts",
+              },
+              {
+                name: "Navjeevan Model School",
+                type: "Primary School",
+                city: "Bikaner, Rajasthan",
+                tag: "Completed",
+                tagColor: "bg-emerald-100 text-emerald-700",
+                header: "bg-sky-700",
+                accent: "#fff",
+                gradient: "from-sky-800 via-sky-700 to-blue-600",
+                barColor: "bg-sky-200",
+                logo: "NM",
+                logoColor: "bg-white text-sky-700",
+                navItems: ["Home", "Events", "Gallery", "Contact"],
+                tagline: "Learning with Love & Joy",
+                desc: "Play Group to Class VIII · English Medium",
+              },
+            ].map((client, i) => (
+              <motion.div
+                key={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.08 } } }}
+                className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 group"
+              >
+                {/* Browser chrome */}
+                <div className="bg-gray-100 px-3 py-2 flex items-center gap-2 border-b border-gray-200">
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                  </div>
+                  <div className="flex-1 bg-white rounded-md px-3 py-0.5 text-[10px] text-gray-400 font-mono truncate border border-gray-200">
+                    www.{client.name.toLowerCase().replace(/\s+/g, "")}.com
+                  </div>
+                  <Globe className="w-3 h-3 text-gray-400" />
+                </div>
+
+                {/* Website preview mockup */}
+                <div className={`bg-gradient-to-br ${client.gradient} h-48 relative overflow-hidden`}>
+                  {/* Nav bar */}
+                  <div className={`${client.header} px-4 py-2 flex items-center justify-between`}>
+                    <div className={`${client.logoColor} rounded text-[10px] font-extrabold px-2 py-0.5`}>{client.logo}</div>
+                    <div className="flex gap-3">
+                      {client.navItems.slice(0, 3).map((n, ni) => (
+                        <div key={ni} className="text-white/70 text-[8px] font-medium">{n}</div>
+                      ))}
+                    </div>
+                    <div className={`${client.barColor} rounded text-[7px] font-bold px-2 py-0.5 text-gray-800`}>Enquire</div>
+                  </div>
+                  {/* Hero area */}
+                  <div className="px-5 pt-5 pb-3">
+                    <div className="text-white/40 text-[8px] font-semibold uppercase tracking-widest mb-1">{client.type}</div>
+                    <div className="text-white text-base font-extrabold leading-tight mb-1">{client.tagline}</div>
+                    <div className="text-white/60 text-[9px] mb-3">{client.desc}</div>
+                    <div className={`${client.barColor} rounded-lg text-[8px] font-bold px-3 py-1.5 inline-block text-gray-900`}>Get Admission →</div>
+                  </div>
+                  {/* Decorative abstract shapes */}
+                  <div className="absolute bottom-0 right-0 w-24 h-24 bg-white/5 rounded-tl-full"></div>
+                  <div className="absolute bottom-4 right-4 w-10 h-10 bg-white/5 rounded-full"></div>
+                </div>
+
+                {/* Card footer */}
+                <div className="p-4 flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <p className="font-bold text-gray-900 text-sm leading-snug truncate">{client.name}</p>
+                    <p className="text-xs text-gray-400 mt-0.5">{client.type} &nbsp;·&nbsp; {client.city}</p>
+                  </div>
+                  <span className={`${client.tagColor} text-[10px] font-bold px-2.5 py-1 rounded-full shrink-0 whitespace-nowrap`}>{client.tag}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CTA below portfolio */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center">
+            <p className="text-gray-500 text-sm mb-5">Want a website like these for your institute?</p>
+            <a href="https://wa.me/918209647142?text=I%20saw%20your%20portfolio%20and%20want%20a%20website%20for%20my%20institute" target="_blank" rel="noopener noreferrer">
+              <Button className="h-12 px-8 text-base bg-primary hover:bg-primary/90 text-white rounded-xl font-bold shadow-md hover:shadow-lg transition-all">
+                Get Your Website Built <ExternalLink className="ml-2 w-4 h-4" />
+              </Button>
+            </a>
+          </motion.div>
+
         </div>
       </section>
 
