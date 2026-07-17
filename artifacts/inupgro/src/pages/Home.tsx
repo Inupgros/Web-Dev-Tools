@@ -126,8 +126,7 @@ export default function Home() {
             {[
               { label: "Why Inupgro", href: "#why" },
               { label: "Portfolio", href: "#portfolio" },
-              { label: "Pricing", href: "#pricing" },
-              { label: "Career Pathway", href: "#career" }
+              { label: "Pricing", href: "#pricing" }
             ].map((link) => (
               <a key={link.href} href={link.href} className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all">
                 {link.label}
@@ -605,88 +604,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="career" className="py-20 md:py-28 bg-gradient-to-b from-gray-50/80 to-white overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-14">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-50 text-purple-700 text-sm font-semibold mb-5">
-              <Compass className="w-4 h-4" />
-              FREE with Website Contract
-            </div>
-            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">The Career Guidance Tool That Sets Your Institute Apart</h2>
-            <p className="text-base md:text-lg text-gray-500 leading-relaxed">Most schools offer academics. Yours will also offer AI-powered career guidance covering 600+ career paths -- from Class 6 onwards. Students get clarity on their future, and parents see your institute as one that truly cares. It's completely free with your Inupgro website.</p>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16 lg:mb-20">
-            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="space-y-7">
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  { value: "600+", label: "Career Paths", bg: "bg-purple-50", color: "text-purple-700" },
-                  { value: "15k+", label: "Colleges", bg: "bg-blue-50", color: "text-blue-700" },
-                  { value: "98%", label: "Satisfaction", bg: "bg-emerald-50", color: "text-emerald-700" },
-                  { value: "24/7", label: "AI Support", bg: "bg-amber-50", color: "text-amber-700" }
-                ].map((stat, i) => (
-                  <div key={i} className={`${stat.bg} p-5 rounded-2xl text-center border border-white shadow-sm`}>
-                    <div className={`text-2xl font-extrabold ${stat.color}`}>{stat.value}</div>
-                    <div className="text-xs text-gray-500 font-semibold mt-1 uppercase tracking-wider">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              <ul className="space-y-4">
-                {[
-                  { icon: Map, title: "Step-by-Step Roadmaps", desc: "Students see exactly what skills, courses, and exams they need -- no more confusion about 'what to do after 10th or 12th.'" },
-                  { icon: Lightbulb, title: "Expert Pro-Tips", desc: "Practical advice from industry professionals who have actually walked the path -- not generic career counseling." },
-                  { icon: Building2, title: "15,000+ College Matches", desc: "Students get matched to the right colleges based on their career goals, location, budget, and academic profile." },
-                  { icon: TrendingUp, title: "Live Salary & Job Data", desc: "Real-time data on salary ranges, job demand, and industry growth across India -- so students make informed choices." }
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3.5 group">
-                    <div className="mt-0.5 w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center shrink-0 group-hover:bg-purple-100 transition-colors">
-                      <item.icon className="w-5 h-5 text-purple-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900 text-[15px]">{item.title}</h4>
-                      <p className="text-sm text-gray-500 mt-0.5">{item.desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="bg-gradient-to-r from-purple-50 to-purple-50/50 border border-purple-200/60 rounded-2xl p-5">
-                <p className="text-sm font-bold text-purple-800 mb-1">How Does Your Institute Benefit?</p>
-                <p className="text-sm text-purple-600 leading-relaxed">Your institute gets showcased on the Career Pathway platform, visible to thousands of students exploring careers. Parents see you as a forward-thinking school. All free with your Inupgro website contract.</p>
-              </div>
-
-              <a href="https://wa.me/918209647142?text=I'm%20interested%20in%20the%20Career%20Pathway%20Tool" target="_blank" rel="noopener noreferrer">
-                <Button data-testid="career-cta-explore" size="lg" className="bg-purple-600 hover:bg-purple-700 text-white font-bold shadow-lg shadow-purple-200/50 rounded-xl hover:shadow-xl hover:scale-[1.02] transition-all">
-                  Get Career Pathway Access <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </a>
-            </motion.div>
-
-            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative" style={{ perspective: 1200 }}>
-              <div className="absolute -inset-4 bg-gradient-to-br from-purple-100/40 to-blue-100/30 rounded-[2rem] blur-2xl -z-10"></div>
-              <FlipScreenshots front={careerHomeSrc} back={careerExploreSrc} />
-            </motion.div>
-          </div>
-
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="grid md:grid-cols-3 gap-6 mt-12 lg:mt-20">
-            {[
-              { title: "For Students", desc: "No more guessing about the future. Explore 600+ career paths, understand what each career requires, see salary data, and get a step-by-step roadmap -- all from Class 6 onwards.", icon: GraduationCap, color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
-              { title: "For Schools & Colleges", desc: "Become the institute that offers career clarity, not just academics. Get showcased on the platform, attract more enrollments, and give parents a compelling reason to choose you.", icon: Building2, color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
-              { title: "For Parents", desc: "Finally, a data-backed way to guide your child's career. No more relying on opinions -- see real salary data, job demand, and clear roadmaps for every career option.", icon: Users, color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" }
-            ].map((card, i) => (
-              <motion.div key={i} variants={fadeInUp} className={`bg-white p-7 rounded-2xl shadow-sm border ${card.border} hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group`}>
-                <div className={`w-13 h-13 ${card.bg} rounded-2xl flex items-center justify-center mb-5 w-14 h-14 group-hover:scale-110 transition-transform duration-300`}>
-                  <card.icon className={`w-7 h-7 ${card.color}`} />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{card.title}</h3>
-                <p className="text-gray-500 leading-relaxed text-[15px]">{card.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
       <section className="py-20 md:py-28 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-14">
@@ -799,7 +716,6 @@ export default function Home() {
               <ul className="space-y-2.5 text-sm">
                 <li><a href="#why" className="hover:text-white transition-colors">Why Inupgro</a></li>
                 <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
-                <li><a href="#career" className="hover:text-white transition-colors">Career Pathway</a></li>
                 <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
               </ul>
             </div>
