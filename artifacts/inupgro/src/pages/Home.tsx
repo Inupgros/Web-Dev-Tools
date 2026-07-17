@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useEffect, useRef, useState } from "react";
@@ -8,35 +8,17 @@ import {
   Globe,
   MessageCircle,
   TrendingUp,
-  Users,
-  Zap,
   Star,
-  Newspaper,
-  Target,
-  BarChart3,
-  BookOpen,
-  UserPlus,
-  FileCheck,
   GraduationCap,
-  Wallet,
   ArrowRight,
   Phone,
   MapPin,
-  Compass,
-  Map,
-  Lightbulb,
-  Building2,
-  ShieldCheck,
-  Clock,
-  Gift,
   Play,
   Award,
   Sparkles,
   ExternalLink,
   MonitorSmartphone
 } from "lucide-react";
-import careerHomeSrc from "@assets/screenshots/dev-frontend-inupgro-career-pathway_vercel_app.png";
-import careerExploreSrc from "@assets/screenshots/dev-frontend-inupgro-career-pathway_vercel_app_public-explore.png";
 import { EnquiryDialog } from "@/components/EnquiryDialog";
 
 function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: string }) {
@@ -56,42 +38,7 @@ function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: strin
   );
 }
 
-function FlipScreenshots({ front, back }: { front: string; back: string }) {
-  const [flipped, setFlipped] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => setFlipped((f) => !f), 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div
-      className="relative w-full cursor-pointer"
-      style={{ perspective: 1200 }}
-      onClick={() => setFlipped((f) => !f)}
-    >
-      <motion.div
-        animate={{ rotateY: flipped ? 180 : 0 }}
-        transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-        style={{ transformStyle: "preserve-3d" }}
-        className="relative w-full"
-      >
-        <div style={{ backfaceVisibility: "hidden" }} className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200/80 bg-white">
-          <img src={front} alt="Inupgro Career Pathway - Your Future, Mapped Out" className="w-full h-auto" />
-        </div>
-        <div
-          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
-          className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border border-gray-200/80 bg-white"
-        >
-          <img src={back} alt="Explore 600+ Career Paths on Inupgro" className="w-full h-auto object-cover" />
-        </div>
-      </motion.div>
-    </div>
-  );
-}
-
 export default function Home() {
-  const [selectedPlan] = useState<"1yr" | "5yr" | "10yr">("10yr");
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -171,7 +118,7 @@ export default function Home() {
               </motion.h1>
 
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-blue-100/80 font-medium max-w-2xl mx-auto leading-relaxed">
-                A professionally designed website that puts your institute on the map -- helping parents find you on Google, enquire via WhatsApp, and choose you over competitors. Starting at just ₹15,000.
+                A professionally designed website that puts your institute on the map — helping parents find you on Google, enquire via WhatsApp, and choose you over competitors. Starting at just ₹15,000.
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
@@ -222,14 +169,14 @@ export default function Home() {
               The Problem We Solve
             </div>
             <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">Why Do 500+ Institutes Choose INUPGRO?</h2>
-            <p className="text-base md:text-lg text-gray-500 leading-relaxed">Most institutes lose students to competitors simply because they lack a professional online presence. Parents today Google before they visit. Without a website, you're invisible. Inupgro changes that -- giving you a digital identity that builds trust, attracts enquiries, and fills seats.</p>
+            <p className="text-base md:text-lg text-gray-500 leading-relaxed">Most institutes lose students to competitors simply because they lack a professional online presence. Parents today Google before they visit. Without a website, you're invisible. Inupgro changes that — giving you a digital identity that builds trust, attracts enquiries, and fills seats.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { icon: Globe, title: "Be Found Online", desc: "Today's parents search online before choosing a school. Your professional website ensures they find you first -- not your competitor.", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
-              { icon: TrendingUp, title: "Increase Admissions", desc: "A professional website with WhatsApp integration means every parent who finds you can reach you instantly -- turning visitors into real enquiries.", color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
-              { icon: GraduationCap, title: "Long-Term Value & Support", desc: "One payment covers you for up to 10 years. Ongoing maintenance, updates, and technical support are all included -- your website always stays fresh.", color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" }
+              { icon: Globe, title: "Be Found Online", desc: "Today's parents search online before choosing a school. Your professional website ensures they find you first — not your competitor.", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
+              { icon: TrendingUp, title: "Increase Admissions", desc: "A professional website with WhatsApp integration means every parent who finds you can reach you instantly — turning visitors into real enquiries.", color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
+              { icon: GraduationCap, title: "Long-Term Value & Support", desc: "One payment covers you for up to 10 years. Ongoing maintenance, updates, and technical support are all included — your website always stays fresh.", color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" }
             ].map((item, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.12 } } }} className={`bg-white p-8 rounded-2xl shadow-sm border ${item.border} text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group`}>
                 <div className={`w-16 h-16 ${item.bg} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -670,12 +617,12 @@ export default function Home() {
           </motion.div>
           <Accordion type="single" collapsible className="w-full space-y-3">
             {[
-              { q: "What does the website package include?", a: "You get a professionally designed, mobile-responsive website with your own domain name, fast hosting, SSL security, WhatsApp chat integration, enquiry/admission forms, Google SEO optimization, and ongoing maintenance. We offer three plans: ₹15,000 for 1 year, ₹50,000 for 5 years, or ₹80,000 for 10 years (best value -- save 47%). The 10-year plan also includes complimentary add-ons: a free professional photoshoot, director's message video, career counselling session, and a certified counsellor visiting your institution twice a year." },
+              { q: "What does the website package include?", a: "You get a professionally designed, mobile-responsive website with your own domain name, fast hosting, SSL security, WhatsApp chat integration, enquiry/admission forms, Google SEO optimization, and ongoing maintenance. We offer three plans: ₹15,000 for 1 year, ₹50,000 for 5 years, or ₹80,000 for 10 years (best value — save 47%). The 10-year plan also includes complimentary add-ons: a free professional photoshoot, director's message video, career counselling session, and a certified counsellor visiting your institution twice a year." },
               { q: "What is included in the 10-year plan add-ons?", a: "The 10-year plan comes with four exclusive complimentary add-ons at no extra cost: (1) a free professional photoshoot of your institute, (2) a director's message video, (3) a career counselling session, and (4) a certified counsellor who visits your institution twice a year for your teachers, students, and parents." },
               { q: "I already have a website. Can I still benefit?", a: "Yes. If your current website isn't generating enquiries or looks outdated, we'll build you a modern, admission-focused website designed to convert visitors into leads. If you already have a domain (like yourschool.com), we'll seamlessly connect it to your new Inupgro website." },
-              { q: "How long does it take to build my website?", a: "Typically 3--7 working days from when we receive your institute details, photos, and content. We handle all the technical setup -- domain, hosting, SSL, WhatsApp integration, SEO -- and hand over a fully live website ready to receive enquiries." },
-              { q: "Do you provide support after the website goes live?", a: "Absolutely. Our team provides ongoing technical support for the full duration of your plan -- up to 10 years. Content updates like changing a phone number, adding a notice, or updating photos are handled promptly. You're never left on your own." },
-              { q: "Why is Inupgro so affordable compared to others?", a: "Most web agencies charge ₹1-5 Lakhs for a school website and then charge yearly maintenance fees on top. Inupgro's mission is to make digital transformation accessible to every institute in India. By standardizing our process, we deliver high-quality, admission-focused websites at a fraction of the cost -- with no hidden fees." }
+              { q: "How long does it take to build my website?", a: "Typically 3–7 working days from when we receive your institute details, photos, and content. We handle all the technical setup — domain, hosting, SSL, WhatsApp integration, SEO — and hand over a fully live website ready to receive enquiries." },
+              { q: "Do you provide support after the website goes live?", a: "Absolutely. Our team provides ongoing technical support for the full duration of your plan — up to 10 years. Content updates like changing a phone number, adding a notice, or updating photos are handled promptly. You're never left on your own." },
+              { q: "Why is Inupgro so affordable compared to others?", a: "Most web agencies charge ₹1-5 Lakhs for a school website and then charge yearly maintenance fees on top. Inupgro's mission is to make digital transformation accessible to every institute in India. By standardizing our process, we deliver high-quality, admission-focused websites at a fraction of the cost — with no hidden fees." }
             ].map((faq, i) => (
               <AccordionItem key={i} value={`item-${i + 1}`} className="bg-gray-50 border border-gray-100 rounded-2xl px-6 data-[state=open]:bg-white data-[state=open]:shadow-sm data-[state=open]:border-gray-200 transition-all">
                 <AccordionTrigger data-testid={`faq-trigger-${i + 1}`} className="text-base font-semibold hover:no-underline text-left py-5">
@@ -725,7 +672,7 @@ export default function Home() {
                 </div>
                 <span className="text-xl font-extrabold text-white tracking-tight">INUPGRO</span>
               </div>
-              <p className="text-sm text-gray-500 leading-relaxed">India's most affordable website solution for educational institutes. Professional, admission-focused websites built to help your institute get found, trusted, and chosen -- starting at just ₹15,000.</p>
+              <p className="text-sm text-gray-500 leading-relaxed">India's most affordable website solution for educational institutes. Professional, admission-focused websites built to help your institute get found, trusted, and chosen — starting at just ₹15,000.</p>
             </div>
             <div>
               <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">Contact Us</h4>
