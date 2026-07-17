@@ -248,115 +248,133 @@ export default function Home() {
       </section>
 
       {/* ── Portfolio Section ── */}
-      <section id="portfolio" className="py-20 md:py-28 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6">
+      <section id="portfolio" className="py-20 md:py-28 bg-[#060e1f] relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.06),transparent_60%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(59,130,246,0.05),transparent_60%)]"></div>
 
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-14">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 text-primary text-sm font-semibold mb-5">
-              <MonitorSmartphone className="w-4 h-4" />
+        <div className="container relative z-10 mx-auto px-4 md:px-6">
+
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.07] border border-white/10 text-blue-200 text-sm font-semibold mb-5">
+              <MonitorSmartphone className="w-4 h-4 text-secondary" />
               Our Work
             </div>
-            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">Websites We've Built</h2>
-            <p className="text-base md:text-lg text-gray-500 leading-relaxed">Real institutes, real websites — designed to attract parents, showcase achievements, and drive admissions across India.</p>
+            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-white mb-4 leading-tight">Websites We've Built</h2>
+            <p className="text-base md:text-lg text-blue-200/60 leading-relaxed">Real institutes, real websites — professionally designed to attract parents, showcase achievements, and drive admissions.</p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+          {/* Stats strip */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="flex flex-wrap justify-center gap-8 mb-14">
+            {[
+              { num: "275+", label: "Websites Built" },
+              { num: "20+", label: "Cities Covered" },
+              { num: "10 Yrs", label: "Max Support" },
+              { num: "98%", label: "Client Satisfaction" },
+            ].map((s, i) => (
+              <div key={i} className="text-center">
+                <div className="text-2xl font-extrabold text-secondary">{s.num}</div>
+                <div className="text-xs text-blue-300/60 font-semibold uppercase tracking-wider mt-0.5">{s.label}</div>
+              </div>
+            ))}
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto mb-14">
             {[
               {
                 name: "Rajasthan Public School",
                 type: "K-12 School",
-                city: "Jaipur, Rajasthan",
-                tag: "Completed",
-                tagColor: "bg-emerald-100 text-emerald-700",
+                city: "Jaipur",
+                plan: "10-Year Plan",
                 header: "bg-[#0f172a]",
-                accent: "#f59e0b",
-                gradient: "from-[#0f172a] via-[#1e3a5f] to-[#0f2d52]",
+                gradient: "from-[#0f172a] via-[#1a2f55] to-[#0e2040]",
                 barColor: "bg-amber-400",
+                topBorder: "border-t-amber-400",
                 logo: "RPS",
                 logoColor: "bg-amber-400 text-gray-900",
-                navItems: ["Home", "About", "Academics", "Contact"],
+                navItems: ["Home", "About", "Academics"],
                 tagline: "Shaping Tomorrow's Leaders",
                 desc: "Excellence in Education Since 1998",
+                blocks: ["bg-white/10", "bg-white/5"],
               },
               {
                 name: "Sunrise Coaching Centre",
                 type: "Coaching Institute",
-                city: "Jodhpur, Rajasthan",
-                tag: "Completed",
-                tagColor: "bg-emerald-100 text-emerald-700",
-                header: "bg-orange-600",
-                accent: "#fff",
-                gradient: "from-orange-600 via-orange-500 to-amber-400",
+                city: "Jodhpur",
+                plan: "5-Year Plan",
+                header: "bg-orange-700",
+                gradient: "from-orange-700 via-orange-600 to-amber-500",
                 barColor: "bg-white",
+                topBorder: "border-t-orange-500",
                 logo: "SC",
                 logoColor: "bg-white text-orange-600",
-                navItems: ["Courses", "Results", "Faculty", "Enroll"],
+                navItems: ["Courses", "Results", "Faculty"],
                 tagline: "Top Results, Every Year",
                 desc: "IIT · NEET · Board Excellence",
+                blocks: ["bg-white/15", "bg-white/8"],
               },
               {
                 name: "Greenwood International",
                 type: "CBSE School",
-                city: "Ajmer, Rajasthan",
-                tag: "Completed",
-                tagColor: "bg-emerald-100 text-emerald-700",
-                header: "bg-emerald-700",
-                accent: "#fff",
-                gradient: "from-emerald-800 via-emerald-700 to-teal-600",
+                city: "Ajmer",
+                plan: "10-Year Plan",
+                header: "bg-emerald-800",
+                gradient: "from-emerald-900 via-emerald-700 to-teal-700",
                 barColor: "bg-emerald-200",
+                topBorder: "border-t-emerald-400",
                 logo: "GI",
                 logoColor: "bg-white text-emerald-700",
-                navItems: ["Home", "Facilities", "Gallery", "Admissions"],
+                navItems: ["Home", "Facilities", "Admissions"],
                 tagline: "Nurturing Global Citizens",
-                desc: "CBSE Affiliated · Classes Nursery–XII",
+                desc: "CBSE Affiliated · Nursery–XII",
+                blocks: ["bg-white/10", "bg-white/5"],
               },
               {
                 name: "Vidya Shakti Academy",
                 type: "Skill Training",
-                city: "Kota, Rajasthan",
-                tag: "Completed",
-                tagColor: "bg-emerald-100 text-emerald-700",
-                header: "bg-purple-700",
-                accent: "#fff",
-                gradient: "from-purple-800 via-purple-700 to-indigo-700",
+                city: "Kota",
+                plan: "1-Year Plan",
+                header: "bg-purple-800",
+                gradient: "from-purple-900 via-purple-700 to-indigo-800",
                 barColor: "bg-purple-300",
+                topBorder: "border-t-purple-400",
                 logo: "VS",
                 logoColor: "bg-white text-purple-700",
-                navItems: ["Programs", "Batch", "Placement", "Contact"],
+                navItems: ["Programs", "Batch", "Contact"],
                 tagline: "Skills That Build Careers",
-                desc: "Computer · Spoken English · Tally",
+                desc: "Computer · English · Tally",
+                blocks: ["bg-white/10", "bg-white/5"],
               },
               {
-                name: "Future Bright Junior College",
+                name: "Future Bright Jr. College",
                 type: "Junior College",
-                city: "Jaipur, Rajasthan",
-                tag: "Completed",
-                tagColor: "bg-emerald-100 text-emerald-700",
-                header: "bg-rose-700",
-                accent: "#fff",
-                gradient: "from-rose-800 via-rose-700 to-pink-600",
+                city: "Jaipur",
+                plan: "5-Year Plan",
+                header: "bg-rose-800",
+                gradient: "from-rose-900 via-rose-700 to-pink-700",
                 barColor: "bg-pink-200",
+                topBorder: "border-t-rose-400",
                 logo: "FB",
                 logoColor: "bg-white text-rose-700",
-                navItems: ["Streams", "Faculty", "Results", "Admissions"],
+                navItems: ["Streams", "Faculty", "Admissions"],
                 tagline: "Your Future Starts Here",
                 desc: "Science · Commerce · Arts",
+                blocks: ["bg-white/10", "bg-white/5"],
               },
               {
                 name: "Navjeevan Model School",
                 type: "Primary School",
-                city: "Bikaner, Rajasthan",
-                tag: "Completed",
-                tagColor: "bg-emerald-100 text-emerald-700",
-                header: "bg-sky-700",
-                accent: "#fff",
-                gradient: "from-sky-800 via-sky-700 to-blue-600",
+                city: "Bikaner",
+                plan: "10-Year Plan",
+                header: "bg-sky-800",
+                gradient: "from-sky-900 via-sky-700 to-blue-700",
                 barColor: "bg-sky-200",
+                topBorder: "border-t-sky-400",
                 logo: "NM",
                 logoColor: "bg-white text-sky-700",
-                navItems: ["Home", "Events", "Gallery", "Contact"],
+                navItems: ["Home", "Events", "Gallery"],
                 tagline: "Learning with Love & Joy",
-                desc: "Play Group to Class VIII · English Medium",
+                desc: "Play Group to Class VIII",
+                blocks: ["bg-white/10", "bg-white/5"],
               },
             ].map((client, i) => (
               <motion.div
@@ -364,63 +382,69 @@ export default function Home() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.08 } } }}
-                className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 group"
+                variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.07 } } }}
+                className={`bg-[#0d1626] rounded-2xl overflow-hidden border border-white/[0.08] border-t-2 ${client.topBorder} hover:border-white/20 hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 group`}
               >
                 {/* Browser chrome */}
-                <div className="bg-gray-100 px-3 py-2 flex items-center gap-2 border-b border-gray-200">
+                <div className="bg-[#111827] px-3 py-2 flex items-center gap-2 border-b border-white/[0.06]">
                   <div className="flex gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                    <div className="w-2 h-2 rounded-full bg-red-500/70"></div>
+                    <div className="w-2 h-2 rounded-full bg-amber-500/70"></div>
+                    <div className="w-2 h-2 rounded-full bg-green-500/70"></div>
                   </div>
-                  <div className="flex-1 bg-white rounded-md px-3 py-0.5 text-[10px] text-gray-400 font-mono truncate border border-gray-200">
-                    www.{client.name.toLowerCase().replace(/\s+/g, "")}.com
+                  <div className="flex-1 bg-white/[0.06] rounded px-2 py-0.5 text-[10px] text-white/30 font-mono truncate">
+                    www.{client.name.toLowerCase().replace(/[\s.]/g, "")}.com
                   </div>
-                  <Globe className="w-3 h-3 text-gray-400" />
+                  <Globe className="w-3 h-3 text-white/20" />
                 </div>
 
-                {/* Website preview mockup */}
-                <div className={`bg-gradient-to-br ${client.gradient} h-48 relative overflow-hidden`}>
-                  {/* Nav bar */}
-                  <div className={`${client.header} px-4 py-2 flex items-center justify-between`}>
-                    <div className={`${client.logoColor} rounded text-[10px] font-extrabold px-2 py-0.5`}>{client.logo}</div>
-                    <div className="flex gap-3">
-                      {client.navItems.slice(0, 3).map((n, ni) => (
-                        <div key={ni} className="text-white/70 text-[8px] font-medium">{n}</div>
+                {/* Website preview */}
+                <div className={`bg-gradient-to-br ${client.gradient} h-52 relative overflow-hidden`}>
+                  {/* Mock navbar */}
+                  <div className={`${client.header} px-3 py-1.5 flex items-center justify-between`}>
+                    <div className={`${client.logoColor} rounded text-[9px] font-extrabold px-2 py-0.5 tracking-wide`}>{client.logo}</div>
+                    <div className="flex gap-2.5">
+                      {client.navItems.map((n, ni) => (
+                        <div key={ni} className="text-white/60 text-[8px] font-medium">{n}</div>
                       ))}
                     </div>
-                    <div className={`${client.barColor} rounded text-[7px] font-bold px-2 py-0.5 text-gray-800`}>Enquire</div>
+                    <div className={`${client.barColor} rounded text-[7px] font-bold px-2 py-0.5 text-gray-900`}>Enquire</div>
                   </div>
-                  {/* Hero area */}
-                  <div className="px-5 pt-5 pb-3">
-                    <div className="text-white/40 text-[8px] font-semibold uppercase tracking-widest mb-1">{client.type}</div>
-                    <div className="text-white text-base font-extrabold leading-tight mb-1">{client.tagline}</div>
-                    <div className="text-white/60 text-[9px] mb-3">{client.desc}</div>
-                    <div className={`${client.barColor} rounded-lg text-[8px] font-bold px-3 py-1.5 inline-block text-gray-900`}>Get Admission →</div>
+                  {/* Hero content */}
+                  <div className="px-4 pt-4">
+                    <div className="text-white/35 text-[8px] font-bold uppercase tracking-widest mb-1.5">{client.type}</div>
+                    <div className="text-white font-extrabold text-[15px] leading-tight mb-1">{client.tagline}</div>
+                    <div className="text-white/50 text-[8px] mb-3">{client.desc}</div>
+                    <div className={`${client.barColor} rounded-md text-[8px] font-bold px-2.5 py-1 inline-block text-gray-900`}>Get Admission →</div>
                   </div>
-                  {/* Decorative abstract shapes */}
-                  <div className="absolute bottom-0 right-0 w-24 h-24 bg-white/5 rounded-tl-full"></div>
-                  <div className="absolute bottom-4 right-4 w-10 h-10 bg-white/5 rounded-full"></div>
+                  {/* Simulated content rows */}
+                  <div className="absolute bottom-0 left-0 right-0 px-4 pb-3 flex flex-col gap-1.5">
+                    <div className={`h-1.5 rounded-full ${client.blocks[0]} w-3/4`}></div>
+                    <div className={`h-1.5 rounded-full ${client.blocks[1]} w-1/2`}></div>
+                  </div>
+                  {/* Decorative orb */}
+                  <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/5 rounded-full"></div>
                 </div>
 
                 {/* Card footer */}
-                <div className="p-4 flex items-start justify-between gap-3">
+                <div className="px-4 py-3.5 flex items-center justify-between gap-3">
                   <div className="min-w-0">
-                    <p className="font-bold text-gray-900 text-sm leading-snug truncate">{client.name}</p>
-                    <p className="text-xs text-gray-400 mt-0.5">{client.type} &nbsp;·&nbsp; {client.city}</p>
+                    <p className="font-bold text-white text-sm leading-snug truncate">{client.name}</p>
+                    <p className="text-[11px] text-white/35 mt-0.5">{client.type} &nbsp;·&nbsp; {client.city}</p>
                   </div>
-                  <span className={`${client.tagColor} text-[10px] font-bold px-2.5 py-1 rounded-full shrink-0 whitespace-nowrap`}>{client.tag}</span>
+                  <span className="bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 text-[10px] font-bold px-2.5 py-1 rounded-full shrink-0 whitespace-nowrap flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span> {client.plan}
+                  </span>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* CTA below portfolio */}
+          {/* CTA */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center">
-            <p className="text-gray-500 text-sm mb-5">Want a website like these for your institute?</p>
+            <p className="text-blue-200/50 text-sm mb-5">Want a website like these for your institute?</p>
             <a href="https://wa.me/918209647142?text=I%20saw%20your%20portfolio%20and%20want%20a%20website%20for%20my%20institute" target="_blank" rel="noopener noreferrer">
-              <Button className="h-12 px-8 text-base bg-primary hover:bg-primary/90 text-white rounded-xl font-bold shadow-md hover:shadow-lg transition-all">
+              <Button className="h-12 px-8 text-base bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-xl font-bold shadow-lg shadow-secondary/20 hover:shadow-xl hover:scale-[1.02] transition-all">
                 Get Your Website Built <ExternalLink className="ml-2 w-4 h-4" />
               </Button>
             </a>
@@ -442,7 +466,7 @@ export default function Home() {
               One Investment, Three Powerful Benefits
             </div>
             <h2 className="text-3xl md:text-[2.75rem] font-extrabold mb-4 leading-tight">Simple, Transparent Pricing</h2>
-            <p className="text-base md:text-lg text-blue-100/70 leading-relaxed">Choose a plan that fits your budget. Every plan includes domain, hosting, SEO, WhatsApp forms, and free career guidance for your students.</p>
+            <p className="text-base md:text-lg text-blue-100/70 leading-relaxed">Choose a plan that fits your budget. Every plan includes your own domain, fast hosting, SSL security, WhatsApp integration, and ongoing support.</p>
           </motion.div>
 
           {/* 3 plan cards */}
