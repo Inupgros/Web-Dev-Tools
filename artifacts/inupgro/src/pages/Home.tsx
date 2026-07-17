@@ -127,8 +127,7 @@ export default function Home() {
               { label: "Why Inupgro", href: "#why" },
               { label: "Portfolio", href: "#portfolio" },
               { label: "Pricing", href: "#pricing" },
-              { label: "Career Pathway", href: "#career" },
-              { label: "Features", href: "#features" }
+              { label: "Career Pathway", href: "#career" }
             ].map((link) => (
               <a key={link.href} href={link.href} className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all">
                 {link.label}
@@ -688,46 +687,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="features" className="py-20 md:py-28 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 text-amber-700 text-sm font-semibold mb-5">
-              <Clock className="w-4 h-4" />
-              Launching Soon -- Free for 1 Year with Website Contract
-            </div>
-            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">9 Tools to Run Your Institute Smarter</h2>
-            <p className="text-base md:text-lg text-gray-500 leading-relaxed">From admissions to fee collection, marketing to scholarships -- manage everything from one platform. All 9 features are free for 1 year when you sign up for a website with Inupgro.</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
-            {[
-              { icon: Globe, title: "Enhanced School Visibility", desc: "Get listed on the Inupgro network so parents and students discover your institute organically -- beyond just your own website.", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
-              { icon: Newspaper, title: "Educational School News", desc: "Publish achievements, events, and updates that parents actually see -- build trust and community engagement effortlessly.", color: "text-indigo-600", bg: "bg-indigo-50", border: "border-indigo-100" },
-              { icon: Target, title: "Targeted Marketing", desc: "Reach the right parents in your area with AI-powered campaigns. Stop wasting money on flyers -- go digital.", color: "text-rose-600", bg: "bg-rose-50", border: "border-rose-100" },
-              { icon: BarChart3, title: "Track School Performance", desc: "See which classes, teachers, and subjects are performing best. Make data-driven decisions instead of guessing.", color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
-              { icon: BookOpen, title: "Turn Knowledge into Income", desc: "Teachers can earn ₹2,000 per topic shared on the platform. Your staff creates content, Inupgro pays them.", color: "text-amber-600", bg: "bg-amber-50", border: "border-amber-100" },
-              { icon: UserPlus, title: "One-Click Onboarding", desc: "Register new students, teachers, and staff in seconds -- no paperwork, no manual data entry, no hassle.", color: "text-cyan-600", bg: "bg-cyan-50", border: "border-cyan-100" },
-              { icon: FileCheck, title: "Admission Result Publishing", desc: "Publish admission results online instantly. Parents check results themselves -- saving your staff hours of phone calls.", color: "text-violet-600", bg: "bg-violet-50", border: "border-violet-100" },
-              { icon: GraduationCap, title: "Scholarship Framework", desc: "Create, manage, and distribute scholarships digitally. Students apply online, you review and approve -- all in one place.", color: "text-teal-600", bg: "bg-teal-50", border: "border-teal-100" },
-              { icon: Wallet, title: "Smart Fee Ecosystem", desc: "Generate invoices, send payment reminders via WhatsApp, and track who's paid and who hasn't -- all automatically.", color: "text-orange-600", bg: "bg-orange-50", border: "border-orange-100" }
-            ].map((feat, i) => (
-              <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.06 } } }} className={`bg-white p-7 rounded-2xl shadow-sm border ${feat.border} hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group relative`}>
-                <div className="absolute top-4 right-4">
-                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-50 text-amber-600 text-[11px] font-bold uppercase tracking-wider">
-                    <Clock className="w-3 h-3" /> Coming Soon
-                  </span>
-                </div>
-                <div className={`w-12 h-12 ${feat.bg} rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
-                  <feat.icon className={`w-6 h-6 ${feat.color}`} />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 pr-20">{feat.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{feat.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-20 md:py-28 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-14">
@@ -841,7 +800,6 @@ export default function Home() {
                 <li><a href="#why" className="hover:text-white transition-colors">Why Inupgro</a></li>
                 <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
                 <li><a href="#career" className="hover:text-white transition-colors">Career Pathway</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">Platform Features</a></li>
                 <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
               </ul>
             </div>
