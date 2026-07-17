@@ -171,7 +171,7 @@ export default function Home() {
               </motion.h1>
 
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-blue-100/80 font-medium max-w-2xl mx-auto leading-relaxed">
-                A professional website and AI-powered career guidance -- everything your institute needs to attract students and stand out, starting at just ₹15,000. Plus, 9 management tools launching soon -- free for your first year.
+                A professionally designed website that puts your institute on the map -- helping parents find you on Google, enquire via WhatsApp, and choose you over competitors. Starting at just ₹15,000.
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
@@ -229,7 +229,7 @@ export default function Home() {
             {[
               { icon: Globe, title: "Be Found Online", desc: "Today's parents search online before choosing a school. Your professional website ensures they find you first -- not your competitor.", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
               { icon: TrendingUp, title: "Increase Admissions", desc: "A professional website with WhatsApp integration means every parent who finds you can reach you instantly -- turning visitors into real enquiries.", color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
-              { icon: GraduationCap, title: "Stand Out with Career Guidance", desc: "Offer something no other school does -- free AI-powered career guidance for students. Parents value this, and it drives enrollments.", color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" }
+              { icon: GraduationCap, title: "Long-Term Value & Support", desc: "One payment covers you for up to 10 years. Ongoing maintenance, updates, and technical support are all included -- your website always stays fresh.", color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" }
             ].map((item, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.12 } } }} className={`bg-white p-8 rounded-2xl shadow-sm border ${item.border} text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group`}>
                 <div className={`w-16 h-16 ${item.bg} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -572,7 +572,7 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInScale}>
             <h2 className="text-xl md:text-3xl font-extrabold mb-3">Why Pay Lakhs When You Can Start at Just ₹15,000?</h2>
             <p className="text-base md:text-xl font-semibold max-w-3xl mx-auto">
-              Other companies charge ₹1-5 Lakhs for a website alone. With Inupgro, you get a <span className="bg-primary/10 px-2 py-0.5 rounded-md">long-term website</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">Free Career Pathway</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">1 Year Free Platform</span> -- all in one.
+              Other companies charge ₹1-5 Lakhs for a website alone. With Inupgro, you get a <span className="bg-primary/10 px-2 py-0.5 rounded-md">professional website</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">domain & hosting</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">10 years of support</span> -- all in one affordable package.
             </p>
           </motion.div>
         </div>
@@ -589,7 +589,7 @@ export default function Home() {
             {[
               { num: "1", title: "Send Us a Message", desc: "Tap the WhatsApp button or call us. Tell us about your institute -- that's all we need to get started.", icon: Phone },
               { num: "2", title: "We Build Your Website", desc: "Our team designs a professional, mobile-friendly website tailored to your institute within days.", icon: Globe },
-              { num: "3", title: "Go Live & Get Noticed", desc: "Your website goes live with SEO, WhatsApp chat, and enquiry forms. Career Pathway Tool activates instantly.", icon: Play },
+              { num: "3", title: "Go Live & Get Noticed", desc: "Your website goes live with SEO, WhatsApp chat, and enquiry forms. Parents start finding you on Google from day one.", icon: Play },
               { num: "4", title: "Watch Admissions Grow", desc: "Start receiving enquiries from parents who find you online. Track, manage, and grow -- all from one place.", icon: TrendingUp }
             ].map((step, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.12 } } }} className="relative flex flex-col items-center text-center group">
@@ -612,9 +612,9 @@ export default function Home() {
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { name: "Rajesh Kumar", inst: "Sunshine Public School, Jaipur", text: "Before Inupgro, we had no online presence and were losing students to competitors with websites. Within weeks of going live, we started getting WhatsApp enquiries from parents who found us on Google. The Career Pathway tool is something parents genuinely value." },
-              { name: "Priya Sharma", inst: "Excel Coaching Institute", text: "I was spending a lot every year on a basic website that looked outdated. With Inupgro, I paid ₹80,000 once and got a professional website for 10 years, plus the Career Pathway tool and platform features for free. It's the smartest investment I've made for my institute." },
-              { name: "Dr. A. Verma", inst: "Global Degree College", text: "What convinced me was the value -- a 10-year website, career guidance for students, and soon an entire management platform. We now receive 5-10 enquiries via WhatsApp every week just from the website. The upcoming fee management and scholarship tools will save us hours of manual work." }
+              { name: "Rajesh Kumar", inst: "Sunshine Public School, Jaipur", text: "Before Inupgro, we had no online presence and were losing students to competitors with websites. Within weeks of going live, we started receiving WhatsApp enquiries from parents who found us on Google. Best decision we made for our institute." },
+              { name: "Priya Sharma", inst: "Excel Coaching Institute", text: "I was spending a lot every year on a basic website that looked outdated. With Inupgro, I paid ₹80,000 once and got a professional website for 10 years with full support. It's the smartest investment I've made for my institute." },
+              { name: "Dr. A. Verma", inst: "Global Degree College", text: "The design is professional, loads fast on mobile, and the WhatsApp integration means every parent who finds us can reach us instantly. We now receive 5-10 enquiries every week just from the website. Worth every rupee." }
             ].map((test, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.1 } } }} className="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 relative hover:shadow-lg transition-shadow duration-300">
                 <div className="flex gap-1 mb-4">
@@ -646,12 +646,12 @@ export default function Home() {
           </motion.div>
           <Accordion type="single" collapsible className="w-full space-y-3">
             {[
-              { q: "What does the website package include?", a: "You get a professionally designed, mobile-responsive website with your own domain name, fast hosting, SSL security, WhatsApp chat integration, enquiry/admission forms, Google SEO optimization, and ongoing maintenance. We offer three plans: ₹15,000 for 1 year, ₹50,000 for 5 years, or ₹80,000 for 10 years (best value -- save 47%). The 10-year plan also includes complimentary add-ons: free professional photoshoot, director's message video, career counselling session, and a certified counsellor visiting your institution twice a year. The Career Pathway Tool is included free with all plans." },
-              { q: "Is the Career Pathway Tool really free?", a: "Yes, 100% free for your institute and students. The only requirement is a website contract with Inupgro (starting at ₹15,000). Once your website is live, the Career Pathway Tool is activated at no extra cost. Your institute also gets showcased on the platform, which helps attract more student enquiries." },
-              { q: "What are the 9 platform features and when do they launch?", a: "The 9 features cover everything from targeted marketing and performance tracking to fee management and scholarship distribution. They are launching soon and will be completely free for 1 year for all institutes with a website contract. After the first year, affordable subscription plans will be available -- but you can cancel anytime." },
+              { q: "What does the website package include?", a: "You get a professionally designed, mobile-responsive website with your own domain name, fast hosting, SSL security, WhatsApp chat integration, enquiry/admission forms, Google SEO optimization, and ongoing maintenance. We offer three plans: ₹15,000 for 1 year, ₹50,000 for 5 years, or ₹80,000 for 10 years (best value -- save 47%). The 10-year plan also includes complimentary add-ons: a free professional photoshoot, director's message video, career counselling session, and a certified counsellor visiting your institution twice a year." },
+              { q: "What is included in the 10-year plan add-ons?", a: "The 10-year plan comes with four exclusive complimentary add-ons at no extra cost: (1) a free professional photoshoot of your institute, (2) a director's message video, (3) a career counselling session, and (4) a certified counsellor who visits your institution twice a year for your teachers, students, and parents." },
               { q: "I already have a website. Can I still benefit?", a: "Yes. If your current website isn't generating enquiries or looks outdated, we'll build you a modern, admission-focused website designed to convert visitors into leads. If you already have a domain (like yourschool.com), we'll seamlessly connect it to your new Inupgro website." },
-              { q: "Do you provide support after the website goes live?", a: "Absolutely. Our team provides ongoing technical support for the entire 10-year period. Content updates like changing a phone number, adding a notice, or updating photos are handled promptly. You're never left on your own." },
-              { q: "Why is Inupgro so affordable compared to others?", a: "Most web agencies charge ₹1-5 Lakhs for a school website and additional yearly maintenance fees. Inupgro's mission is to make digital transformation accessible to every institute in India. By standardizing our process, we deliver high-quality websites at a fraction of the cost -- and bundle career guidance and management tools for free." }
+              { q: "How long does it take to build my website?", a: "Typically 3--7 working days from when we receive your institute details, photos, and content. We handle all the technical setup -- domain, hosting, SSL, WhatsApp integration, SEO -- and hand over a fully live website ready to receive enquiries." },
+              { q: "Do you provide support after the website goes live?", a: "Absolutely. Our team provides ongoing technical support for the full duration of your plan -- up to 10 years. Content updates like changing a phone number, adding a notice, or updating photos are handled promptly. You're never left on your own." },
+              { q: "Why is Inupgro so affordable compared to others?", a: "Most web agencies charge ₹1-5 Lakhs for a school website and then charge yearly maintenance fees on top. Inupgro's mission is to make digital transformation accessible to every institute in India. By standardizing our process, we deliver high-quality, admission-focused websites at a fraction of the cost -- with no hidden fees." }
             ].map((faq, i) => (
               <AccordionItem key={i} value={`item-${i + 1}`} className="bg-gray-50 border border-gray-100 rounded-2xl px-6 data-[state=open]:bg-white data-[state=open]:shadow-sm data-[state=open]:border-gray-200 transition-all">
                 <AccordionTrigger data-testid={`faq-trigger-${i + 1}`} className="text-base font-semibold hover:no-underline text-left py-5">
@@ -674,7 +674,7 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
             <h2 className="text-3xl md:text-5xl font-extrabold mb-5 leading-tight">Your Competitors Are Already Online. Are You?</h2>
             <p className="text-base md:text-lg text-blue-100/70 mb-3 leading-relaxed">Every day without a website, your institute is invisible to parents searching for schools on Google. Join 500+ institutes who have already taken the digital leap with Inupgro.</p>
-            <p className="text-lg text-secondary font-bold mb-10">Starting at ₹15,000. Career guidance, free photoshoot, director's video & management tools included.</p>
+            <p className="text-lg text-secondary font-bold mb-10">Starting at ₹15,000. Free photoshoot, director's video & certified counsellor included with the 10-year plan.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a href="https://wa.me/918209647142" target="_blank" rel="noopener noreferrer">
                 <Button data-testid="final-cta-join" size="lg" className="h-14 px-8 text-base bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold rounded-xl shadow-lg shadow-secondary/25 hover:shadow-xl hover:scale-[1.02] transition-all">
@@ -701,7 +701,7 @@ export default function Home() {
                 </div>
                 <span className="text-xl font-extrabold text-white tracking-tight">INUPGRO</span>
               </div>
-              <p className="text-sm text-gray-500 leading-relaxed">India's most affordable digital ecosystem for educational institutes. Professional websites, AI career guidance, and school management tools -- all in one platform.</p>
+              <p className="text-sm text-gray-500 leading-relaxed">India's most affordable website solution for educational institutes. Professional, admission-focused websites built to help your institute get found, trusted, and chosen -- starting at just ₹15,000.</p>
             </div>
             <div>
               <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">Contact Us</h4>
