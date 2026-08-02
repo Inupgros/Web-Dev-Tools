@@ -1,1 +1,2 @@
 - [Video artifact registration recovery](video-artifact-registration.md) — recover unregistered subagent-built video artifacts via createArtifact + file overlay; scaffold tsconfig needs DOM lib for typecheck.
+- [Headless video artifact export](headless-video-export.md) — export video artifacts to MP4 via chromium CDP screencast with real frame timestamps; puppeteer page.screencast() gives slow-motion output.

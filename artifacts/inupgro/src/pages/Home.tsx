@@ -20,6 +20,7 @@ import {
   MonitorSmartphone
 } from "lucide-react";
 import { EnquiryDialog } from "@/components/EnquiryDialog";
+import { PromoVideo } from "@/components/PromoVideo";
 import shotBanyantree from "@assets/screenshots/portfolio/banyantree.webp";
 import shotRookwood from "@assets/screenshots/portfolio/rookwood.webp";
 import shotDps from "@assets/screenshots/portfolio/dps-udaipur.webp";
@@ -166,6 +167,29 @@ export default function Home() {
                 <div className="text-[11px] sm:text-xs md:text-sm text-blue-200/70 font-medium mt-1 uppercase tracking-wider leading-tight">{stat.label}</div>
               </div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Promo Video Section ── */}
+      <section id="video" className="relative bg-primary pb-20 md:pb-28">
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-primary to-[hsl(210,73%,16%)] pointer-events-none"></div>
+        <div className="container relative z-10 mx-auto px-4 md:px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={fadeInScale}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.08] border border-white/10 text-blue-100 text-sm font-semibold mb-4">
+                <Play className="w-4 h-4 text-secondary" />
+                Watch: 31 Seconds
+              </div>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-white leading-tight">See What Inupgro Does for Your Institute</h2>
+            </div>
+            <PromoVideo />
           </motion.div>
         </div>
       </section>
