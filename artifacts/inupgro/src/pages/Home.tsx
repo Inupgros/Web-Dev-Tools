@@ -20,6 +20,15 @@ import {
   MonitorSmartphone
 } from "lucide-react";
 import { EnquiryDialog } from "@/components/EnquiryDialog";
+import shotBanyantree from "@assets/screenshots/portfolio/banyantree.webp";
+import shotRookwood from "@assets/screenshots/portfolio/rookwood.webp";
+import shotDps from "@assets/screenshots/portfolio/dps-udaipur.webp";
+import shotAone from "@assets/screenshots/portfolio/aone.webp";
+import shotVardhman from "@assets/screenshots/portfolio/vardhman.webp";
+import shotStMarys from "@assets/screenshots/portfolio/st-marys.webp";
+import shotStPaul from "@assets/screenshots/portfolio/stpaul.webp";
+import shotStTeresa from "@assets/screenshots/portfolio/stteresa.webp";
+import shotSemount from "@assets/screenshots/portfolio/semount.webp";
 
 function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: string }) {
   const count = useMotionValue(0);
@@ -228,100 +237,94 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto mb-14">
             {[
               {
-                name: "Rajasthan Public School",
-                type: "K-12 School",
-                city: "Jaipur",
-                plan: "10-Year Plan",
-                header: "bg-[#0f172a]",
-                gradient: "from-[#0f172a] via-[#1a2f55] to-[#0e2040]",
-                barColor: "bg-amber-400",
-                topBorder: "border-t-amber-400",
-                logo: "RPS",
-                logoColor: "bg-amber-400 text-gray-900",
-                navItems: ["Home", "About", "Academics"],
-                tagline: "Shaping Tomorrow's Leaders",
-                desc: "Excellence in Education Since 1998",
-                blocks: ["bg-white/10", "bg-white/5"],
-              },
-              {
-                name: "Sunrise Coaching Centre",
-                type: "Coaching Institute",
-                city: "Jodhpur",
-                plan: "5-Year Plan",
-                header: "bg-orange-700",
-                gradient: "from-orange-700 via-orange-600 to-amber-500",
-                barColor: "bg-white",
-                topBorder: "border-t-orange-500",
-                logo: "SC",
-                logoColor: "bg-white text-orange-600",
-                navItems: ["Courses", "Results", "Faculty"],
-                tagline: "Top Results, Every Year",
-                desc: "IIT · NEET · Board Excellence",
-                blocks: ["bg-white/15", "bg-white/8"],
-              },
-              {
-                name: "Greenwood International",
+                name: "Banyan Tree School",
                 type: "CBSE School",
-                city: "Ajmer",
-                plan: "10-Year Plan",
-                header: "bg-emerald-800",
-                gradient: "from-emerald-900 via-emerald-700 to-teal-700",
-                barColor: "bg-emerald-200",
-                topBorder: "border-t-emerald-400",
-                logo: "GI",
-                logoColor: "bg-white text-emerald-700",
-                navItems: ["Home", "Facilities", "Admissions"],
-                tagline: "Nurturing Global Citizens",
-                desc: "CBSE Affiliated · Nursery–XII",
-                blocks: ["bg-white/10", "bg-white/5"],
-              },
-              {
-                name: "Vidya Shakti Academy",
-                type: "Skill Training",
-                city: "Kota",
-                plan: "1-Year Plan",
-                header: "bg-purple-800",
-                gradient: "from-purple-900 via-purple-700 to-indigo-800",
-                barColor: "bg-purple-300",
-                topBorder: "border-t-purple-400",
-                logo: "VS",
-                logoColor: "bg-white text-purple-700",
-                navItems: ["Programs", "Batch", "Contact"],
-                tagline: "Skills That Build Careers",
-                desc: "Computer · English · Tally",
-                blocks: ["bg-white/10", "bg-white/5"],
-              },
-              {
-                name: "Future Bright Jr. College",
-                type: "Junior College",
                 city: "Jaipur",
-                plan: "5-Year Plan",
-                header: "bg-rose-800",
-                gradient: "from-rose-900 via-rose-700 to-pink-700",
-                barColor: "bg-pink-200",
-                topBorder: "border-t-rose-400",
-                logo: "FB",
-                logoColor: "bg-white text-rose-700",
-                navItems: ["Streams", "Faculty", "Admissions"],
-                tagline: "Your Future Starts Here",
-                desc: "Science · Commerce · Arts",
-                blocks: ["bg-white/10", "bg-white/5"],
+                url: "https://banyantree.inupgrodigital.com/",
+                domain: "banyantree.inupgrodigital.com",
+                shot: shotBanyantree,
+                tags: ["Website", "SEO", "Admissions"],
+                highlight: "CBSE Affiliated · Est. 2011",
               },
               {
-                name: "Navjeevan Model School",
-                type: "Primary School",
-                city: "Bikaner",
-                plan: "10-Year Plan",
-                header: "bg-sky-800",
-                gradient: "from-sky-900 via-sky-700 to-blue-700",
-                barColor: "bg-sky-200",
-                topBorder: "border-t-sky-400",
-                logo: "NM",
-                logoColor: "bg-white text-sky-700",
-                navItems: ["Home", "Events", "Gallery"],
-                tagline: "Learning with Love & Joy",
-                desc: "Play Group to Class VIII",
-                blocks: ["bg-white/10", "bg-white/5"],
+                name: "Rockwoods High School",
+                type: "CBSE School",
+                city: "Udaipur",
+                url: "https://rookwoord.inupgrodigital.com/",
+                domain: "rookwoord.inupgrodigital.com",
+                shot: shotRookwood,
+                tags: ["Website", "SEO", "SMO"],
+                highlight: "Premium Institution · CBSE",
+              },
+              {
+                name: "DPS Udaipur",
+                type: "CBSE School",
+                city: "Udaipur",
+                url: "https://dps.udaipur.inupgrodigital.com/",
+                domain: "dps.udaipur.inupgrodigital.com",
+                shot: shotDps,
+                tags: ["Website", "SEO", "Analytics", "Admissions"],
+                highlight: "22-Acre Campus · Since 1999",
+              },
+              {
+                name: "A-One Sr. Sec. School",
+                type: "RBSE School",
+                city: "Udaipur",
+                url: "https://aone.inupgrodigital.com/",
+                domain: "aone.inupgrodigital.com",
+                shot: shotAone,
+                tags: ["Website", "SMO", "Admissions"],
+                highlight: "Nursery to XII · Est. 1998",
+              },
+              {
+                name: "Vardhman Public School",
+                type: "Public School",
+                city: "Udaipur",
+                url: "https://vardhman.inupgrodigital.com/",
+                domain: "vardhman.inupgrodigital.com",
+                shot: shotVardhman,
+                tags: ["Website", "SEO", "Analytics"],
+                highlight: "Parent Portal · News & Events",
+              },
+              {
+                name: "St. Mary's School",
+                type: "Sr. Sec. School",
+                city: "Udaipur",
+                url: "https://st-marys.inupgrodigital.com/",
+                domain: "st-marys.inupgrodigital.com",
+                shot: shotStMarys,
+                tags: ["Website", "SEO", "Admissions"],
+                highlight: "Est. 1950 · 75 Years of Excellence",
+              },
+              {
+                name: "St. Paul's School",
+                type: "CBSE School",
+                city: "Udaipur",
+                url: "https://stpaul.inupgrodigital.com/",
+                domain: "stpaul.inupgrodigital.com",
+                shot: shotStPaul,
+                tags: ["Website", "SMO", "Admissions"],
+                highlight: "3000+ Students · Since 1975",
+              },
+              {
+                name: "St. Teresa's School",
+                type: "Sr. Sec. School",
+                city: "Udaipur",
+                url: "https://stteresa.inupgrodigital.com/",
+                domain: "stteresa.inupgrodigital.com",
+                shot: shotStTeresa,
+                tags: ["Website", "SEO", "Analytics"],
+                highlight: "Est. 1951 · Student Portal",
+              },
+              {
+                name: "Seamount Institute",
+                type: "Training Academy",
+                city: "Udaipur",
+                url: "https://semount.inupgrodigital.com/",
+                domain: "semount.inupgrodigital.com",
+                shot: shotSemount,
+                tags: ["Website", "SEO", "SMO", "Admissions"],
+                highlight: "Govt. Affiliated · Since 2011",
               },
             ].map((client, i) => (
               <motion.div
@@ -329,8 +332,8 @@ export default function Home() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.07 } } }}
-                className={`bg-[#0d1626] rounded-2xl overflow-hidden border border-white/[0.08] border-t-2 ${client.topBorder} hover:border-white/20 hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 group`}
+                variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.06 } } }}
+                className="bg-[#0d1626] rounded-2xl overflow-hidden border border-white/[0.08] border-t-2 border-t-secondary/70 hover:border-white/20 hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 group flex flex-col"
               >
                 {/* Browser chrome */}
                 <div className="bg-[#111827] px-3 py-2 flex items-center gap-2 border-b border-white/[0.06]">
@@ -340,48 +343,47 @@ export default function Home() {
                     <div className="w-2 h-2 rounded-full bg-green-500/70"></div>
                   </div>
                   <div className="flex-1 bg-white/[0.06] rounded px-2 py-0.5 text-[10px] text-white/30 font-mono truncate">
-                    www.{client.name.toLowerCase().replace(/[\s.]/g, "")}.com
+                    {client.domain}
                   </div>
                   <Globe className="w-3 h-3 text-white/20" />
                 </div>
 
-                {/* Website preview */}
-                <div className={`bg-gradient-to-br ${client.gradient} h-52 relative overflow-hidden`}>
-                  {/* Mock navbar */}
-                  <div className={`${client.header} px-3 py-1.5 flex items-center justify-between`}>
-                    <div className={`${client.logoColor} rounded text-[9px] font-extrabold px-2 py-0.5 tracking-wide`}>{client.logo}</div>
-                    <div className="flex gap-2.5">
-                      {client.navItems.map((n, ni) => (
-                        <div key={ni} className="text-white/60 text-[8px] font-medium">{n}</div>
-                      ))}
-                    </div>
-                    <div className={`${client.barColor} rounded text-[7px] font-bold px-2 py-0.5 text-gray-900`}>Enquire</div>
-                  </div>
-                  {/* Hero content */}
-                  <div className="px-4 pt-4">
-                    <div className="text-white/35 text-[8px] font-bold uppercase tracking-widest mb-1.5">{client.type}</div>
-                    <div className="text-white font-extrabold text-[15px] leading-tight mb-1">{client.tagline}</div>
-                    <div className="text-white/50 text-[8px] mb-3">{client.desc}</div>
-                    <div className={`${client.barColor} rounded-md text-[8px] font-bold px-2.5 py-1 inline-block text-gray-900`}>Get Admission →</div>
-                  </div>
-                  {/* Simulated content rows */}
-                  <div className="absolute bottom-0 left-0 right-0 px-4 pb-3 flex flex-col gap-1.5">
-                    <div className={`h-1.5 rounded-full ${client.blocks[0]} w-3/4`}></div>
-                    <div className={`h-1.5 rounded-full ${client.blocks[1]} w-1/2`}></div>
-                  </div>
-                  {/* Decorative orb */}
-                  <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/5 rounded-full"></div>
-                </div>
+                {/* Real website screenshot */}
+                <a href={client.url} target="_blank" rel="noopener noreferrer" className="block relative overflow-hidden h-48" data-testid={`portfolio-shot-${i}`}>
+                  <img
+                    src={client.shot}
+                    alt={`${client.name} website homepage`}
+                    loading="lazy"
+                    className="w-full h-full object-cover object-top group-hover:scale-[1.04] transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d1626]/80 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-2.5 left-3 text-[10px] font-semibold text-white/70">{client.highlight}</div>
+                </a>
 
                 {/* Card footer */}
-                <div className="px-4 py-3.5 flex items-center justify-between gap-3">
-                  <div className="min-w-0">
-                    <p className="font-bold text-white text-sm leading-snug truncate">{client.name}</p>
-                    <p className="text-[11px] text-white/35 mt-0.5">{client.type} &nbsp;·&nbsp; {client.city}</p>
+                <div className="px-4 pt-3.5 pb-4 flex flex-col gap-3 flex-1">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0">
+                      <p className="font-bold text-white text-sm leading-snug truncate">{client.name}</p>
+                      <p className="text-[11px] text-white/35 mt-0.5">{client.type} &nbsp;·&nbsp; {client.city}</p>
+                    </div>
+                    <a
+                      href={client.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`portfolio-visit-${i}`}
+                      className="shrink-0 inline-flex items-center gap-1 text-[11px] font-bold text-secondary hover:text-amber-300 transition-colors mt-0.5"
+                    >
+                      Visit Website <ExternalLink className="w-3 h-3" />
+                    </a>
                   </div>
-                  <span className="bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 text-[10px] font-bold px-2.5 py-1 rounded-full shrink-0 whitespace-nowrap flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span> {client.plan}
-                  </span>
+                  <div className="flex flex-wrap gap-1.5 mt-auto">
+                    {client.tags.map((t, ti) => (
+                      <span key={ti} className="bg-white/[0.06] border border-white/10 text-blue-200/80 text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}

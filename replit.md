@@ -18,7 +18,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **Contact**: Phone +91 82096 47142, WhatsApp wa.me/918209647142
 - **Address**: Jhalana Gram, Malviya Nagar, Jaipur (Raj)
 - **Career Pathway URL**: https://dev-frontend-inupgro-career-pathway.vercel.app/
-- **Screenshots**: `attached_assets/screenshots/` (career pathway app screenshots)
+- **Screenshots**: `attached_assets/screenshots/` (career pathway app screenshots); `attached_assets/screenshots/portfolio/` (WebP homepage shots of the 9 real client sites on *.inupgrodigital.com used in the portfolio section)
 - **Vite alias**: `@assets/` maps to `attached_assets/`
 - **Key file**: `artifacts/inupgro/src/pages/Home.tsx` (entire landing page)
 
