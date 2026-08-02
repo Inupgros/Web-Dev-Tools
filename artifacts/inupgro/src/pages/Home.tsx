@@ -127,7 +127,7 @@ export default function Home() {
               </motion.h1>
 
               <motion.p variants={fadeInUp} className="text-lg md:text-xl text-blue-100/80 font-medium max-w-2xl mx-auto leading-relaxed">
-                A professionally designed website that puts your institute on the map — helping parents find you on Google, enquire via WhatsApp, and choose you over competitors. Starting at just ₹15,000.
+                Inupgro builds your institute's complete digital presence — a professional website, Google visibility, social media reach, and WhatsApp enquiries — so parents find you, trust you, and choose you. Starting at just ₹15,000.
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
@@ -178,14 +178,14 @@ export default function Home() {
               The Problem We Solve
             </div>
             <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">Why Do 500+ Institutes Choose INUPGRO?</h2>
-            <p className="text-base md:text-lg text-gray-500 leading-relaxed">Most institutes lose students to competitors simply because they lack a professional online presence. Parents today Google before they visit. Without a website, you're invisible. Inupgro changes that — giving you a digital identity that builds trust, attracts enquiries, and fills seats.</p>
+            <p className="text-base md:text-lg text-gray-500 leading-relaxed">Most institutes lose students to competitors simply because they can't be found online. Parents today search on Google, check social media, and compare before they visit. Inupgro doesn't just build websites — we give your institute a complete digital presence: found on Google, active on social media, reachable on WhatsApp, and measurable with analytics. A digital identity that builds trust, attracts enquiries, and fills seats.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { icon: Globe, title: "Be Found Online", desc: "Today's parents search online before choosing a school. Your professional website ensures they find you first — not your competitor.", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
-              { icon: TrendingUp, title: "Increase Admissions", desc: "A professional website with WhatsApp integration means every parent who finds you can reach you instantly — turning visitors into real enquiries.", color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
-              { icon: GraduationCap, title: "Long-Term Value & Support", desc: "One payment covers you for up to 10 years. Ongoing maintenance, updates, and technical support are all included — your website always stays fresh.", color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" }
+              { icon: Globe, title: "Be Found Everywhere", desc: "Parents search Google and social media before choosing a school. Your digital presence — website, SEO, and social media — ensures they find you first, not your competitor.", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
+              { icon: TrendingUp, title: "Turn Visibility into Admissions", desc: "Every parent who discovers you online can reach you instantly on WhatsApp. Analytics show you what's working — so visibility becomes enquiries, and enquiries become admissions.", color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
+              { icon: GraduationCap, title: "Long-Term Value & Support", desc: "One payment keeps your digital presence alive for up to 10 years. Maintenance, updates, and technical support are all included — your institute always looks its best online.", color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" }
             ].map((item, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.12 } } }} className={`bg-white p-8 rounded-2xl shadow-sm border ${item.border} text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group`}>
                 <div className={`w-16 h-16 ${item.bg} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -215,8 +215,8 @@ export default function Home() {
               <MonitorSmartphone className="w-4 h-4 text-secondary" />
               Our Work
             </div>
-            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-white mb-4 leading-tight">Websites We've Built</h2>
-            <p className="text-base md:text-lg text-blue-200/60 leading-relaxed">Real institutes, real websites — professionally designed to attract parents, showcase achievements, and drive admissions.</p>
+            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-white mb-4 leading-tight">Digital Presence We've Delivered</h2>
+            <p className="text-base md:text-lg text-blue-200/60 leading-relaxed">Real institutes, real results — complete digital presences with website, SEO, social media, and admission enquiries working together.</p>
           </motion.div>
 
           {/* Stats strip */}
@@ -391,10 +391,10 @@ export default function Home() {
 
           {/* CTA */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center">
-            <p className="text-blue-200/50 text-sm mb-5">Want a website like these for your institute?</p>
-            <a href="https://wa.me/918209647142?text=I%20saw%20your%20portfolio%20and%20want%20a%20website%20for%20my%20institute" target="_blank" rel="noopener noreferrer">
+            <p className="text-blue-200/50 text-sm mb-5">Want a digital presence like this for your institute?</p>
+            <a href="https://wa.me/918209647142?text=I%20saw%20your%20portfolio%20and%20want%20a%20digital%20presence%20for%20my%20institute" target="_blank" rel="noopener noreferrer">
               <Button className="h-12 px-8 text-base bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-xl font-bold shadow-lg shadow-secondary/20 hover:shadow-xl hover:scale-[1.02] transition-all">
-                Get Your Website Built <ExternalLink className="ml-2 w-4 h-4" />
+                Get Your Digital Presence <ExternalLink className="ml-2 w-4 h-4" />
               </Button>
             </a>
           </motion.div>
@@ -415,7 +415,7 @@ export default function Home() {
               One Investment, Three Powerful Benefits
             </div>
             <h2 className="text-3xl md:text-[2.75rem] font-extrabold mb-4 leading-tight">Simple, Transparent Pricing</h2>
-            <p className="text-base md:text-lg text-blue-100/70 leading-relaxed">Choose a plan that fits your budget. Every plan includes your own domain, fast hosting, SSL security, WhatsApp integration, and ongoing support.</p>
+            <p className="text-base md:text-lg text-blue-100/70 leading-relaxed">Every plan is a complete digital-presence package — your website is the foundation, with your own domain, Google SEO, WhatsApp enquiries, SSL security, and ongoing support built in.</p>
           </motion.div>
 
           {/* 3 plan cards */}
@@ -443,7 +443,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/918209647142?text=I'm%20interested%20in%20the%201-Year%20Website%20Plan%20(%E2%82%B915%2C000)" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/918209647142?text=I'm%20interested%20in%20the%201-Year%20Digital%20Presence%20Plan%20(%E2%82%B915%2C000)" target="_blank" rel="noopener noreferrer">
                 <Button data-testid="pricing-1yr-cta" variant="outline" className="w-full h-11 text-sm bg-white/[0.06] hover:bg-white/[0.14] text-white border-white/20 rounded-xl font-bold transition-all">
                   Get 1-Year Plan <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -491,7 +491,7 @@ export default function Home() {
                   <li className="flex items-start gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" /> Certified counselor — 2 visits/year for Institution, teachers, students &amp; parents</li>
                 </ul>
               </div>
-              <a href="https://wa.me/918209647142?text=I'm%20interested%20in%20the%2010-Year%20Website%20Plan%20(%E2%82%B980%2C000)" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/918209647142?text=I'm%20interested%20in%20the%2010-Year%20Digital%20Presence%20Plan%20(%E2%82%B980%2C000)" target="_blank" rel="noopener noreferrer">
                 <Button data-testid="pricing-website-cta" className="w-full h-12 text-base bg-primary hover:bg-primary/90 text-white rounded-xl font-bold shadow-lg hover:shadow-xl transition-all">
                   Get 10-Year Plan <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -524,7 +524,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <a href="https://wa.me/918209647142?text=I'm%20interested%20in%20the%205-Year%20Website%20Plan%20(%E2%82%B950%2C000)" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/918209647142?text=I'm%20interested%20in%20the%205-Year%20Digital%20Presence%20Plan%20(%E2%82%B950%2C000)" target="_blank" rel="noopener noreferrer">
                 <Button data-testid="pricing-5yr-cta" variant="outline" className="w-full h-11 text-sm bg-white/[0.06] hover:bg-white/[0.14] text-white border-white/20 rounded-xl font-bold transition-all">
                   Get 5-Year Plan <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -543,9 +543,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.15),transparent_70%)]"></div>
         <div className="container relative z-10 mx-auto px-4 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInScale}>
-            <h2 className="text-xl md:text-3xl font-extrabold mb-3">Why Pay Lakhs When You Can Start at Just ₹15,000?</h2>
+            <h2 className="text-xl md:text-3xl font-extrabold mb-3">Why Pay Lakhs When You Can Go Digital at Just ₹15,000?</h2>
             <p className="text-base md:text-xl font-semibold max-w-3xl mx-auto">
-              Other companies charge ₹1-5 Lakhs for a website alone. With Inupgro, you get a <span className="bg-primary/10 px-2 py-0.5 rounded-md">professional website</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">domain & hosting</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">10 years of support</span> -- all in one affordable package.
+              Other companies charge ₹1-5 Lakhs for a website alone. With Inupgro, you get a <span className="bg-primary/10 px-2 py-0.5 rounded-md">complete digital presence</span> — <span className="bg-primary/10 px-2 py-0.5 rounded-md">website + SEO + WhatsApp enquiries</span> + <span className="bg-primary/10 px-2 py-0.5 rounded-md">up to 10 years of support</span> — all in one affordable package.
             </p>
           </motion.div>
         </div>
@@ -555,15 +555,15 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-14">
             <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">Go Digital in 4 Simple Steps</h2>
-            <p className="text-base md:text-lg text-gray-500 leading-relaxed">No technical knowledge needed. We handle everything -- you just focus on educating.</p>
+            <p className="text-base md:text-lg text-gray-500 leading-relaxed">No technical knowledge needed. We build and manage your entire digital presence — you just focus on educating.</p>
           </motion.div>
           <div className="grid md:grid-cols-4 gap-6 relative max-w-5xl mx-auto">
             <div className="hidden md:block absolute top-10 left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-transparent via-gray-200 to-transparent -z-10"></div>
             {[
               { num: "1", title: "Send Us a Message", desc: "Tap the WhatsApp button or call us. Tell us about your institute -- that's all we need to get started.", icon: Phone },
-              { num: "2", title: "We Build Your Website", desc: "Our team designs a professional, mobile-friendly website tailored to your institute within days.", icon: Globe },
-              { num: "3", title: "Go Live & Get Noticed", desc: "Your website goes live with SEO, WhatsApp chat, and enquiry forms. Parents start finding you on Google from day one.", icon: Play },
-              { num: "4", title: "Watch Admissions Grow", desc: "Start receiving enquiries from parents who find you online. Track, manage, and grow -- all from one place.", icon: TrendingUp }
+              { num: "2", title: "We Build Your Digital Presence", desc: "Our team creates your professional website — the foundation of your digital presence — tailored to your institute within days.", icon: Globe },
+              { num: "3", title: "Go Live & Get Noticed", desc: "Your digital presence goes live with Google SEO, WhatsApp chat, and enquiry forms. Parents start finding your institute online from day one.", icon: Play },
+              { num: "4", title: "Watch Admissions Grow", desc: "Start receiving enquiries from parents who find you online. Track what's working with analytics and grow -- all from one place.", icon: TrendingUp }
             ].map((step, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.12 } } }} className="relative flex flex-col items-center text-center group">
                 <div className="w-[72px] h-[72px] rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-white text-2xl font-extrabold flex items-center justify-center mb-5 shadow-xl group-hover:scale-105 transition-transform duration-300">
@@ -581,12 +581,12 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-14">
             <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-primary mb-4 leading-tight">Hear from Institute Leaders Like You</h2>
-            <p className="text-base md:text-lg text-gray-500">Real feedback from schools, colleges, and coaching centres already growing with Inupgro.</p>
+            <p className="text-base md:text-lg text-gray-500">Real feedback from schools, colleges, and coaching centres already growing their digital presence with Inupgro.</p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               { name: "Rajesh Kumar", inst: "Sunshine Public School, Jaipur", text: "Before Inupgro, we had no online presence and were losing students to competitors with websites. Within weeks of going live, we started receiving WhatsApp enquiries from parents who found us on Google. Best decision we made for our institute." },
-              { name: "Priya Sharma", inst: "Excel Coaching Institute", text: "I was spending a lot every year on a basic website that looked outdated. With Inupgro, I paid ₹80,000 once and got a professional website for 10 years with full support. It's the smartest investment I've made for my institute." },
+              { name: "Priya Sharma", inst: "Excel Coaching Institute", text: "I was spending a lot every year on a basic website that looked outdated. With Inupgro, I paid ₹80,000 once and got a complete digital presence for 10 years with full support. It's the smartest investment I've made for my institute." },
               { name: "Dr. A. Verma", inst: "Global Degree College", text: "The design is professional, loads fast on mobile, and the WhatsApp integration means every parent who finds us can reach us instantly. We now receive 5-10 enquiries every week just from the website. Worth every rupee." }
             ].map((test, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { delay: i * 0.1 } } }} className="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 relative hover:shadow-lg transition-shadow duration-300">
@@ -619,12 +619,12 @@ export default function Home() {
           </motion.div>
           <Accordion type="single" collapsible className="w-full space-y-3">
             {[
-              { q: "What does the website package include?", a: "You get a professionally designed, mobile-responsive website with your own domain name, fast hosting, SSL security, WhatsApp chat integration, enquiry/admission forms, Google SEO optimization, and ongoing maintenance. We offer three plans: ₹15,000 for 1 year, ₹50,000 for 5 years, or ₹80,000 for 10 years (best value — save 47%). The 10-year plan also includes complimentary add-ons: a free professional photoshoot, director's message video, career counselling session, and a certified counsellor visiting your institution twice a year." },
+              { q: "What does the digital presence package include?", a: "You get a complete digital presence for your institute: a professionally designed, mobile-responsive website with your own domain name, fast hosting, SSL security, WhatsApp chat integration, enquiry/admission forms, Google SEO optimization, and ongoing maintenance. We offer three plans: ₹15,000 for 1 year, ₹50,000 for 5 years, or ₹80,000 for 10 years (best value — save 47%). The 10-year plan also includes complimentary add-ons: a free professional photoshoot, director's message video, career counselling session, and a certified counsellor visiting your institution twice a year." },
               { q: "What is included in the 10-year plan add-ons?", a: "The 10-year plan comes with four exclusive complimentary add-ons at no extra cost: (1) a free professional photoshoot of your institute, (2) a director's message video, (3) a career counselling session, and (4) a certified counsellor who visits your institution twice a year for your teachers, students, and parents." },
-              { q: "I already have a website. Can I still benefit?", a: "Yes. If your current website isn't generating enquiries or looks outdated, we'll build you a modern, admission-focused website designed to convert visitors into leads. If you already have a domain (like yourschool.com), we'll seamlessly connect it to your new Inupgro website." },
-              { q: "How long does it take to build my website?", a: "Typically 3–7 working days from when we receive your institute details, photos, and content. We handle all the technical setup — domain, hosting, SSL, WhatsApp integration, SEO — and hand over a fully live website ready to receive enquiries." },
-              { q: "Do you provide support after the website goes live?", a: "Absolutely. Our team provides ongoing technical support for the full duration of your plan — up to 10 years. Content updates like changing a phone number, adding a notice, or updating photos are handled promptly. You're never left on your own." },
-              { q: "Why is Inupgro so affordable compared to others?", a: "Most web agencies charge ₹1-5 Lakhs for a school website and then charge yearly maintenance fees on top. Inupgro's mission is to make digital transformation accessible to every institute in India. By standardizing our process, we deliver high-quality, admission-focused websites at a fraction of the cost — with no hidden fees." }
+              { q: "I already have a website. Can I still benefit?", a: "Yes. A website alone isn't a digital presence — if yours isn't generating enquiries, isn't found on Google, or looks outdated, we'll rebuild your online identity into a modern, admission-focused digital presence that converts visitors into leads. If you already have a domain (like yourschool.com), we'll seamlessly connect it." },
+              { q: "How long does it take to go digital?", a: "Typically 3–7 working days from when we receive your institute details, photos, and content. We handle all the technical setup — domain, hosting, SSL, WhatsApp integration, Google SEO — and hand over a fully live digital presence ready to receive enquiries." },
+              { q: "Do you provide support after we go live?", a: "Absolutely. Our team provides ongoing technical support for the full duration of your plan — up to 10 years. Content updates like changing a phone number, adding a notice, or updating photos are handled promptly. Your digital presence never goes stale, and you're never left on your own." },
+              { q: "Why is Inupgro so affordable compared to others?", a: "Most agencies charge ₹1-5 Lakhs for a website alone and then charge yearly maintenance fees on top. Inupgro's mission is to make a complete digital presence accessible to every institute in India. By standardizing our process, we deliver high-quality, admission-focused digital presences at a fraction of the cost — with no hidden fees." }
             ].map((faq, i) => (
               <AccordionItem key={i} value={`item-${i + 1}`} className="bg-gray-50 border border-gray-100 rounded-2xl px-6 data-[state=open]:bg-white data-[state=open]:shadow-sm data-[state=open]:border-gray-200 transition-all">
                 <AccordionTrigger data-testid={`faq-trigger-${i + 1}`} className="text-base font-semibold hover:no-underline text-left py-5">
@@ -646,7 +646,7 @@ export default function Home() {
         <div className="container relative z-10 mx-auto px-4 text-center max-w-3xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
             <h2 className="text-3xl md:text-5xl font-extrabold mb-5 leading-tight">Your Competitors Are Already Online. Are You?</h2>
-            <p className="text-base md:text-lg text-blue-100/70 mb-3 leading-relaxed">Every day without a website, your institute is invisible to parents searching for schools on Google. Join 500+ institutes who have already taken the digital leap with Inupgro.</p>
+            <p className="text-base md:text-lg text-blue-100/70 mb-3 leading-relaxed">Every day without a digital presence, your institute is invisible to parents searching for schools on Google and social media. Join 500+ institutes who have already taken the digital leap with Inupgro.</p>
             <p className="text-lg text-secondary font-bold mb-10">Starting at ₹15,000. Free photoshoot, director's video & certified counsellor included with the 10-year plan.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a href="https://wa.me/918209647142" target="_blank" rel="noopener noreferrer">
@@ -674,7 +674,7 @@ export default function Home() {
                 </div>
                 <span className="text-xl font-extrabold text-white tracking-tight">INUPGRO</span>
               </div>
-              <p className="text-sm text-gray-500 leading-relaxed">India's most affordable website solution for educational institutes. Professional, admission-focused websites built to help your institute get found, trusted, and chosen — starting at just ₹15,000.</p>
+              <p className="text-sm text-gray-500 leading-relaxed">India's most affordable digital presence for educational institutes. Website, Google visibility, social media, and admission enquiries — everything your institute needs to get found, trusted, and chosen. Starting at just ₹15,000.</p>
             </div>
             <div>
               <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">Contact Us</h4>
