@@ -1,0 +1,9 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "ecywtEHDFhOhgRT8wtixI"
+uri = "file://artifacts/inupgro-video/public/audio/bg_music.mp3"
+type = "audio"
+title = "background music"
+description = "Generated music: Corporate motivational instrumental background music scoring an EdTech brand promo video. Warm piano, uplifting strings, subtle electronic percussion, 105 BPM, confident and optimist…"

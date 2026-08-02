@@ -1,0 +1,28 @@
+kind = "video"
+previewPath = "/inupgro-video/"
+title = "Inupgro Promo Video"
+description = "A short animated marketing video pitching Inupgro's complete digital presence offer for educational institutes — website, Google visibility, social media, and WhatsApp admission enquiries — in the brand's navy and gold style."
+version = "1.0.0"
+id = "artifacts/inupgro-video"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/inupgro-video/" ]
+localPort = 21936
+
+[services.development]
+run = "pnpm --filter @workspace/inupgro-video run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/inupgro-video", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/inupgro-video/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21936"
+BASE_PATH = "/inupgro-video/"

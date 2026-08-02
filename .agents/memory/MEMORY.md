@@ -1,0 +1,1 @@
+- [Video artifact registration recovery](video-artifact-registration.md) — recover unregistered subagent-built video artifacts via createArtifact + file overlay; scaffold tsconfig needs DOM lib for typecheck.
