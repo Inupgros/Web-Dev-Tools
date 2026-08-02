@@ -70,14 +70,13 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen relative font-sans overflow-x-hidden">
-
       <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-gray-100/80 shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
         <div className="container mx-auto px-4 md:px-6 h-[72px] flex items-center justify-between">
           <a href="#" className="flex items-center gap-2.5 group">
             <div className="w-9 h-9 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
               <span className="text-white font-extrabold text-lg leading-none">I</span>
             </div>
-            <span className="text-[22px] font-extrabold tracking-tight text-primary">INUPGRO</span>
+            <span className="text-[22px] font-extrabold tracking-tight text-primary">INUPGRO DIGITAL</span>
           </a>
           <div className="hidden md:flex items-center space-x-1">
             {[
@@ -99,7 +98,6 @@ export default function Home() {
           />
         </div>
       </nav>
-
       <section className="relative pt-20 pb-28 md:pt-28 md:pb-36 overflow-hidden bg-primary text-white">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2940&auto=format&fit=crop')] bg-cover bg-center opacity-[0.07]"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-[hsl(210,73%,20%)]"></div>
@@ -170,7 +168,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* ── Promo Video Section ── */}
       <section id="video" className="relative bg-primary pb-20 md:pb-28">
         <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-primary to-[hsl(210,73%,16%)] pointer-events-none"></div>
@@ -193,7 +190,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       <section id="why" className="py-20 md:py-28 bg-gradient-to-b from-gray-50/80 to-white">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-14">
@@ -226,7 +222,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* ── Portfolio Section ── */}
       <section id="portfolio" className="py-20 md:py-28 bg-[#060e1f] relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.06),transparent_60%)]"></div>
@@ -425,7 +420,6 @@ export default function Home() {
 
         </div>
       </section>
-
       <section id="pricing" className="py-20 md:py-28 bg-primary text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-400/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
@@ -562,7 +556,6 @@ export default function Home() {
 
         </div>
       </section>
-
       <section className="py-14 bg-gradient-to-r from-secondary via-secondary to-amber-400 text-secondary-foreground relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.15),transparent_70%)]"></div>
         <div className="container relative z-10 mx-auto px-4 text-center">
@@ -574,7 +567,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-14">
@@ -600,7 +592,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="py-20 md:py-28 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-14">
@@ -634,7 +625,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section id="faq" className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-12">
@@ -662,7 +652,6 @@ export default function Home() {
           </Accordion>
         </div>
       </section>
-
       <section className="py-20 md:py-28 bg-primary text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2942&auto=format&fit=crop')] bg-cover bg-center opacity-[0.06]"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-[hsl(210,73%,20%)]"></div>
@@ -687,7 +676,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       <footer className="bg-gray-950 text-gray-400 py-14">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-10 border-b border-gray-800/60 pb-10 mb-10">
@@ -722,7 +710,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
       <a
         href="https://wa.me/918209647142"
         target="_blank"
