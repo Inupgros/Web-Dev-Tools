@@ -414,8 +414,6 @@ export default function Home() {
                 name: "Banyan Tree School",
                 type: "CBSE School",
                 city: "Jaipur",
-                url: "https://banyantree.inupgrodigital.com/",
-                domain: "banyantree.inupgrodigital.com",
                 shot: shotBanyantree,
                 tags: ["Website", "SEO", "Admissions"],
                 highlight: "CBSE Affiliated · Est. 2011",
@@ -424,8 +422,6 @@ export default function Home() {
                 name: "Rockwoods High School",
                 type: "CBSE School",
                 city: "Udaipur",
-                url: "https://rookwoord.inupgrodigital.com/",
-                domain: "rookwoord.inupgrodigital.com",
                 shot: shotRookwood,
                 tags: ["Website", "SEO", "SMO"],
                 highlight: "Premium Institution · CBSE",
@@ -434,8 +430,6 @@ export default function Home() {
                 name: "DPS Udaipur",
                 type: "CBSE School",
                 city: "Udaipur",
-                url: "https://dps.udaipur.inupgrodigital.com/",
-                domain: "dps.udaipur.inupgrodigital.com",
                 shot: shotDps,
                 tags: ["Website", "SEO", "Analytics", "Admissions"],
                 highlight: "22-Acre Campus · Since 1999",
@@ -444,8 +438,6 @@ export default function Home() {
                 name: "A-One Sr. Sec. School",
                 type: "RBSE School",
                 city: "Udaipur",
-                url: "https://aone.inupgrodigital.com/",
-                domain: "aone.inupgrodigital.com",
                 shot: shotAone,
                 tags: ["Website", "SMO", "Admissions"],
                 highlight: "Nursery to XII · Est. 1998",
@@ -454,8 +446,6 @@ export default function Home() {
                 name: "Vardhman Public School",
                 type: "Public School",
                 city: "Udaipur",
-                url: "https://vardhman.inupgrodigital.com/",
-                domain: "vardhman.inupgrodigital.com",
                 shot: shotVardhman,
                 tags: ["Website", "SEO", "Analytics"],
                 highlight: "Parent Portal · News & Events",
@@ -464,8 +454,6 @@ export default function Home() {
                 name: "St. Mary's School",
                 type: "Sr. Sec. School",
                 city: "Udaipur",
-                url: "https://st-marys.inupgrodigital.com/",
-                domain: "st-marys.inupgrodigital.com",
                 shot: shotStMarys,
                 tags: ["Website", "SEO", "Admissions"],
                 highlight: "Est. 1950 · 75 Years of Excellence",
@@ -474,8 +462,6 @@ export default function Home() {
                 name: "St. Paul's School",
                 type: "CBSE School",
                 city: "Udaipur",
-                url: "https://stpaul.inupgrodigital.com/",
-                domain: "stpaul.inupgrodigital.com",
                 shot: shotStPaul,
                 tags: ["Website", "SMO", "Admissions"],
                 highlight: "3000+ Students · Since 1975",
@@ -484,8 +470,6 @@ export default function Home() {
                 name: "St. Teresa's School",
                 type: "Sr. Sec. School",
                 city: "Udaipur",
-                url: "https://stteresa.inupgrodigital.com/",
-                domain: "stteresa.inupgrodigital.com",
                 shot: shotStTeresa,
                 tags: ["Website", "SEO", "Analytics"],
                 highlight: "Est. 1951 · Student Portal",
@@ -494,8 +478,6 @@ export default function Home() {
                 name: "Seamount Institute",
                 type: "Training Academy",
                 city: "Udaipur",
-                url: "https://semount.inupgrodigital.com/",
-                domain: "semount.inupgrodigital.com",
                 shot: shotSemount,
                 tags: ["Website", "SEO", "SMO", "Admissions"],
                 highlight: "Govt. Affiliated · Since 2011",
@@ -524,16 +506,13 @@ export default function Home() {
                     <div className="w-2 h-2 rounded-full bg-green-500/70"></div>
                   </div>
                   <div className="flex-1 bg-white/[0.06] rounded px-2 py-0.5 text-[10px] text-white/30 font-mono truncate">
-                    {client.domain}
+                    Website preview
                   </div>
                   <Globe className="w-3 h-3 text-white/20" />
                 </div>
 
                 {/* Real website screenshot */}
-                <a
-                  href={client.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <div
                   className="block relative overflow-hidden h-48"
                   data-testid={`portfolio-shot-${i}`}
                 >
@@ -547,7 +526,7 @@ export default function Home() {
                   <div className="absolute bottom-2.5 left-3 text-[10px] font-semibold text-white/70">
                     {client.highlight}
                   </div>
-                </a>
+                </div>
 
                 {/* Card footer */}
                 <div className="px-4 pt-3.5 pb-4 flex flex-col gap-3 flex-1">
@@ -560,15 +539,6 @@ export default function Home() {
                         {client.type} &nbsp;·&nbsp; {client.city}
                       </p>
                     </div>
-                    <a
-                      href={client.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-testid={`portfolio-visit-${i}`}
-                      className="shrink-0 inline-flex items-center gap-1 text-[11px] font-bold text-secondary hover:text-amber-300 transition-colors mt-0.5"
-                    >
-                      Visit Website <ExternalLink className="w-3 h-3" />
-                    </a>
                   </div>
                   <div className="flex flex-wrap gap-1.5 mt-auto">
                     {client.tags.map((t, ti) => (
